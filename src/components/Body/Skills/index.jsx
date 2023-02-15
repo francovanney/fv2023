@@ -37,7 +37,7 @@ const Skills = () => {
 	};
 	return (
 		<section className='page-section'>
-			<Container>
+			<Container className='mt-4 animate__animated animate__fadeIn animate__delay-2s'>
 				<Row>
 					<Col className='mt-4 mb-4'>
 						<h2>Skills</h2>

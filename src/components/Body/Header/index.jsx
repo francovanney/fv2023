@@ -1,12 +1,15 @@
 import { Container, Row, Col } from "react-bootstrap";
+import "animate.css";
 
 const Header = () => {
 	return (
 		<section className='page-section' id='header-section'>
 			<Container>
-				<Row>
-					<Col md={12}>
-						<h1 id='title'>
+				<Row className='animate__animated animate__fadeInDown'>
+					<Col md={12} >
+						<h1
+							id='title'
+							>
 							FRANCO VANNEY
 						</h1>
 					</Col>

@@ -15,13 +15,17 @@ const AboutMe = () => {
 		<Container>
 			<Row>
 				<Col xs={12} sm={12} md={4}>
-					<h1 className='text-left'>
+					<h1 className='text-left animate__animated animate__fadeInDown'>
 						Acerca de mí
 					</h1>
 				</Col>
 				<Col xs={12} sm={12} md={8}>
-					<h1 className="mt-2 mb-2">¡Hola!</h1>
-					<p id="text-about">
+					<h1 className='mt-2 mb-2 animate__animated animate__fadeInDown'>
+						¡Hola!
+					</h1>
+					<p
+						id='text-about'
+						className='animate__animated animate__backInRight'>
 						Soy Franco Vanney, desarrollador
 						front-end y diseñador
 						multidisciplinario. Actualmente
@@ -61,12 +65,12 @@ const AboutMe = () => {
 						disfrutes muchos de los
 						proyectos que muestro a
 						continuación.
-						<p className='mt-4'>
+						<p className='mt-4 animate__animated animate__backInRight'>
 							¡Gracias por visitar mi
 							portfolio!
 						</p>
 					</p>
-					<Row>
+					<Row className='mt-4 animate__animated animate__fadeIn animate__delay-2s'>
 						<h4 className='mb-4'>
 							Descargá mi CV
 						</h4>
