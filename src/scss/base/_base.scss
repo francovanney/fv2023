@@ -16,7 +16,11 @@ h1 {
 }
 
 Button {
-    color: var(--AccentColor)  !important;
+    color: var(--WhiteColor)  !important;
     background-color: var(--FirstColor) !important;
     border: none !important;
+    &:hover {
+        opacity: 0.8;
+        transition: opacity .3s ease-in-out;
+    }
 }
