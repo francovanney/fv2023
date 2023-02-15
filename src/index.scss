@@ -1,5 +1,6 @@
 // ABSTRACTS //
 @use './scss/abstracts/variables'; 
+@use './App.scss';
 
 // BASE // 
 
@@ -10,3 +11,5 @@
 
 @use './components/Navbar/navbar.scss';
 @use './components/Body/body.scss';
+@use './components/Body/Header/header.scss';
+@use './components/Body/AboutMe/about-me.scss';
