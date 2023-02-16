@@ -7,12 +7,12 @@ import Navbar from "./components/Navbar";
 const App = () => {
 	const [loading, setLoading] = useState(false);
 
-	useEffect(() => {
+/* 	useEffect(() => {
 		setLoading(true);
 		setTimeout(() => {
 			setLoading(false);
 		}, 3500);
-	}, []);
+	}, []); */
 
 	return (
 		<div className='App'>
