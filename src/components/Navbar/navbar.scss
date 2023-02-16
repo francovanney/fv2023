@@ -42,3 +42,13 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  ul, li {
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+
+  ul {
+    display: flex;
+    gap: 64px;
+  }

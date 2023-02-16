@@ -1,9 +1,11 @@
 import { Nav } from "react-bootstrap";
 import logo from "../../assets/Logos/Fv/logo_FVDark.svg";
 import { useState, useEffect } from "react";
+import { useMediaQueries } from "../../utils/mediaQueries";
 
 const Navbar = () => {
 	const [scrolled, setScrolled] = useState(false);
+	const { isDesktop, isMobile } = useMediaQueries();
 
 	const onScroll = () => {
 		const scrollPosition = window.pageYOffset;
@@ -30,15 +32,46 @@ const Navbar = () => {
 				className={scrolled ? "scrolled-down" : ""}
 				id='nav'>
 				<div className='container flex'>
-					<img src={logo} width={35}/>
-					<svg src>
-
-					</svg>
+					<img src={logo} width={35} />
 					<div className='links'>
-						<Nav.Link>Lorem1</Nav.Link>
-						<Nav.Link>Lorem2</Nav.Link>
-						<Nav.Link>Lorem3</Nav.Link>
-						<Nav.Link>Lorem4</Nav.Link>
+						<ul>
+							<li>
+								{isMobile ? (
+									<Nav.Link>
+										Hola
+									</Nav.Link>
+								) : (
+									""
+								)}
+							</li>
+							<li>
+								{isMobile ? (
+									<Nav.Link>
+										Skills
+									</Nav.Link>
+								) : (
+									""
+								)}
+							</li>
+							<li>
+								{isMobile ? (
+									<Nav.Link>
+										Work
+									</Nav.Link>
+								) : (
+									""
+								)}
+							</li>
+							<li>
+								{isMobile ? (
+									<Nav.Link>
+										Contacto
+									</Nav.Link>
+								) : (
+									""
+								)}
+							</li>
+						</ul>
 					</div>
 				</div>
 			</nav>
