@@ -31,6 +31,9 @@ const Navbar = () => {
 				id='nav'>
 				<div className='container flex'>
 					<img src={logo} width={35}/>
+					<svg src>
+
+					</svg>
 					<div className='links'>
 						<Nav.Link>Lorem1</Nav.Link>
 						<Nav.Link>Lorem2</Nav.Link>
