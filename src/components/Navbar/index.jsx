@@ -1,5 +1,5 @@
 import { Nav } from "react-bootstrap";
-import logo from "../../assets/logo_fv-dark.png";
+import logo from "../../assets/Logos/Fv/logo_FVDark.svg";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
 				className={scrolled ? "scrolled-down" : ""}
 				id='nav'>
 				<div className='container flex'>
-					<img src={logo} />
+					<img src={logo} width={35}/>
 					<div className='links'>
 						<Nav.Link>Lorem1</Nav.Link>
 						<Nav.Link>Lorem2</Nav.Link>

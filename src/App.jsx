@@ -1,15 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.scss";
 import Body from "./components/Body";
+import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 
 const App = () => {
-	const [count, setCount] = useState(0);
+	const [loading, setLoading] = useState(false);
+
+	useEffect(() => {
+		setLoading(true);
+		setTimeout(() => {
+			setLoading(false);
+		}, 3500);
+	}, []);
 
 	return (
 		<div className='App'>
-			<Navbar />
-			<Body />
+			{loading ? (
+				<Loader />
+			) : (
+				<>
+					<Navbar />
+					<Body />
+				</>
+			)}
 		</div>
 	);
 };
