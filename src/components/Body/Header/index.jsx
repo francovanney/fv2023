@@ -14,7 +14,7 @@ const Header = () => {
 						width: 2000,
 						opacity: 0.15,
 						backgroundImage:
-							"url('https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEORycF0cw24p4FdEHGkjCgaNqd_gFNRbmD_B3_6BaCZn3nsvNd4jcUo0rhmy9MDnakZwZJZWp-fJ1Ug2Sm0g6rF2VCi1Kg=w1366-h560')"
+							"url('http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcSjHbAOP4JVKfM1zXYtcwQX3dc7Lp89JMrQWG4LYPKaQ3DxbXxejNIsSsKOQitF-T4MZcbRDHtQq3qU5fuPkIQ')"
 					}}
 				/>
 			</Background>

@@ -1,12 +1,9 @@
 import { Nav } from "react-bootstrap";
 import logo from "../../assets/Logos/Fv/logo_FVDark.svg";
 import { useState, useEffect } from "react";
-import { useMediaQueries } from "../../utils/mediaQueries";
 
 const Navbar = () => {
 	const [scrolled, setScrolled] = useState(false);
-	const { isDesktop, isMobile } = useMediaQueries();
-
 	const onScroll = () => {
 		const scrollPosition = window.pageYOffset;
 		if (scrollPosition > 10) {
@@ -30,7 +27,9 @@ const Navbar = () => {
 	const [expandNavbar, setExpandNavbar] = useState(false);
 
 	return (
-		<div className='navbar' id={expandNavbar ? "open" : "close"}>
+		<nav
+			className={scrolled ? "scrolled-down navbar" : "navbar"}
+			id={expandNavbar ? "open" : "close"}>
 			<div className='container-logo'>
 				<img src={logo} width={35} id='FVLogo' />
 			</div>
@@ -47,11 +46,11 @@ const Navbar = () => {
 				</div>
 				<Nav.Link href='#header-section'>Home</Nav.Link>
 				<Nav.Link href='#hola-section'>¡Hola!</Nav.Link>
-				<Nav.Link href='#header-section'>
-					Experience
+				<Nav.Link href='#skills-section'>
+					Skills
 				</Nav.Link>
 			</div>
-		</div>
+		</nav>
 	);
 };
 

@@ -36,7 +36,7 @@ const Skills = () => {
 		}
 	};
 	return (
-		<section className='page-section'>
+		<section className='page-section' id='skills-section'>
 			<Container className='container mt-4 animate__animated animate__fadeIn animate__delay-2s'>
 				<Row>
 					<Col className='mt-4 mb-4'>

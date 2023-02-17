@@ -12,6 +12,17 @@
   z-index: 999;
 }
 
+nav.scrolled-down {
+  height: 60px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.14);
+  transition: ease-in-out 1s;
+}
+
+nav.scrolled-down img {
+  scale: 1.15;
+  transition: ease-in-out .5s;
+}
+
 .container-logo {
   margin-left: 100px;
 }
