@@ -107,12 +107,12 @@ nav.scrolled-down img {
   .toggleButton {
     height: 35px;
   }
-  .scrolled-down {
-    height: 25px !important;
-  }
 }
 
 @media only screen and (min-width: 600px) {
+  #open {
+    height: 100vh !important;
+  }
   .toggleButton {
     display: none;
   }

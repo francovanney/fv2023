@@ -1,7 +1,7 @@
 import { Nav } from "react-bootstrap";
 import logo from "../../assets/Logos/Fv/logo_FVDark.svg";
 import { useState, useEffect } from "react";
-import { motion, useScroll, useSpring } from "framer-motion"; 
+import { motion, useScroll, useSpring } from "framer-motion";
 
 const Navbar = () => {
 	const [scrolled, setScrolled] = useState(false);
@@ -56,9 +56,19 @@ const Navbar = () => {
 						{expandNavbar ? "X" : "O"}
 					</button>
 				</div>
-				<Nav.Link href='#header-section'>Home</Nav.Link>
-				<Nav.Link href='#hola-section'>¡Hola!</Nav.Link>
-				<Nav.Link href='#skills-section'>
+				<Nav.Link
+					href='#header-section'
+					onClick={() => setExpandNavbar(close)}>
+					Home
+				</Nav.Link>
+				<Nav.Link
+					href='#hola-section'
+					onClick={() => setExpandNavbar(close)}>
+					¡Hola!
+				</Nav.Link>
+				<Nav.Link
+					href='#skills-section'
+					onClick={() => setExpandNavbar(close)}>
 					Skills
 				</Nav.Link>
 			</div>
