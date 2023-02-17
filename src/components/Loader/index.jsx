@@ -17,7 +17,7 @@ const pathVariants = {
 		opacity: 1,
 		pathLength: 1,
 		transition: {
-			duration: 2,
+			duration: 1,
 			ease: "easeInOut",
 			repeat: Infinity
 		}
@@ -40,8 +40,12 @@ const Loader = () => {
 				enable-background='new 0 0 4248 3817'
 				xml:space='preserve'
 				//variants={svgVariants}
-				initial='hidden'
-				animate='visible'>
+				initial={{ scale: 0.2 }}
+				animate={{
+					scale: [0.5, 1, 1.75, 2, 4],
+                    opacity: [0, 1, 0, 1, 0, 1, 0, 1]
+				}}
+				transition={{ duration: 5 }}>
 				<motion.path
 					variants={pathVariants}
 					fill='#17BED2'

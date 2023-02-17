@@ -1,6 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import "animate.css";
 import { Parallax, Background } from "react-parallax";
+import { motion } from "framer-motion";
 import avatar from "../../../assets/Img/profile.jpg";
 
 const Header = () => {
@@ -30,10 +31,19 @@ const Header = () => {
 							</h5>
 						</Col>
 						<Col md={3}>
-							<img
+							<motion.img
+								whileHover={{
+									scale: 1
+								}}
+								initial={{
+									scale: 0.9
+								}}
+								transition={{
+									type: "spring",
+									duration: 2
+								}}
 								id='img-pattern'
 								src={avatar}
-								width={250}
 								className='banner'
 							/>
 						</Col>

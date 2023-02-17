@@ -26,56 +26,91 @@ const Navbar = () => {
 			window.removeEventListener("scroll", onScroll);
 		};
 	}, [scrolled]);
+
+	const [expandNavbar, setExpandNavbar] = useState(false);
+
 	return (
-		<body>
-			<nav
-				className={scrolled ? "scrolled-down" : ""}
-				id='nav'>
-				<div className='container flex'>
-					<img src={logo} width={35} />
-					<div className='links'>
-						<ul>
-							<li>
-								{isMobile ? (
-									<Nav.Link>
-										Hola
-									</Nav.Link>
-								) : (
-									""
-								)}
-							</li>
-							<li>
-								{isMobile ? (
-									<Nav.Link>
-										Skills
-									</Nav.Link>
-								) : (
-									""
-								)}
-							</li>
-							<li>
-								{isMobile ? (
-									<Nav.Link>
-										Work
-									</Nav.Link>
-								) : (
-									""
-								)}
-							</li>
-							<li>
-								{isMobile ? (
-									<Nav.Link>
-										Contacto
-									</Nav.Link>
-								) : (
-									""
-								)}
-							</li>
-						</ul>
-					</div>
+		/* 		<nav
+			className={scrolled ? "scrolled-down nav" : "nav"}
+			id={expandNavbar ? "open" : "close"}>
+			<div className='container-nav'>
+				<img src={logo} width={35} />
+				<button
+					className='toggleButton'
+					onClick={() => {
+						setExpandNavbar(
+							(prev) => !prev
+						);
+					}}>
+					|||
+				</button>
+				<div className='links'>
+					<ul>
+						<li>
+							{isMobile ? (
+								<Nav.Link>
+									Hola
+								</Nav.Link>
+							) : (
+								<Nav.Link>
+									Hola 2
+								</Nav.Link>
+							)}
+						</li>
+						<li>
+							{isMobile ? (
+								<Nav.Link>
+									Skills
+								</Nav.Link>
+							) : (
+								""
+							)}
+						</li>
+						<li>
+							{isMobile ? (
+								<Nav.Link>
+									Work
+								</Nav.Link>
+							) : (
+								""
+							)}
+						</li>
+						<li>
+							{isMobile ? (
+								<Nav.Link>
+									Contacto
+								</Nav.Link>
+							) : (
+								""
+							)}
+						</li>
+					</ul>
 				</div>
-			</nav>
-		</body>
+			</div>
+		</nav> */
+		<div className='navbar' id={expandNavbar ? "open" : "close"}>
+			<div className='container-logo'>
+				<img src={logo} width={35} id='FVLogo' />
+			</div>
+			<div className='links'>
+				<div className='toggleButton'>
+					<button
+						onClick={() => {
+							setExpandNavbar(
+								(prev) => !prev
+							);
+						}}>
+						{expandNavbar ? "X" : "O"}
+					</button>
+				</div>
+				<Nav.Link to='/'> Home </Nav.Link>
+				<Nav.Link to='/projects'> Projects </Nav.Link>
+				<Nav.Link to='/experience'>
+					{" "}
+					Experience{" "}
+				</Nav.Link>
+			</div>
+		</div>
 	);
 };
 
