@@ -107,6 +107,9 @@ nav.scrolled-down img {
   .toggleButton {
     height: 35px;
   }
+  .scrolled-down {
+    height: 25px !important;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -127,6 +130,16 @@ nav.scrolled-down img {
   }
 
 
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--FirstColor);
+  transform-origin: 0%;
 }
 
 

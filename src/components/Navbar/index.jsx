@@ -1,6 +1,7 @@
 import { Nav } from "react-bootstrap";
 import logo from "../../assets/Logos/Fv/logo_FVDark.svg";
 import { useState, useEffect } from "react";
+import { motion, useScroll, useSpring } from "framer-motion"; 
 
 const Navbar = () => {
 	const [scrolled, setScrolled] = useState(false);
@@ -26,6 +27,13 @@ const Navbar = () => {
 
 	const [expandNavbar, setExpandNavbar] = useState(false);
 
+	const { scrollYProgress } = useScroll();
+	const scaleX = useSpring(scrollYProgress, {
+		stiffness: 100,
+		damping: 30,
+		restDelta: 0.001
+	});
+
 	return (
 		<nav
 			className={scrolled ? "scrolled-down navbar" : "navbar"}
@@ -33,6 +41,10 @@ const Navbar = () => {
 			<div className='container-logo'>
 				<img src={logo} width={35} id='FVLogo' />
 			</div>
+			<motion.div
+				className='progress-bar'
+				style={{ scaleX }}
+			/>
 			<div className='links'>
 				<div className='toggleButton'>
 					<button

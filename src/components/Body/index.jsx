@@ -1,7 +1,8 @@
 import { Parallax, Background } from "react-parallax";
+
 import AboutMe from "./AboutMe";
 import Skills from "./Skills";
-import Header from "./Header"
+import Header from "./Header";
 
 const insideStyles = {
 	background: "white",
@@ -24,7 +25,7 @@ const Body = () => {
 	return (
 		<>
 			<section>
-				<Header/>
+				<Header />
 				<AboutMe />
 				<Skills />
 			</section>

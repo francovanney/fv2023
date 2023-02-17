@@ -38,6 +38,19 @@ const AboutMe = () => {
 								enable-background='new 0 0 980 556'
 								xml:space='preserve'>
 								<motion.path
+									whileHover={{
+										y: [
+											0,
+											45,
+											0,
+											45,
+											0
+										]
+									}}
+									transition={{
+										type: "spring",
+										duration: 2
+									}}
 									variants={
 										pathVariants
 									}
