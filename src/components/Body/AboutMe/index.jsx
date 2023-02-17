@@ -21,29 +21,30 @@ const pathVariants = {
 
 const AboutMe = () => {
 	return (
-		<Container className='pt-4'>
-			<Row>
-				<Col xs={12} sm={12} md={4}>
-					<h1 className='text-left'>
-						<motion.svg
-							version='1.1'
-							id='Layer_1'
-							xmlns='http://www.w3.org/2000/svg'
-							xmlns:xlink='http://www.w3.org/1999/xlink'
-							x='0px'
-							y='0px'
-							width='15%'
-							viewBox='0 0 980 556'
-							enable-background='new 0 0 980 556'
-							xml:space='preserve'>
-							<motion.path
-								variants={
-									pathVariants
-								}
-								fill='#17bed2'
-								opacity='1.000000'
-								stroke='none'
-								d='
+		<section className='page-section' id='hola-section'>
+			<Container className='pt-4'>
+				<Row>
+					<Col xs={12} sm={12} md={4}>
+						<h1 className='text-left'>
+							<motion.svg
+								version='1.1'
+								id='Layer_1'
+								xmlns='http://www.w3.org/2000/svg'
+								xmlns:xlink='http://www.w3.org/1999/xlink'
+								x='0px'
+								y='0px'
+								width='15%'
+								viewBox='0 0 980 556'
+								enable-background='new 0 0 980 556'
+								xml:space='preserve'>
+								<motion.path
+									variants={
+										pathVariants
+									}
+									fill='#17bed2'
+									opacity='1.000000'
+									stroke='none'
+									d='
 								M0.999998,231.468658 
 									C3.041728,230.100555 5.179591,229.370926 7.111398,228.277313 
 									C102.995811,173.995193 198.861938,119.680733 294.737152,65.382339 
@@ -61,8 +62,8 @@ const AboutMe = () => {
 									C200.221466,438.906525 100.968086,382.449493 1.357354,325.996246 
 									C1.000000,294.645782 1.000000,263.291534 0.999998,231.468658 
 								z'
-							/>
-							{/* 							<path
+								/>
+								{/* 							<path
 								fill='#010101'
 								opacity='1.000000'
 								stroke='none'
@@ -107,117 +108,152 @@ const AboutMe = () => {
 									C392.608795,556.254517 372.695831,556.210083 352.782898,556.165649 
 								z'
 							/> */}
-						</motion.svg>
-					</h1>
-				</Col>
-				<Col xs={12} sm={12} md={8}>
-					<h2 className='mb-2 animate__animated animate__fadeInDown'>
-						¡Hola! 👋
-					</h2>
-					<p
-						id='text-about'
-						className='animate__animated animate__backInRight'>
-						Mi nombre es Franco Vanney, soy
-						desarrollador front-end y
-						diseñador multidisciplinario.{" "}
-						<br /> Actualmente vivo en la
-						ciudad de Junín - Buenos Aires,
-						Argentina. <br /> Soy un team
-						player, curioso, creativo y
-						detallista, apasionado del
-						proceso creativo. Aporto mi lado
-						creativo para darle a cada
-						elemento un propósito,
-						compartiendo distintos puntos de
-						vista con el team y, en última
-						instancia, conectarlo al código.
-						<br />
-						Creo que el diseño centrado en
-						el ser humano crea productos y
-						servicios para resolver
-						necesidades, a su vez
-						transmitiendo valores y
-						emociones positivas.
-						<br />
-						Como front-end me dedico
-						escribir código en distintos
-						lenguajes con un énfasis en el
-						proceso de pensar, planificar y
-						crear elementos visuales
-						atractivos con el fin de lograr
-						una excelente experiencia para
-						el usuario. <br />
-						Mi objetivo es aprender algo
-						nuevo todos los días para
-						aumentar mi crecimiento personal
-						y profesional. <br />
-						Me gustan mucho las mascotas, la
-						música y andar en bici. Soy
-						músico, toco guitarras y piano.
-						Los fines de semana me dedico a
-						ser técnico en iluminación y
-						video en eventos profesionales.
-						<br />
-						Sin más que agregar, ¡espero que
-						disfrutes muchos de los
-						proyectos que muestro a
-						continuación!.
-						<p className='mt-4 animate__animated animate__backInRight'>
-							¡Gracias por visitar mi
-							portfolio!
+							</motion.svg>
+						</h1>
+					</Col>
+					<Col xs={12} sm={12} md={8}>
+						<h2 className='mb-2'>
+							¡Hola!{" "}
+							<motion.div
+								style={{
+									display: "inline-block"
+								}}
+								whileHover={{
+									rotate: [
+										0,
+										45,
+										0,
+										45,
+										0
+									]
+								}}
+								transition={{
+									type: "spring",
+									duration: 2
+								}}>
+								<span>👋</span>
+							</motion.div>
+						</h2>
+						<p
+							id='text-about'
+							className='animate__animated animate__backInRight'>
+							Mi nombre es Franco
+							Vanney, soy
+							desarrollador front-end
+							y diseñador
+							multidisciplinario.{" "}
+							<br /> Actualmente vivo
+							en la ciudad de Junín -
+							Buenos Aires, Argentina.{" "}
+							<br /> Soy un team
+							player, curioso,
+							creativo y detallista,
+							apasionado del proceso
+							creativo. Aporto mi lado
+							creativo para darle a
+							cada elemento un
+							propósito, compartiendo
+							distintos puntos de
+							vista con el team y, en
+							última instancia,
+							conectarlo al código.
+							<br />
+							Creo que el diseño
+							centrado en el ser
+							humano crea productos y
+							servicios para resolver
+							necesidades, a su vez
+							transmitiendo valores y
+							emociones positivas.
+							<br />
+							Como front-end me dedico
+							escribir código en
+							distintos lenguajes con
+							un énfasis en el proceso
+							de pensar, planificar y
+							crear elementos visuales
+							atractivos con el fin de
+							lograr una excelente
+							experiencia para el
+							usuario. <br />
+							Mi objetivo es aprender
+							algo nuevo todos los
+							días para aumentar mi
+							crecimiento personal y
+							profesional. <br />
+							Me gustan mucho las
+							mascotas, la música y
+							andar en bici. Soy
+							músico, toco guitarras y
+							piano. Los fines de
+							semana me dedico a ser
+							técnico en iluminación y
+							video en eventos
+							profesionales.
+							<br />
+							Sin más que agregar,
+							¡espero que disfrutes
+							muchos de los proyectos
+							que muestro a
+							continuación!.
+							<p className='mt-4 animate__animated animate__backInRight'>
+								¡Gracias por
+								visitar mi
+								portfolio!
+							</p>
 						</p>
-					</p>
-					<Container>
-						<Row className='mt-4 mb-4 animate__animated animate__fadeIn animate__delay-2s'>
-							<h4 className='mb-4 text-center'>
-								Descargá mi CV
-							</h4>
-							<Container className='d-flex justify-content-around'>
-								<motion.button
-									id='button-custom'
-									whileHover={{
-										scale: 1.1
-									}}
-									whileTap={{
-										scale: 0.9
-									}}>
-									CV
-									ESPAÑOL
-								</motion.button>
+						<Container>
+							<Row className='mt-4 mb-4 animate__animated animate__fadeIn animate__delay-2s'>
+								<h4 className='mb-4 text-center'>
+									Descargá
+									mi CV
+								</h4>
+								<Container className='d-flex justify-content-around'>
+									<motion.button
+										id='button-custom'
+										whileHover={{
+											scale: 1.1
+										}}
+										whileTap={{
+											scale: 0.9
+										}}>
+										CV
+										ESPAÑOL
+									</motion.button>
 
-								<motion.button
-									id='button-custom'
-									whileHover={{
-										scale: 1.1
-									}}
-									whileTap={{
-										scale: 0.9
-									}}>
-									CV
-									ENGLISH
-								</motion.button>
-							</Container>
-						</Row>
-					</Container>
-				</Col>
-				<Col xs={12} sm={12} md={4}>
-					<h1 className='text-left'>
-						<motion.svg
-							version='1.1'
-							id='Layer_1'
-							xmlns='http://www.w3.org/2000/svg'
-							xmlns:xlink='http://www.w3.org/1999/xlink'
-							x='0px'
-							y='0px'
-							width='15%'
-							viewBox='0 0 980 556'
-							enable-background='new 0 0 980 556'
-							xml:space='preserve'>
-							<path
-								fill='#17bed2'
-								opacity='1.000000'
-								stroke='none'
-								d='
+									<motion.button
+										id='button-custom'
+										whileHover={{
+											scale: 1.1
+										}}
+										whileTap={{
+											scale: 0.9
+										}}>
+										CV
+										ENGLISH
+									</motion.button>
+								</Container>
+							</Row>
+						</Container>
+					</Col>
+					<Col xs={12} sm={12} md={4}>
+						<h1 className='text-left'>
+							<motion.svg
+								version='1.1'
+								id='Layer_1'
+								xmlns='http://www.w3.org/2000/svg'
+								xmlns:xlink='http://www.w3.org/1999/xlink'
+								x='0px'
+								y='0px'
+								width='15%'
+								viewBox='0 0 980 556'
+								enable-background='new 0 0 980 556'
+								xml:space='preserve'>
+								<path
+									fill='#17bed2'
+									opacity='1.000000'
+									stroke='none'
+									d='
 								M981.000000,325.531342 
 									C978.961548,326.889587 976.821106,327.600098 974.899292,328.694427 
 									C881.012878,382.154694 787.146484,435.649933 693.271423,489.130188 
@@ -240,12 +276,12 @@ const AboutMe = () => {
 									C980.337280,282.573608 980.668640,287.286804 981.000000,292.000000 
 									C981.000000,303.020905 981.000000,314.041779 981.000000,325.531342 
 								z'
-							/>
-							<path
-								fill='#010101'
-								opacity='1.000000'
-								stroke='none'
-								d='
+								/>
+								<path
+									fill='#010101'
+									opacity='1.000000'
+									stroke='none'
+									d='
 								M352.782898,556.165649 
 									C357.537140,542.368286 362.146790,528.518982 367.067657,514.781250 
 									C428.224365,344.047394 489.426331,173.329788 551.288696,2.304496 
@@ -257,12 +293,13 @@ const AboutMe = () => {
 									C414.555542,557.000000 414.111115,557.000000 413.094177,556.649414 
 									C392.608795,556.254517 372.695831,556.210083 352.782898,556.165649 
 								z'
-							/>
-						</motion.svg>
-					</h1>
-				</Col>
-			</Row>
-		</Container>
+								/>
+							</motion.svg>
+						</h1>
+					</Col>
+				</Row>
+			</Container>
+		</section>
 	);
 };
 

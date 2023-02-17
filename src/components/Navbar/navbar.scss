@@ -24,12 +24,15 @@
   justify-content: center;
   color: rgb(0, 0, 0);
   margin-right: 100px;
+  gap: 64px;
+  &:hover {
+    color: var(--FirstColor);
+  }
 }
 
 .navbar a {
   color: rgb(0, 0, 0);
   text-decoration: none;
-  margin: 20px;
   font-size: 1em;
 }
 

@@ -30,64 +30,6 @@ const Navbar = () => {
 	const [expandNavbar, setExpandNavbar] = useState(false);
 
 	return (
-		/* 		<nav
-			className={scrolled ? "scrolled-down nav" : "nav"}
-			id={expandNavbar ? "open" : "close"}>
-			<div className='container-nav'>
-				<img src={logo} width={35} />
-				<button
-					className='toggleButton'
-					onClick={() => {
-						setExpandNavbar(
-							(prev) => !prev
-						);
-					}}>
-					|||
-				</button>
-				<div className='links'>
-					<ul>
-						<li>
-							{isMobile ? (
-								<Nav.Link>
-									Hola
-								</Nav.Link>
-							) : (
-								<Nav.Link>
-									Hola 2
-								</Nav.Link>
-							)}
-						</li>
-						<li>
-							{isMobile ? (
-								<Nav.Link>
-									Skills
-								</Nav.Link>
-							) : (
-								""
-							)}
-						</li>
-						<li>
-							{isMobile ? (
-								<Nav.Link>
-									Work
-								</Nav.Link>
-							) : (
-								""
-							)}
-						</li>
-						<li>
-							{isMobile ? (
-								<Nav.Link>
-									Contacto
-								</Nav.Link>
-							) : (
-								""
-							)}
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav> */
 		<div className='navbar' id={expandNavbar ? "open" : "close"}>
 			<div className='container-logo'>
 				<img src={logo} width={35} id='FVLogo' />
@@ -103,11 +45,10 @@ const Navbar = () => {
 						{expandNavbar ? "X" : "O"}
 					</button>
 				</div>
-				<Nav.Link to='/'> Home </Nav.Link>
-				<Nav.Link to='/projects'> Projects </Nav.Link>
-				<Nav.Link to='/experience'>
-					{" "}
-					Experience{" "}
+				<Nav.Link href='#header-section'>Home</Nav.Link>
+				<Nav.Link href='#hola-section'>¡Hola!</Nav.Link>
+				<Nav.Link href='#header-section'>
+					Experience
 				</Nav.Link>
 			</div>
 		</div>
