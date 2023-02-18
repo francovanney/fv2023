@@ -58,7 +58,10 @@ const Navbar = () => {
 				</div>
 				<Nav.Link
 					href='#header-section'
-					onClick={() => setExpandNavbar(close)}>
+					onClick={() => {
+						preventDefault();
+						setExpandNavbar(close);
+					}}>
 					Home
 				</Nav.Link>
 				<Nav.Link
@@ -70,6 +73,11 @@ const Navbar = () => {
 					href='#skills-section'
 					onClick={() => setExpandNavbar(close)}>
 					Skills
+				</Nav.Link>
+				<Nav.Link
+					href='#experience'
+					onClick={() => setExpandNavbar(close)}>
+					Experiencia
 				</Nav.Link>
 			</div>
 		</nav>
