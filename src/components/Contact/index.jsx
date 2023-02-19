@@ -24,7 +24,7 @@ const Contact = () => {
 	return (
 		<section className='page-section' id='contact-section'>
 			<Container className='mb-4'>
-				<h2>Contact</h2>
+				<h1>Contact</h1>
 			</Container>
 			<Container id='contact-div'>
 				<Formik
@@ -100,22 +100,12 @@ const Contact = () => {
 										<BootstrapForm.Label>
 											Mensaje
 										</BootstrapForm.Label>
-										{/* 										<Field
-											placeholder='Ingresá un mensaje'
-											name='message'
-											as={
-												BootstrapForm.Control
-											}
-											isInvalid={
-												touched.message &&
-												errors.message
-											}
-										/> */}
 										<FastField name='message'>
 											{({
 												field
 											}) => (
 												<textarea
+													placeholder="Ingresá tu mensaje"
 													rows={
 														4
 													}
