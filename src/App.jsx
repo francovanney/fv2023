@@ -3,6 +3,7 @@ import "./App.scss";
 import Body from "./components/Body";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
+import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 
@@ -26,6 +27,7 @@ const App = () => {
 					<Body />
 					<Experience />
 					<Contact />
+					<Footer/>
 				</>
 			)}
 		</div>

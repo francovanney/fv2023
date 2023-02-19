@@ -3,6 +3,7 @@ import "animate.css";
 import { Parallax, Background } from "react-parallax";
 import { motion } from "framer-motion";
 import avatar from "../../../assets/Img/profile.jpg";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Header = () => {
 	return (
@@ -29,8 +30,30 @@ const Header = () => {
 								Desarrollador
 								Front-End
 							</h5>
+							<Row className="mt-3">
+								<Col md={12}>
+									<a href='#'>
+										<FaGithub
+											className='mx-2 custom-icon'
+											size='30px'
+										/>
+									</a>
+									<a href='#'>
+										<FaInstagram
+											className='mx-2 custom-icon'
+											size='30px'
+										/>
+									</a>
+									<a href='#'>
+										<FaLinkedin
+											className='mx-2 custom-icon'
+											size='30px'
+										/>
+									</a>
+								</Col>
+							</Row>
 						</Col>
-						<Col md={3}>
+						<Col md={4}>
 							<motion.img
 								whileHover={{
 									scale: 1

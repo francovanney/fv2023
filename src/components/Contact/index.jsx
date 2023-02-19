@@ -12,7 +12,7 @@ const validationSchema = Yup.object().shape({
 });
 
 const Contact = () => {
-	const [showModal, setShowModal] = useState(true);
+	const [showModal, setShowModal] = useState(false);
 
 	const handleSubmit = (values, { setSubmitting, resetForm }) => {
 		console.log(values);
