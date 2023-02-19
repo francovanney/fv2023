@@ -28,3 +28,8 @@ Button {
         transition: opacity .3s ease-in-out;
     }
 }
+
+#button-custom {
+    padding: .75em 1.5em;
+    border-radius: 15px;
+}

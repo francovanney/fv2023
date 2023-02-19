@@ -7,16 +7,16 @@ import "react-vertical-timeline-component/style.min.css";
 
 function Experience() {
 	return (
-		<section className='page-section' id='experience'>
+		<section className='page-section' id='experience-section'>
 			<Container>
 				<h1>Experiencia</h1>
 				<div className='experience'>
-					<VerticalTimeline lineColor='#3e497a'>
+					<VerticalTimeline lineColor='#4E148C'>
 						<VerticalTimelineElement
 							className='vertical-timeline-element--education'
 							date='2010 - 2014'
 							iconStyle={{
-								background: "#3e497a",
+								background: "#17bed2",
 								color: "#fff"
 							}}>
 							<h3 className='vertical-timeline-element-title'>
@@ -46,7 +46,7 @@ function Experience() {
 							className='vertical-timeline-element--education'
 							date='2014 - 2018'
 							iconStyle={{
-								background: "#3e497a",
+								background: "#17bed2",
 								color: "#fff"
 							}}>
 							<h3 className='vertical-timeline-element-title'>

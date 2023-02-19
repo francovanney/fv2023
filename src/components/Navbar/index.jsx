@@ -75,9 +75,14 @@ const Navbar = () => {
 					Skills
 				</Nav.Link>
 				<Nav.Link
-					href='#experience'
+					href='#experience-section'
 					onClick={() => setExpandNavbar(close)}>
 					Experiencia
+				</Nav.Link>
+				<Nav.Link
+					href='#contact-section'
+					onClick={() => setExpandNavbar(close)}>
+					Contacto
 				</Nav.Link>
 			</div>
 		</nav>
