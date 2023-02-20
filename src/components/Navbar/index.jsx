@@ -5,6 +5,10 @@ import { motion, useScroll, useSpring } from "framer-motion";
 
 const Navbar = () => {
 	const [scrolled, setScrolled] = useState(false);
+	const [expandNavbar, setExpandNavbar] = useState(false);
+	const [active, setActive] = useState("");
+
+	// SCROLL BAR //
 	const onScroll = () => {
 		const scrollPosition = window.pageYOffset;
 		if (scrollPosition > 10) {
@@ -25,8 +29,6 @@ const Navbar = () => {
 		};
 	}, [scrolled]);
 
-	const [expandNavbar, setExpandNavbar] = useState(false);
-
 	const { scrollYProgress } = useScroll();
 	const scaleX = useSpring(scrollYProgress, {
 		stiffness: 100,
@@ -34,8 +36,35 @@ const Navbar = () => {
 		restDelta: 0.001
 	});
 
+	// ACTIVE SECTION //
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const sections = document.querySelectorAll("section");
+			sections.forEach((section) => {
+				const rect = section.getBoundingClientRect();
+				if (
+					rect.top <= 200 &&
+					rect.bottom > 200 &&
+					rect.bottom <=
+						(window.innerHeight ||
+							document.documentElement
+								.clientHeight)
+				) {
+					setActive(section.id);
+				}
+			});
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	return (
 		<nav
+			activeKey='/'
 			className={scrolled ? "scrolled-down navbar" : "navbar"}
 			id={expandNavbar ? "open" : "close"}>
 			<div className='container-logo'>
@@ -57,6 +86,11 @@ const Navbar = () => {
 					</button>
 				</div>
 				<Nav.Link
+					className={
+						active === "header-section"
+							? "active"
+							: ""
+					}
 					href='#header-section'
 					onClick={() => {
 						preventDefault();
@@ -65,21 +99,41 @@ const Navbar = () => {
 					Home
 				</Nav.Link>
 				<Nav.Link
+					className={
+						active === "hola-section"
+							? "active"
+							: ""
+					}
 					href='#hola-section'
 					onClick={() => setExpandNavbar(close)}>
 					¡Hola!
 				</Nav.Link>
 				<Nav.Link
+					className={
+						active === "skills-section"
+							? "active"
+							: ""
+					}
 					href='#skills-section'
 					onClick={() => setExpandNavbar(close)}>
 					Skills
 				</Nav.Link>
 				<Nav.Link
+					className={
+						active === "experience-section"
+							? "active"
+							: ""
+					}
 					href='#experience-section'
 					onClick={() => setExpandNavbar(close)}>
 					Experiencia
 				</Nav.Link>
 				<Nav.Link
+					className={
+						active === "contact-section"
+							? "active"
+							: ""
+					}
 					href='#contact-section'
 					onClick={() => setExpandNavbar(close)}>
 					Contacto

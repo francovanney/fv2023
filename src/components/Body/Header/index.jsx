@@ -3,7 +3,7 @@ import "animate.css";
 import { Parallax, Background } from "react-parallax";
 import { motion } from "framer-motion";
 import avatar from "../../../assets/Img/profile.jpg";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaBehance } from "react-icons/fa";
 
 const Header = () => {
 	return (
@@ -30,22 +30,44 @@ const Header = () => {
 								Desarrollador
 								Front-End
 							</h5>
-							<Row className="mt-3">
+							<Row className='mt-3'>
 								<Col md={12}>
-									<a href='#'>
+									<a
+										href='https://www.linkedin.com/in/franco-vanney-0b9273a1/'
+										target={
+											"_blank"
+										}>
+										<FaLinkedin
+											className='mx-2 custom-icon'
+											size='30px'
+										/>
+									</a>
+									<a
+										href='https://github.com/francovanney'
+										target={
+											"_blank"
+										}>
 										<FaGithub
 											className='mx-2 custom-icon'
 											size='30px'
 										/>
 									</a>
-									<a href='#'>
-										<FaInstagram
+									<a
+										href='https://www.behance.net/francovanney'
+										target={
+											"_blank"
+										}>
+										<FaBehance
 											className='mx-2 custom-icon'
 											size='30px'
 										/>
 									</a>
-									<a href='#'>
-										<FaLinkedin
+									<a
+										href='https://www.instagram.com/francovanney/'
+										target={
+											"_blank"
+										}>
+										<FaInstagram
 											className='mx-2 custom-icon'
 											size='30px'
 										/>

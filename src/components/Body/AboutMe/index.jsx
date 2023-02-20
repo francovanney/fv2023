@@ -223,27 +223,41 @@ const AboutMe = () => {
 								</h4>
 								<Container className='d-flex justify-content-around'>
 									<motion.button
-										id='button-custom'
+										id='button-cv'
 										whileHover={{
 											scale: 1.1
 										}}
 										whileTap={{
 											scale: 0.9
 										}}>
-										CV
-										ESPAÑOL
+										<a
+											target={
+												"_blank"
+											}
+											className='link-cv'
+											href='https://drive.google.com/file/d/1i1Mi30QwE4C-Jd2oNMBPBtCArqrBSoMa/view?usp=sharing'>
+											CV
+											ESPAÑOL
+										</a>
 									</motion.button>
 
 									<motion.button
-										id='button-custom'
+										id='button-cv'
 										whileHover={{
 											scale: 1.1
 										}}
 										whileTap={{
 											scale: 0.9
 										}}>
-										CV
-										ENGLISH
+										<a
+											target={
+												"_blank"
+											}
+											className='link-cv'
+											href='https://drive.google.com/file/d/1YQT0cNLPzzZC8X1J2cnEkjxLWzQK-yfb/view?usp=share_link'>
+											CV
+											ENGLISH
+										</a>
 									</motion.button>
 								</Container>
 							</Row>

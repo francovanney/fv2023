@@ -32,11 +32,18 @@ Button {
 #button-custom {
     padding: .75em 1.5em;
     border-radius: 15px;
+    width: 100%;
+}
+
+#button-cv {
+    padding: .75em 1.5em;
+    border-radius: 15px;
 }
 
 .custom-icon {
-    color: grey !important;
+    color: var(--FirstColor) !important;
     &:hover {
-        color: var(--FirstColor) !important;
+        color: var(--BlackColor) !important;
+        transition: all .2s !important;
     }
 }
