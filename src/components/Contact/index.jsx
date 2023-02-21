@@ -72,10 +72,10 @@ const Contact = () => {
 											className='my-2'>
 											<BootstrapForm.Group>
 												<BootstrapForm.Label>
-													Nombre
+													Nombre y Apellido
 												</BootstrapForm.Label>
 												<Field
-													placeholder='Ingresá tu nombre'
+													placeholder='Ingresá tu nombre y apellido'
 													name='name'
 													id='name'
 													as={

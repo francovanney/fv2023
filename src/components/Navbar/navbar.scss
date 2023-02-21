@@ -87,7 +87,7 @@ nav.scrolled-down img {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .toggleButton {
     display: flex;
   }
@@ -109,7 +109,7 @@ nav.scrolled-down img {
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 900px) {
   #open {
     height: 100vh !important;
   }
@@ -141,8 +141,6 @@ nav.scrolled-down img {
   background: var(--FirstColor);
   transform-origin: 0%;
 }
-
-
 
 .nav-link.active {
   color: var(--FirstColor) !important;

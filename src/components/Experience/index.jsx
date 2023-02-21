@@ -1,4 +1,6 @@
-import { Container } from "react-bootstrap";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Container, Modal, Button, Row, Col } from "react-bootstrap";
 import {
 	VerticalTimeline,
 	VerticalTimelineElement
@@ -7,8 +9,15 @@ import "react-vertical-timeline-component/style.min.css";
 import { BiCodeAlt } from "react-icons/bi";
 import { IoSchool } from "react-icons/io5";
 import { FaGlobeEurope } from "react-icons/fa";
+import { motion } from "framer-motion";
+import Agencia2222 from "../../assets/Proyects/2222page.jpg";
+import DaleArg from "../../assets/Proyects/daleArg.jpg";
+import TRT from "../../assets/Proyects/TRT.jpg";
 
 function Experience() {
+	const [showModal, setShowModal] = useState(false);
+	const handleShowModal = () => setShowModal(true);
+
 	return (
 		<section className='page-section' id='experience-section'>
 			<Container className='container mt-4'>
@@ -180,7 +189,7 @@ function Experience() {
 						</VerticalTimelineElement>
 						<VerticalTimelineElement
 							className='vertical-timeline-element--education'
-							date='2010 - 2014'
+							date='2020'
 							iconStyle={{
 								background: "#17bed2",
 								color: "#fff"
@@ -261,6 +270,23 @@ function Experience() {
 									www.pampacode.com
 								</a>
 							</p>
+							<p className='text-description'>
+								<motion.button
+									className='my-4'
+									id='button-custom'
+									whileHover={{
+										scale: 1.025
+									}}
+									whileTap={{
+										scale: 0.9
+									}}
+									onClick={
+										handleShowModal
+									}>
+									VER
+									PROYECTOS
+								</motion.button>
+							</p>
 						</VerticalTimelineElement>
 						<VerticalTimelineElement
 							className='vertical-timeline-element--education'
@@ -281,6 +307,90 @@ function Experience() {
 						</VerticalTimelineElement>
 					</VerticalTimeline>
 				</div>
+				<Modal
+					centered
+					size='md'
+					show={showModal}
+					onHide={() => setShowModal(false)}>
+					<Modal.Header closeButton>
+						<Modal.Title>
+							Proyectos
+						</Modal.Title>
+					</Modal.Header>
+					<Modal.Body>
+						<Row>
+							<Col xs={6} md={6}>
+								<a
+									href='http://trtproducciones.com/'
+									target={
+										"_blank"
+									}>
+									<img
+										src={
+											TRT
+										}
+										className='img-fluid'></img>
+									<p className='text-center'>
+										<a
+											target={
+												"_blank"
+											}
+											href='http://trtproducciones.com/'>
+											TRTproducciones
+										</a>
+									</p>
+								</a>
+							</Col>
+							<Col xs={6} md={6}>
+								<a
+									href='https://www.daleargentinafest.com/'
+									target={
+										"_blank"
+									}>
+									<img
+										src={
+											DaleArg
+										}
+										className='img-fluid'></img>
+									<p className='text-center'>
+										<a
+											target={
+												"_blank"
+											}
+											href='https://www.daleargentinafest.com/'>
+											Dale
+											Argentina
+											Fest
+										</a>
+									</p>
+								</a>
+							</Col>
+							<Col xs={6} md={6}>
+								<a
+									href='https://2222agencia.com/'
+									target={
+										"_blank"
+									}>
+									<img
+										src={
+											Agencia2222
+										}
+										className='img-fluid'></img>
+									<p className='text-center'>
+										<a
+											target={
+												"_blank"
+											}
+											href='https://2222agencia.com/'>
+											2222
+											Agencia
+										</a>
+									</p>
+								</a>
+							</Col>
+						</Row>
+					</Modal.Body>
+				</Modal>
 			</Container>
 		</section>
 	);
