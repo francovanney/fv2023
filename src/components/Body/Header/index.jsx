@@ -15,7 +15,7 @@ const Header = () => {
 						width: 2000,
 						opacity: 0.15,
 						backgroundImage:
-							"url('http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcSjHbAOP4JVKfM1zXYtcwQX3dc7Lp89JMrQWG4LYPKaQ3DxbXxejNIsSsKOQitF-T4MZcbRDHtQq3qU5fuPkIQ')"
+							"url('https://raw.githubusercontent.com/francovanney/fv2023/master/src/assets/Img/Fv-mosaico.png')"
 					}}
 				/>
 			</Background>

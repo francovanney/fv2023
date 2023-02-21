@@ -23,19 +23,13 @@ const Contact = () => {
 			"t5VRn93ztSrrfLBVy"
 		).then(
 			(result) => {
-				console.log(
-					"Formulario enviado con éxito",
-					result.text
-				);
 				setShowModal(true);
-				// aquí puedes abrir el modal de éxito y limpiar los campos del formulario
 			},
 			(error) => {
 				console.log(
 					"Error al enviar formulario",
 					error.text
 				);
-				// aquí puedes abrir un modal de error o mostrar un mensaje de error al usuario
 			}
 		);
 	}
