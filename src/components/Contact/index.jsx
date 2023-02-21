@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { Button, Form as BootstrapForm, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 const validationSchema = Yup.object().shape({
 	name: Yup.string().required("Este campo es obligatorio"),
@@ -14,12 +15,30 @@ const validationSchema = Yup.object().shape({
 const Contact = () => {
 	const [showModal, setShowModal] = useState(false);
 
-	const handleSubmit = (values, { setSubmitting, resetForm }) => {
-		console.log(values);
-		resetForm();
-		setSubmitting(false);
-		setShowModal(true);
-	};
+	function sendForm(values) {
+		emailjs.send(
+			"service_v1a6wdt",
+			"template_6wsp1e5",
+			values,
+			"t5VRn93ztSrrfLBVy"
+		).then(
+			(result) => {
+				console.log(
+					"Formulario enviado con éxito",
+					result.text
+				);
+				setShowModal(true);
+				// aquí puedes abrir el modal de éxito y limpiar los campos del formulario
+			},
+			(error) => {
+				console.log(
+					"Error al enviar formulario",
+					error.text
+				);
+				// aquí puedes abrir un modal de error o mostrar un mensaje de error al usuario
+			}
+		);
+	}
 
 	return (
 		<section className='page-section' id='contact-section'>
@@ -37,7 +56,13 @@ const Contact = () => {
 						validationSchema={
 							validationSchema
 						}
-						onSubmit={handleSubmit}>
+						onSubmit={(
+							values,
+							{ resetForm }
+						) => {
+							sendForm(values);
+							resetForm();
+						}}>
 						{({
 							errors,
 							touched,
@@ -58,6 +83,7 @@ const Contact = () => {
 												<Field
 													placeholder='Ingresá tu nombre'
 													name='name'
+													id='name'
 													as={
 														BootstrapForm.Control
 													}
@@ -86,6 +112,7 @@ const Contact = () => {
 												<Field
 													placeholder='Ingresá tu empresa'
 													name='company'
+													id='company'
 													as={
 														BootstrapForm.Control
 													}
@@ -110,7 +137,9 @@ const Contact = () => {
 												<BootstrapForm.Label>
 													Mensaje
 												</BootstrapForm.Label>
-												<FastField name='message'>
+												<FastField
+													name='message'
+													id='message'>
 													{({
 														field
 													}) => (
@@ -134,6 +163,7 @@ const Contact = () => {
 									</Row>
 
 									<motion.button
+										type='submit'
 										className='my-4'
 										id='button-custom'
 										whileHover={{
@@ -144,49 +174,38 @@ const Contact = () => {
 										}}>
 										ENVIAR
 									</motion.button>
-
-									<Modal
-										show={
-											showModal
-										}
-										centered
-										onHide={() =>
-											setShowModal(
-												false
-											)
-										}>
-										<Modal.Header
-											closeButton></Modal.Header>
-										<Modal.Body>
-											El
-											formulario
-											ha
-											sido
-											enviado
-											exitosamente.
-											<br />
-											¡Gracias
-											por
-											comunicarte
-											conmigo!
-										</Modal.Body>
-										<Modal.Footer>
-											<Button
-												onClick={() =>
-													setShowModal(
-														false
-													)
-												}>
-												Cerrar
-											</Button>
-										</Modal.Footer>
-									</Modal>
 								</Form>
 							</Container>
 						)}
 					</Formik>
 				</Container>
 			</Container>
+			{showModal && (
+				<Modal
+					show={showModal}
+					centered
+					onHide={() => setShowModal(false)}>
+					<Modal.Header
+						closeButton></Modal.Header>
+					<Modal.Body>
+						El formulario ha sido enviado
+						exitosamente.
+						<br />
+						¡Gracias por comunicarte
+						conmigo!
+					</Modal.Body>
+					<Modal.Footer>
+						<Button
+							onClick={() =>
+								setShowModal(
+									false
+								)
+							}>
+							Cerrar
+						</Button>
+					</Modal.Footer>
+				</Modal>
+			)}
 		</section>
 	);
 };
