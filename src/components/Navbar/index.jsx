@@ -5,7 +5,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 
 const Navbar = () => {
 	const [scrolled, setScrolled] = useState(false);
-	const [expandNavbar, setExpandNavbar] = useState(false);
+	const [expandNavbar, setExpandNavbar] = useState(undefined);
 	const [active, setActive] = useState("");
 
 	// SCROLL BAR //
