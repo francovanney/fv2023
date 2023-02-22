@@ -185,7 +185,7 @@ const Contact = () => {
 										}}>
 										{texts.projectsButton ===
 										"es"
-											? "EVIAR"
+											? "ENVIAR"
 											: "SEND"}
 									</motion.button>
 								</Form>
