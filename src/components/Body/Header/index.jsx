@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import "animate.css";
 import { Parallax, Background } from "react-parallax";
 import { motion } from "framer-motion";
-import avatar from "../../../assets/Img/profile.jpg";
+import avatar from "../../../assets/Img/Profile2.jpg";
 import { FaGithub, FaInstagram, FaLinkedin, FaBehance } from "react-icons/fa";
 
 const Header = () => {
