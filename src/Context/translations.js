@@ -23,11 +23,12 @@ const translations = {
 		contactCompany: "Empresa",
 		contactCompanyPlaceholder: "Ingresá empresa",
 		contactMessage: "Mensaje",
-		contactMsgPlaceholder: "Ingresá un mensaje",
+		textarea: "Ingresá un mensaje",
 		contactButton: "",
-        language: 'Idioma',
-        modalSuccessMessage: 'El formulario ha sido enviado exitosamente. ¡Gracias por comunicarte!',
-		errorMessage: 'Este campo es obligatorio'
+		language: "Idioma",
+		modalSuccessMessage:
+			"El formulario ha sido enviado exitosamente. ¡Gracias por comunicarte!",
+		errorMessage: "Este campo es obligatorio"
 	},
 	en: {
 		navbarHome: "Home",
@@ -54,11 +55,12 @@ const translations = {
 		contactCompany: "Company",
 		contactCompanyPlaceholder: "Enter your company",
 		contactMessage: "Message",
-		contactMsgPlaceholder: "Enter a message",
+		textarea: "Enter a message",
 		contactButton: "",
-        language: 'Language',
-        modalSuccessMessage: 'The form has been sent successfully. Thanks for reaching out!',
-		errorMessage: 'This field is required'
+		language: "Language",
+		modalSuccessMessage:
+			"The form has been sent successfully. Thanks for reaching out!",
+		errorMessage: "This field is required"
 	}
 };
 

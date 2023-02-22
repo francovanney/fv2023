@@ -7,7 +7,6 @@ import { useContext, useState } from "react";
 import emailjs from "emailjs-com";
 import LanguageContext from "../../Context/LanguageContext";
 
-
 const validationSchema = Yup.object().shape({
 	name: Yup.string().required("This is a required field"),
 	company: "",
@@ -146,13 +145,16 @@ const Contact = () => {
 												</BootstrapForm.Label>
 												<FastField
 													name='message'
-													id='message'>
+													id='message'
+													as={
+														BootstrapForm.Control
+													}>
 													{({
 														field
 													}) => (
 														<textarea
 															placeholder={
-																texts.contactMsgPlaceholder
+																texts.textarea
 															}
 															rows={
 																4
