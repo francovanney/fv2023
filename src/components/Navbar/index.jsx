@@ -10,6 +10,17 @@ const Navbar = () => {
 	const [active, setActive] = useState("");
 	const { texts } = useContext(LanguageContext);
 
+	// SCROLL TO SECTION //
+
+	const [section, setSection] = useState(null);
+
+	useEffect(() => {
+		const sectionElement = document.querySelector(`#${section}`);
+		if (sectionElement) {
+			sectionElement.scrollIntoView({ behavior: "smooth" });
+		}
+	}, [section]);
+
 	// SCROLL BAR //
 	const onScroll = () => {
 		const scrollPosition = window.pageYOffset;
@@ -93,10 +104,9 @@ const Navbar = () => {
 							? "active"
 							: ""
 					}
-					href='#header-section'
 					onClick={() => {
-						preventDefault();
 						setExpandNavbar(close);
+						setSection("header-section");
 					}}>
 					{texts.navbarHome}
 				</Nav.Link>
@@ -106,8 +116,10 @@ const Navbar = () => {
 							? "active"
 							: ""
 					}
-					href='#hola-section'
-					onClick={() => setExpandNavbar(close)}>
+					onClick={() => {
+						setExpandNavbar(close);
+						setSection("hola-section");
+					}}>
 					{texts.navbarHola}
 				</Nav.Link>
 				<Nav.Link
@@ -116,8 +128,10 @@ const Navbar = () => {
 							? "active"
 							: ""
 					}
-					href='#skills-section'
-					onClick={() => setExpandNavbar(close)}>
+					onClick={() => {
+						setExpandNavbar(close);
+						setSection("skills-section");
+					}}>
 					{texts.navbarSkills}
 				</Nav.Link>
 				<Nav.Link
@@ -126,8 +140,12 @@ const Navbar = () => {
 							? "active"
 							: ""
 					}
-					href='#experience-section'
-					onClick={() => setExpandNavbar(close)}>
+					onClick={() => {
+						setExpandNavbar(close);
+						setSection(
+							"experience-section"
+						);
+					}}>
 					{texts.navbarExperience}
 				</Nav.Link>
 				<Nav.Link
@@ -136,8 +154,10 @@ const Navbar = () => {
 							? "active"
 							: ""
 					}
-					href='#contact-section'
-					onClick={() => setExpandNavbar(close)}>
+					onClick={() => {
+						setExpandNavbar(close);
+						setSection("contact-section");
+					}}>
 					{texts.navbarContact}
 				</Nav.Link>
 			</div>
