@@ -3,12 +3,14 @@ import logo from "../../assets/Logos/Fv/logo_FVDark.svg";
 import { useState, useEffect, useContext } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import LanguageContext from "../../Context/LanguageContext";
+import { MediaQueries } from "../Utils/mediaqueries";
 
 const Navbar = () => {
 	const [scrolled, setScrolled] = useState(false);
 	const [expandNavbar, setExpandNavbar] = useState(undefined);
 	const [active, setActive] = useState("");
 	const { texts } = useContext(LanguageContext);
+	const { isTabletOrMobile } = MediaQueries();
 
 	// SCROLL TO SECTION //
 
@@ -75,9 +77,13 @@ const Navbar = () => {
 		};
 	}, []);
 
+	const handleCloseNavbar = () => {
+		setExpandNavbar(false);
+	};
+
 	return (
 		<nav
-			//activeKey='/'
+			activeKey='/'
 			className={scrolled ? "scrolled-down navbar" : "navbar"}
 			id={expandNavbar ? "open" : "close"}>
 			<div className='container-logo'>
@@ -87,80 +93,185 @@ const Navbar = () => {
 				className='progress-bar'
 				style={{ scaleX }}
 			/>
-			<div className='links'>
-				<div className='toggleButton'>
-					<button
+			{isTabletOrMobile ? (
+				<div className='links'>
+					<div className='toggleButton'>
+						<button
+							onClick={() => {
+								setExpandNavbar(
+									true
+								);
+							}}>
+							{expandNavbar
+								? "X"
+								: "O"}
+						</button>
+					</div>
+					<Nav.Link
+						className={
+							active ===
+							"header-section"
+								? "active"
+								: ""
+						}
 						onClick={() => {
-							setExpandNavbar(
-								(prev) => !prev
+							handleCloseNavbar();
+							setSection(
+								"header-section"
 							);
 						}}>
-						{expandNavbar ? "X" : "O"}
-					</button>
-				</div>
-				<Nav.Link
-					className={
-						active === "header-section"
-							? "active"
-							: ""
-					}
-					onClick={() => {
-						setExpandNavbar(close);
-						setSection("header-section");
-					}}>
-					{texts.navbarHome}
-				</Nav.Link>
-				<Nav.Link
-					className={
-						active === "hola-section"
-							? "active"
-							: ""
-					}
-					onClick={() => {
-						setExpandNavbar(close);
-						setSection("hola-section");
-					}}>
-					{texts.navbarHola}
-				</Nav.Link>
-				<Nav.Link
-					className={
-						active === "skills-section"
-							? "active"
-							: ""
-					}
-					onClick={() => {
-						setExpandNavbar(close);
-						setSection("skills-section");
-					}}>
-					{texts.navbarSkills}
-				</Nav.Link>
-				<Nav.Link
-					className={
-						active === "experience-section"
-							? "active"
-							: ""
-					}
-					onClick={() => {
-						setExpandNavbar(close);
-						setSection(
+						{texts.navbarHome}
+					</Nav.Link>
+					<Nav.Link
+						className={
+							active ===
+							"hola-section"
+								? "active"
+								: ""
+						}
+						onClick={() => {
+							handleCloseNavbar();
+							setSection(
+								"hola-section"
+							);
+						}}>
+						{texts.navbarHola}
+					</Nav.Link>
+					<Nav.Link
+						className={
+							active ===
+							"skills-section"
+								? "active"
+								: ""
+						}
+						onClick={() => {
+							handleCloseNavbar();
+							setSection(
+								"skills-section"
+							);
+						}}>
+						{texts.navbarSkills}
+					</Nav.Link>
+					<Nav.Link
+						className={
+							active ===
 							"experience-section"
-						);
-					}}>
-					{texts.navbarExperience}
-				</Nav.Link>
-				<Nav.Link
-					className={
-						active === "contact-section"
-							? "active"
-							: ""
-					}
-					onClick={() => {
-						setExpandNavbar(close);
-						setSection("contact-section");
-					}}>
-					{texts.navbarContact}
-				</Nav.Link>
-			</div>
+								? "active"
+								: ""
+						}
+						onClick={() => {
+							handleCloseNavbar();
+							setSection(
+								"experience-section"
+							);
+						}}>
+						{texts.navbarExperience}
+					</Nav.Link>
+					<Nav.Link
+						className={
+							active ===
+							"contact-section"
+								? "active"
+								: ""
+						}
+						onClick={() => {
+							handleCloseNavbar();
+							setSection(
+								"contact-section"
+							);
+						}}>
+						{texts.navbarContact}
+					</Nav.Link>
+				</div>
+			) : (
+				<div className='links'>
+					<div className='toggleButton'>
+						<button
+							onClick={() => {
+								setExpandNavbar(
+									(
+										prev
+									) =>
+										!prev
+								);
+							}}>
+							{expandNavbar
+								? "X"
+								: "O"}
+						</button>
+					</div>
+					<Nav.Link
+						className={
+							active ===
+							"header-section"
+								? "active"
+								: ""
+						}
+						onClick={() => {
+							setSection(
+								"header-section"
+							);
+						}}>
+						{texts.navbarHome}
+					</Nav.Link>
+					<Nav.Link
+						className={
+							active ===
+							"hola-section"
+								? "active"
+								: ""
+						}
+						onClick={() => {
+							setSection(
+								"hola-section"
+							);
+						}}>
+						{texts.navbarHola}
+					</Nav.Link>
+					<Nav.Link
+						className={
+							active ===
+							"skills-section"
+								? "active"
+								: ""
+						}
+						onClick={() => {
+							setSection(
+								"skills-section"
+							);
+						}}>
+						{texts.navbarSkills}
+					</Nav.Link>
+					<Nav.Link
+						className={
+							active ===
+							"experience-section"
+								? "active"
+								: ""
+						}
+						onClick={() => {
+							setSection(
+								"experience-section"
+							);
+						}}>
+						{texts.navbarExperience}
+					</Nav.Link>
+					<Nav.Link
+						className={
+							active ===
+							"contact-section"
+								? "active"
+								: ""
+						}
+						onClick={() => {
+							setSection(
+								"contact-section"
+							);
+						}}>
+						{texts.navbarContact}
+					</Nav.Link>
+				</div>
+			)}
 		</nav>
 	);
 };

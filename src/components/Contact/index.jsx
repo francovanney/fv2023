@@ -152,7 +152,7 @@ const Contact = () => {
 													}) => (
 														<textarea
 															placeholder={
-																texts.contactMessagePlaceholder
+																texts.contactMsgPlaceholder
 															}
 															rows={
 																4
