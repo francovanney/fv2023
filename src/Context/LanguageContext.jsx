@@ -1,8 +1,11 @@
 import { createContext, useState } from "react";
 import translations from "./translations";
 
+const browserLanguage = window.navigator.language;
+const languageParsed = browserLanguage.substring(0, 2);
+
 const LanguageContext = createContext();
-const initialLanguage = "en";
+const initialLanguage = languageParsed;
 
 const LanguageProvider = ({ children }) => {
 	const [language, setLanguage] = useState(initialLanguage);
