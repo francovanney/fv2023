@@ -3,17 +3,20 @@ import { Formik, Form, Field, FastField } from "formik";
 import * as Yup from "yup";
 import { Button, Form as BootstrapForm, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import emailjs from "emailjs-com";
+import LanguageContext from "../../Context/LanguageContext";
+
 
 const validationSchema = Yup.object().shape({
-	name: Yup.string().required("Este campo es obligatorio"),
+	name: Yup.string().required("This is a required field"),
 	company: "",
 	message: ""
 });
 
 const Contact = () => {
 	const [showModal, setShowModal] = useState(false);
+	const { texts } = useContext(LanguageContext);
 
 	function sendForm(values) {
 		emailjs.send(
@@ -38,7 +41,7 @@ const Contact = () => {
 		<section className='page-section' id='contact-section'>
 			<Container className='container mt-4'>
 				<Container className='mb-4'>
-					<h1>Contacto</h1>
+					<h1>{texts.navbarContact}</h1>
 				</Container>
 				<Container id='contact-div'>
 					<Formik
@@ -72,10 +75,14 @@ const Contact = () => {
 											className='my-2'>
 											<BootstrapForm.Group>
 												<BootstrapForm.Label>
-													Nombre y Apellido
+													{
+														texts.contactName
+													}
 												</BootstrapForm.Label>
 												<Field
-													placeholder='Ingresá tu nombre y apellido'
+													placeholder={
+														texts.contactNamePlaceholder
+													}
 													name='name'
 													id='name'
 													as={
@@ -101,10 +108,14 @@ const Contact = () => {
 											className='my-2'>
 											<BootstrapForm.Group>
 												<BootstrapForm.Label>
-													Empresa
+													{
+														texts.contactCompany
+													}
 												</BootstrapForm.Label>
 												<Field
-													placeholder='Ingresá tu empresa'
+													placeholder={
+														texts.contactCompanyPlaceholder
+													}
 													name='company'
 													id='company'
 													as={
@@ -129,7 +140,9 @@ const Contact = () => {
 											className='my-2'>
 											<BootstrapForm.Group>
 												<BootstrapForm.Label>
-													Mensaje
+													{
+														texts.contactMessage
+													}
 												</BootstrapForm.Label>
 												<FastField
 													name='message'
@@ -138,7 +151,9 @@ const Contact = () => {
 														field
 													}) => (
 														<textarea
-															placeholder='Ingresá tu mensaje'
+															placeholder={
+																texts.contactMessagePlaceholder
+															}
 															rows={
 																4
 															}
@@ -166,7 +181,10 @@ const Contact = () => {
 										whileTap={{
 											scale: 0.9
 										}}>
-										ENVIAR
+										{texts.projectsButton ===
+										"es"
+											? "EVIAR"
+											: "SEND"}
 									</motion.button>
 								</Form>
 							</Container>
@@ -182,11 +200,7 @@ const Contact = () => {
 					<Modal.Header
 						closeButton></Modal.Header>
 					<Modal.Body>
-						El formulario ha sido enviado
-						exitosamente.
-						<br />
-						¡Gracias por comunicarte
-						conmigo!
+						{texts.modalSuccessMessage}
 					</Modal.Body>
 					<Modal.Footer>
 						<Button
@@ -195,7 +209,10 @@ const Contact = () => {
 									false
 								)
 							}>
-							Cerrar
+							{texts.projectsButton ===
+							"es"
+								? "Cerrar"
+								: "Close"}
 						</Button>
 					</Modal.Footer>
 				</Modal>

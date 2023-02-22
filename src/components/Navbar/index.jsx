@@ -1,12 +1,14 @@
 import { Nav } from "react-bootstrap";
 import logo from "../../assets/Logos/Fv/logo_FVDark.svg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
+import LanguageContext from "../../Context/LanguageContext";
 
 const Navbar = () => {
 	const [scrolled, setScrolled] = useState(false);
 	const [expandNavbar, setExpandNavbar] = useState(undefined);
 	const [active, setActive] = useState("");
+	const { texts } = useContext(LanguageContext);
 
 	// SCROLL BAR //
 	const onScroll = () => {
@@ -64,7 +66,7 @@ const Navbar = () => {
 
 	return (
 		<nav
-			activeKey='/'
+			//activeKey='/'
 			className={scrolled ? "scrolled-down navbar" : "navbar"}
 			id={expandNavbar ? "open" : "close"}>
 			<div className='container-logo'>
@@ -96,7 +98,7 @@ const Navbar = () => {
 						preventDefault();
 						setExpandNavbar(close);
 					}}>
-					Home
+					{texts.navbarHome}
 				</Nav.Link>
 				<Nav.Link
 					className={
@@ -106,7 +108,7 @@ const Navbar = () => {
 					}
 					href='#hola-section'
 					onClick={() => setExpandNavbar(close)}>
-					¡Hola!
+					{texts.navbarHola}
 				</Nav.Link>
 				<Nav.Link
 					className={
@@ -116,7 +118,7 @@ const Navbar = () => {
 					}
 					href='#skills-section'
 					onClick={() => setExpandNavbar(close)}>
-					Skills
+					{texts.navbarSkills}
 				</Nav.Link>
 				<Nav.Link
 					className={
@@ -126,7 +128,7 @@ const Navbar = () => {
 					}
 					href='#experience-section'
 					onClick={() => setExpandNavbar(close)}>
-					Experiencia
+					{texts.navbarExperience}
 				</Nav.Link>
 				<Nav.Link
 					className={
@@ -136,7 +138,7 @@ const Navbar = () => {
 					}
 					href='#contact-section'
 					onClick={() => setExpandNavbar(close)}>
-					Contacto
+					{texts.navbarContact}
 				</Nav.Link>
 			</div>
 		</nav>

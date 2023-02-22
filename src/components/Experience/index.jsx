@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Container, Modal, Button, Row, Col } from "react-bootstrap";
 import {
@@ -13,15 +13,19 @@ import { motion } from "framer-motion";
 import Agencia2222 from "../../assets/Proyects/2222page.jpg";
 import DaleArg from "../../assets/Proyects/daleArg.jpg";
 import TRT from "../../assets/Proyects/TRT.jpg";
+import LanguageContext from "../../Context/LanguageContext";
 
 function Experience() {
 	const [showModal, setShowModal] = useState(false);
 	const handleShowModal = () => setShowModal(true);
+	const { texts } = useContext(LanguageContext);
 
 	return (
 		<section className='page-section' id='experience-section'>
 			<Container className='container mt-4'>
-				<h1 className='mb-4'>Experiencia</h1>
+				<h1 className='mb-4'>
+					{texts.navbarExperience}
+				</h1>
 				<div className='experience'>
 					<VerticalTimeline lineColor='#4E148C'>
 						<VerticalTimelineElement
@@ -40,83 +44,10 @@ function Experience() {
 								Front-End
 							</h4>
 							<p className='text-description'>
-								Parte del equipo
-								del proyecto de
-								UCMS (Texas),
-								para crear un
-								Sistema Uniforme
-								de Manejo de
-								Casos. Este
-								proyecto masivo
-								involucra a más
-								de 11 equipos,
-								incluyendo
-								analistas,
-								backends,
-								frontends,
-								control de
-								calidad y jefes
-								de proyecto.
-								Como
-								desarrollador,
-								asumo la
-								responsabilidad
-								de estimar,
-								planificar y
-								contribuir a la
-								definición e
-								implementación
-								de diferentes
-								historias de
-								usuario que
-								contribuyan al
-								desarrollo
-								global del
-								proyecto. Entre
-								mis logros en
-								este proyecto,
-								puedo mencionar
-								que diseñé
-								componentes
-								globales,
-								realicé
-								correcciones de
-								errores y
-								desarrollé
-								integración de
-								seguridad en la
-								aplicación,
-								además de dar
-								soporte a otros
-								equipos. También
-								he creado
-								solicitudes de
-								incorporación de
-								cambios y
-								revisado el
-								código de otros
-								desarrolladores
-								para garantizar
-								que cumpla con
-								los estándares
-								de calidad del
-								proyecto. Estoy
-								orgulloso de ser
-								parte de este
-								proyecto y de
-								contribuir al
-								éxito de la
-								iniciativa UCMS
-								en Texas.
+								{texts.exp1}
 							</p>
 							<p className='text-description'>
-								Tecnologias:
-								React,
-								Bootstrap, HTML,
-								CSS, Scrum,
-								Jira,
-								Confluence,
-								Lucidchart
+								{texts.exp1Tech}
 							</p>
 						</VerticalTimelineElement>
 						<VerticalTimelineElement
@@ -135,56 +66,10 @@ function Experience() {
 								Front-End
 							</h4>
 							<p className='text-description'>
-								Como miembro del
-								equipo de
-								front-end de
-								varios proyectos
-								en 3Metas,
-								participé en el
-								diseño y
-								desarrollo de
-								sitios y
-								aplicaciones.
-								Trabajé en la
-								determinación de
-								la estructura y
-								el diseño de las
-								páginas web,
-								garantizando que
-								la experiencia
-								del usuario
-								fuera la mejor
-								posible. Además,
-								creé código
-								reutilizable
-								para futuros
-								proyectos y
-								aseguré que la
-								marca mantuviera
-								su consistencia
-								a lo largo del
-								diseño. También
-								participé en
-								campañas de
-								email marketing
-								y publicidad. En
-								resumen, como
-								parte del equipo
-								de front-end de
-								3Metas, mi
-								trabajo se
-								centró en crear
-								diseños
-								funcionales,
-								eficaces y
-								atractivos para
-								los clientes.
+								{texts.exp2}
 							</p>
 							<p className='text-description'>
-								Tecnologias:
-								Angular, React,
-								Bootstrap, HTML,
-								CSS
+								{texts.exp2Tech}
 							</p>
 						</VerticalTimelineElement>
 						<VerticalTimelineElement
@@ -203,59 +88,7 @@ function Experience() {
 								Front-End
 							</h4>
 							<p className='text-description'>
-								Agencia de
-								software
-								freelance que se
-								dedica al
-								desarrollo de
-								apps, landing
-								pages, sitios
-								web y email
-								marketing.
-								Trabajo en esta
-								start up en mis
-								ratos libres y
-								mi principal
-								tarea es
-								desarrollar
-								aplicaciones y
-								sitios webs.
-								Para lograrlo,
-								me enfoco en
-								brindar
-								soluciones
-								personalizadas
-								basadas en los
-								requerimientos
-								de cada cliente
-								y en el diseño
-								de la interfaz
-								de usuario (UI)
-								y la experiencia
-								de usuario (UX).
-								Además, me
-								aseguro de
-								llevar el diseño
-								a la realidad
-								del código y de
-								que todo
-								funcione de
-								manera eficiente
-								y satisfactoria
-								para el usuario
-								final. En
-								resumen, mi
-								trabajo en la
-								agencia de
-								software
-								freelance se
-								centra en
-								ofrecer
-								soluciones
-								eficaces, desde
-								la concepción
-								hasta la
-								implementación.
+								{texts.exp3}
 							</p>
 							<p className='text-description'>
 								<FaGlobeEurope />
@@ -283,8 +116,10 @@ function Experience() {
 									onClick={
 										handleShowModal
 									}>
-									VER
-									PROYECTOS
+									{texts.projectsButton ===
+									"es"
+										? "VER PROYECTOS"
+										: "VIEW PROJECTS"}
 								</motion.button>
 							</p>
 						</VerticalTimelineElement>
@@ -301,8 +136,7 @@ function Experience() {
 							</h3>
 
 							<h4 className='vertical-timeline-element-subtitle pt-2'>
-								Ingenieria en
-								sistemas
+								{texts.college}
 							</h4>
 						</VerticalTimelineElement>
 					</VerticalTimeline>
@@ -314,7 +148,7 @@ function Experience() {
 					onHide={() => setShowModal(false)}>
 					<Modal.Header closeButton>
 						<Modal.Title>
-							Proyectos
+							{texts.projectTitle}
 						</Modal.Title>
 					</Modal.Header>
 					<Modal.Body>

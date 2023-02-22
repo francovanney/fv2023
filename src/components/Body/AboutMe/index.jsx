@@ -2,6 +2,8 @@ import { Container, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { useContext } from "react";
+import LanguageContext from "../../../Context/LanguageContext";
 
 const pathVariants = {
 	hidden: {
@@ -20,6 +22,7 @@ const pathVariants = {
 };
 
 const AboutMe = () => {
+	const { texts } = useContext(LanguageContext);
 	return (
 		<section className='page-section' id='hola-section'>
 			<Container className='pt-4'>
@@ -126,7 +129,7 @@ const AboutMe = () => {
 					</Col>
 					<Col xs={12} sm={12} md={8}>
 						<h2 className='mb-2'>
-							¡Hola!{" "}
+							{texts.navbarHola}
 							<motion.div
 								style={{
 									display: "inline-block"
@@ -150,115 +153,61 @@ const AboutMe = () => {
 						<p
 							id='text-about'
 							className='animate__animated animate__backInRight'>
-							Mi nombre es Franco
-							Vanney, soy
-							desarrollador front-end
-							y diseñador
-							multidisciplinario.{" "}
-							<br /> Actualmente vivo
-							en la ciudad de Junín -
-							Buenos Aires, Argentina.{" "}
-							<br /> Soy un team
-							player, curioso,
-							creativo y detallista,
-							apasionado del proceso
-							creativo. Aporto mi lado
-							creativo para darle a
-							cada elemento un
-							propósito, compartiendo
-							distintos puntos de
-							vista con el team y, en
-							última instancia,
-							conectarlo al código.
-							<br />
-							Creo que el diseño
-							centrado en el ser
-							humano crea productos y
-							servicios para resolver
-							necesidades, a su vez
-							transmitiendo valores y
-							emociones positivas.
-							<br />
-							Como front-end me dedico
-							escribir código en
-							distintos lenguajes con
-							un énfasis en el proceso
-							de pensar, planificar y
-							crear elementos visuales
-							atractivos con el fin de
-							lograr una excelente
-							experiencia para el
-							usuario. <br />
-							Mi objetivo es aprender
-							algo nuevo todos los
-							días para aumentar mi
-							crecimiento personal y
-							profesional. <br />
-							Me gustan mucho las
-							mascotas, la música y
-							andar en bici. Soy
-							músico, toco guitarras y
-							piano. Los fines de
-							semana me dedico a ser
-							técnico en iluminación y
-							video en eventos
-							profesionales.
-							<br />
-							Sin más que agregar,
-							¡espero que disfrutes
-							muchos de los proyectos
-							que muestro a
-							continuación!.
+							{
+								texts.aboutMeDescription
+							}
 							<p className='mt-4 animate__animated animate__backInRight'>
-								¡Gracias por
-								visitar mi
-								portfolio!
+								{texts.thanks}
 							</p>
 						</p>
 						<Container>
 							<Row className='mt-4 mb-4 animate__animated animate__fadeIn animate__delay-2s'>
 								<h4 className='mb-4 text-center'>
-									Descargá
-									mi CV
+									{
+										texts.downloadCV
+									}
 								</h4>
 								<Container className='d-flex justify-content-around'>
-									<motion.button
-										id='button-cv'
-										whileHover={{
-											scale: 1.1
-										}}
-										whileTap={{
-											scale: 0.9
-										}}>
-										<a
-											target={
-												"_blank"
-											}
-											className='link-cv'
-											href='https://drive.google.com/file/d/1i1Mi30QwE4C-Jd2oNMBPBtCArqrBSoMa/view?usp=sharing'>
-											CV
-											ESPAÑOL
-										</a>
-									</motion.button>
-
-									<motion.button
-										id='button-cv'
-										whileHover={{
-											scale: 1.1
-										}}
-										whileTap={{
-											scale: 0.9
-										}}>
-										<a
-											target={
-												"_blank"
-											}
-											className='link-cv'
-											href='https://drive.google.com/file/d/1YQT0cNLPzzZC8X1J2cnEkjxLWzQK-yfb/view?usp=share_link'>
-											CV
-											ENGLISH
-										</a>
-									</motion.button>
+									{texts.downloadCV ===
+									"CV" ? (
+										<motion.button
+											id='button-cv'
+											whileHover={{
+												scale: 1.1
+											}}
+											whileTap={{
+												scale: 0.9
+											}}>
+											<a
+												target={
+													"_blank"
+												}
+												className='link-cv'
+												href='https://drive.google.com/file/d/1i1Mi30QwE4C-Jd2oNMBPBtCArqrBSoMa/view?usp=sharing'>
+												CV
+												ESPAÑOL
+											</a>
+										</motion.button>
+									) : (
+										<motion.button
+											id='button-cv'
+											whileHover={{
+												scale: 1.1
+											}}
+											whileTap={{
+												scale: 0.9
+											}}>
+											<a
+												target={
+													"_blank"
+												}
+												className='link-cv'
+												href='https://drive.google.com/file/d/1YQT0cNLPzzZC8X1J2cnEkjxLWzQK-yfb/view?usp=share_link'>
+												DOWNLOAD
+												RESUME
+											</a>
+										</motion.button>
+									)}
 								</Container>
 							</Row>
 						</Container>

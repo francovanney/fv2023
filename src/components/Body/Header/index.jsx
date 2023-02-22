@@ -1,11 +1,45 @@
 import { Container, Row, Col } from "react-bootstrap";
 import "animate.css";
+import { useContext } from "react";
+import LanguageContext from "../../../Context/LanguageContext";
 import { Parallax, Background } from "react-parallax";
 import { motion } from "framer-motion";
-import avatar from "../../../assets/Img/Profile2.jpg";
 import { FaGithub, FaInstagram, FaLinkedin, FaBehance } from "react-icons/fa";
+import avatar from "../../../assets/Img/Profile2.jpg";
+import Select from "react-select";
+import ReactCountryFlag from "react-country-flag";
+
+const labelEn = (
+	<ReactCountryFlag
+		countryCode='US'
+		className='emojiFlag'
+		svg
+		style={{
+			fontSize: "2em",
+			lineHeight: "2em"
+		}}
+	/>
+);
+
+const labelEs = (
+	<ReactCountryFlag
+		countryCode='ES'
+		className='emojiFlag'
+		svg
+		style={{
+			fontSize: "2em",
+			lineHeight: "2em"
+		}}
+	/>
+);
+
+const options = [
+	{ value: "en", label: labelEn },
+	{ value: "es", label: labelEs }
+];
 
 const Header = () => {
+	const { texts, handleLanguage } = useContext(LanguageContext);
 	return (
 		<Parallax strength={180}>
 			<Background className='custom-bg'>
@@ -27,8 +61,9 @@ const Header = () => {
 								FRANCO VANNEY
 							</h1>
 							<h5>
-								Desarrollador
-								Front-End
+								{
+									texts.description
+								}
 							</h5>
 							<Row className='mt-3'>
 								<Col md={12}>
@@ -72,6 +107,29 @@ const Header = () => {
 											size='30px'
 										/>
 									</a>
+								</Col>
+							</Row>
+							<Row>
+								<Col
+									id='col-select'
+									xs={12}
+									md={12}>
+									<p>
+										{
+											texts.language
+										}
+									</p>
+									<Select
+										id={
+											"select"
+										}
+										options={
+											options
+										}
+										onChange={
+											handleLanguage
+										}
+									/>
 								</Col>
 							</Row>
 						</Col>
