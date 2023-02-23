@@ -8,6 +8,7 @@ import { FaGithub, FaInstagram, FaLinkedin, FaBehance } from "react-icons/fa";
 import avatar from "../../../assets/Img/Profile2.jpg";
 import Select from "react-select";
 import ReactCountryFlag from "react-country-flag";
+import { languageParsed } from "../../../Context/LanguageContext";
 
 const labelEn = (
 	<ReactCountryFlag
@@ -23,7 +24,7 @@ const labelEn = (
 
 const labelEs = (
 	<ReactCountryFlag
-		countryCode='ES'
+		countryCode='AR'
 		className='emojiFlag'
 		svg
 		style={{
@@ -120,6 +121,12 @@ const Header = () => {
 										}
 									</p>
 									<Select
+										placeholder={
+											languageParsed ===
+											"es"
+												? labelEs
+												: labelEn
+										}
 										id={
 											"select"
 										}
