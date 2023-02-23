@@ -99,7 +99,10 @@ const Navbar = () => {
 						<button
 							onClick={() => {
 								setExpandNavbar(
-									true
+									(
+										prev
+									) =>
+										!prev
 								);
 							}}>
 							{expandNavbar
@@ -185,21 +188,6 @@ const Navbar = () => {
 				</div>
 			) : (
 				<div className='links'>
-					<div className='toggleButton'>
-						<button
-							onClick={() => {
-								setExpandNavbar(
-									(
-										prev
-									) =>
-										!prev
-								);
-							}}>
-							{expandNavbar
-								? "X"
-								: "O"}
-						</button>
-					</div>
 					<Nav.Link
 						className={
 							active ===
