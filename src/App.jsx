@@ -23,6 +23,7 @@ const App = () => {
 	return (
 		<div className='App'>
 			<>
+				<Navbar />
 				<Routes>
 					<Route path='/' element={<Body />} />
 					<Route
