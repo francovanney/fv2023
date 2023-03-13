@@ -1,36 +1,40 @@
 import { useEffect, useState } from "react";
+import { Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Body from "./components/Body";
-import Contact from "./components/Contact";
-import Experience from "./components/Experience";
+import Waffles from "./components/Categorias/Waffles";
+import Yogurts from "./components/Categorias/Yogurts";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
-import { LanguageProvider } from "./Context/LanguageContext";
 
 const App = () => {
 	const [loading, setLoading] = useState(false);
 
-	useEffect(() => {
+	// Uncomment to implement Loader Screen on init //
+
+	/* 	useEffect(() => {
 		setLoading(true);
 		setTimeout(() => {
 			setLoading(false);
 		}, 5000);
-	}, []);
+	}, []); */
 
 	return (
 		<div className='App'>
-			{loading ? (
-				<Loader />
-			) : (
-				<LanguageProvider>
-					<Navbar />
-					<Body />
-					<Experience />
-					<Contact />
-					<Footer />
-				</LanguageProvider>
-			)}
+			<>
+				<Routes>
+					<Route path='/' element={<Body />} />
+					<Route
+						path='/yogurts'
+						element={<Yogurts />}
+					/>
+					<Route
+						path='/waffles'
+						element={<Waffles />}
+					/>
+				</Routes>
+			</>
 		</div>
 	);
 };

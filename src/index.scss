@@ -11,10 +11,6 @@
 
 @use './components/Navbar/navbar.scss';
 @use './components/Body/body.scss';
-@use './components/Body/Header/header.scss';
-@use './components/Body/AboutMe/about-me.scss';
 @use './components/Loader/loader.scss';
-@use './components/Contact/contact.scss';
 @use './components/Footer/footer.scss';
-@use './components/Body/Skills/skills.scss';
-@use './components/Experience/experience.scss';
+@use './components/CardCategorias//cardCategorias.scss';

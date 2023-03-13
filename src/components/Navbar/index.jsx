@@ -2,14 +2,12 @@ import { Nav } from "react-bootstrap";
 import logo from "../../assets/Logos/Fv/logo_FVDark.svg";
 import { useState, useEffect, useContext } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import LanguageContext from "../../Context/LanguageContext";
 import { MediaQueries } from "../Utils/mediaqueries";
 
 const Navbar = () => {
 	const [scrolled, setScrolled] = useState(false);
 	const [expandNavbar, setExpandNavbar] = useState(undefined);
 	const [active, setActive] = useState("");
-	const { texts } = useContext(LanguageContext);
 	const { isTabletOrMobile } = MediaQueries();
 
 	// SCROLL TO SECTION //
@@ -123,7 +121,7 @@ const Navbar = () => {
 								"header-section"
 							);
 						}}>
-						{texts.navbarHome}
+						1
 					</Nav.Link>
 					<Nav.Link
 						className={
@@ -138,7 +136,7 @@ const Navbar = () => {
 								"hola-section"
 							);
 						}}>
-						{texts.navbarHola}
+						2
 					</Nav.Link>
 					<Nav.Link
 						className={
@@ -168,7 +166,7 @@ const Navbar = () => {
 								"experience-section"
 							);
 						}}>
-						{texts.navbarExperience}
+						3
 					</Nav.Link>
 					<Nav.Link
 						className={
@@ -183,7 +181,7 @@ const Navbar = () => {
 								"contact-section"
 							);
 						}}>
-						{texts.navbarContact}
+						4
 					</Nav.Link>
 				</div>
 			) : (
@@ -200,7 +198,7 @@ const Navbar = () => {
 								"header-section"
 							);
 						}}>
-						{texts.navbarHome}
+						1
 					</Nav.Link>
 					<Nav.Link
 						className={
@@ -214,7 +212,7 @@ const Navbar = () => {
 								"hola-section"
 							);
 						}}>
-						{texts.navbarHola}
+						2
 					</Nav.Link>
 					<Nav.Link
 						className={
@@ -228,7 +226,7 @@ const Navbar = () => {
 								"skills-section"
 							);
 						}}>
-						{texts.navbarSkills}
+						3
 					</Nav.Link>
 					<Nav.Link
 						className={
@@ -242,7 +240,7 @@ const Navbar = () => {
 								"experience-section"
 							);
 						}}>
-						{texts.navbarExperience}
+						4
 					</Nav.Link>
 					<Nav.Link
 						className={
@@ -256,7 +254,7 @@ const Navbar = () => {
 								"contact-section"
 							);
 						}}>
-						{texts.navbarContact}
+						5
 					</Nav.Link>
 				</div>
 			)}
