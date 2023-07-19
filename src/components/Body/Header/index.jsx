@@ -9,6 +9,7 @@ import avatar from "../../../assets/Img/Profile2.jpg";
 import Select from "react-select";
 import ReactCountryFlag from "react-country-flag";
 import { languageParsed } from "../../../Context/LanguageContext";
+import { useMediaQuery } from "react-responsive";
 
 const labelEn = (
 	<ReactCountryFlag
@@ -41,19 +42,11 @@ const options = [
 
 const Header = () => {
 	const { texts, handleLanguage } = useContext(LanguageContext);
+	const isXXL = useMediaQuery({ query: "(min-width: 1400px)" });
+	const iconSize = isXXL ? "45px" : "30px";
 	return (
-		<Parallax strength={180}>
-			<Background className='custom-bg'>
-				<div
-					style={{
-						height: 2000,
-						width: 2000,
-						opacity: 0.15,
-						backgroundImage:
-							"url('https://raw.githubusercontent.com/francovanney/fv2023/master/src/assets/Img/Fv-mosaico.png')"
-					}}
-				/>
-			</Background>
+		<Parallax strength={400}>
+			<Background className='custom-bg'></Background>
 			<section className='page-section' id='header-section'>
 				<Container>
 					<Row className='animate__animated animate__fadeInDown'>
@@ -61,7 +54,7 @@ const Header = () => {
 							<h1 id='title'>
 								FRANCO VANNEY
 							</h1>
-							<h5>
+							<h5 id='subtitle'>
 								{
 									texts.description
 								}
@@ -74,8 +67,10 @@ const Header = () => {
 											"_blank"
 										}>
 										<FaLinkedin
-											className='mx-2 custom-icon'
-											size='30px'
+											className='mx-1 custom-icon'
+											size={
+												iconSize
+											}
 										/>
 									</a>
 									<a
@@ -85,7 +80,9 @@ const Header = () => {
 										}>
 										<FaGithub
 											className='mx-2 custom-icon'
-											size='30px'
+											size={
+												iconSize
+											}
 										/>
 									</a>
 									<a
@@ -95,7 +92,9 @@ const Header = () => {
 										}>
 										<FaBehance
 											className='mx-2 custom-icon'
-											size='30px'
+											size={
+												iconSize
+											}
 										/>
 									</a>
 									<a
@@ -105,7 +104,9 @@ const Header = () => {
 										}>
 										<FaInstagram
 											className='mx-2 custom-icon'
-											size='30px'
+											size={
+												iconSize
+											}
 										/>
 									</a>
 								</Col>

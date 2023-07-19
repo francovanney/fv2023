@@ -37,8 +37,15 @@ function Experience() {
 							}}
 							icon={<BiCodeAlt />}>
 							<h3 className='vertical-timeline-element-title'>
-								Incluit
+								IncluIT
 							</h3>
+							<h5 className='vertical-timeline-element-'>
+								Powered by
+								Avenga
+							</h5>
+							<h6 className="mt-1">
+								{texts.aboutIncluit}
+							</h6>
 
 							<h4 className='vertical-timeline-element-subtitle pt-2'>
 								Front-End

@@ -23,11 +23,13 @@ const pathVariants = {
 
 const AboutMe = () => {
 	const { texts } = useContext(LanguageContext);
+	const aboutMeDescription = texts.aboutMeDescription;
+	const paragraphs = aboutMeDescription.split("\n\n");
 	return (
 		<section className='page-section' id='hola-section'>
 			<Container className='pt-4'>
 				<Row>
-					<Col xs={12} sm={12} md={4}>
+					<Col xs={12} sm={12} md={4} xxl={4}>
 						<h1 className='text-left'>
 							<motion.svg
 								version='1.1'
@@ -127,7 +129,7 @@ const AboutMe = () => {
 							</motion.svg>
 						</h1>
 					</Col>
-					<Col xs={12} sm={12} md={8}>
+					<Col xs={12} sm={12} md={8} xxl={8}>
 						<h2 className='mb-2'>
 							{texts.navbarHola}
 							<motion.div
@@ -150,23 +152,34 @@ const AboutMe = () => {
 								<span>👋</span>
 							</motion.div>
 						</h2>
-						<p
-							id='text-about'
-							className='animate__animated animate__backInRight'>
-							{
-								texts.aboutMeDescription
-							}
+						<div id='text-about'>
+							{paragraphs.map(
+								(
+									paragraph,
+									index
+								) => (
+									<p
+										key={
+											index
+										}
+										className='animate__animated animate__backInRight'>
+										{
+											paragraph
+										}
+									</p>
+								)
+							)}
 							<p className='mt-4 animate__animated animate__backInRight'>
 								{texts.thanks}
 							</p>
-						</p>
+						</div>
 						<Container>
 							<Row className='mt-4 mb-4 animate__animated animate__fadeIn animate__delay-2s'>
-								<h4 className='mb-4 text-center'>
+								{/* 								<h4 className='mb-4 text-center'>
 									{
 										texts.downloadCV
 									}
-								</h4>
+								</h4> */}
 								<Container className='d-flex justify-content-around'>
 									{texts.downloadCV ===
 									"CV" ? (
@@ -184,8 +197,8 @@ const AboutMe = () => {
 												}
 												className='link-cv'
 												href='https://drive.google.com/file/d/1i1Mi30QwE4C-Jd2oNMBPBtCArqrBSoMa/view?usp=sharing'>
+												DESCARGAR
 												CV
-												ESPAÑOL
 											</a>
 										</motion.button>
 									) : (

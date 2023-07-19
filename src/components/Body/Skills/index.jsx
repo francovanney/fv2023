@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import ReactLogo from "../../../assets/Logos/React-icon.svg";
+import ReactLogo from "../../../assets/Logos/reactjs-ar21.svg";
 import HtmlLogo from "../../../assets/Logos/html-1.svg";
 import CssLogo from "../../../assets/Logos/css-3.svg";
 import JsLogo from "../../../assets/Logos/logo-javascript.svg";
@@ -85,7 +85,15 @@ const Skills = () => {
 									src={
 										ReactLogo
 									}
-									width='80'></img>
+									width='180'></img>
+							</div>
+							<div>
+								<img
+									className='img-fluid'
+									src={
+										"https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+									}
+									width='100'></img>
 							</div>
 							<div>
 								<img

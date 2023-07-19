@@ -11,13 +11,13 @@ import { LanguageProvider } from "./Context/LanguageContext";
 const App = () => {
 	const [loading, setLoading] = useState(false);
 
-	useEffect(() => {
+/* 	useEffect(() => {
 		setLoading(true);
 		setTimeout(() => {
 			setLoading(false);
 		}, 5000);
 	}, []);
-
+ */
 	return (
 		<div className='App'>
 			{loading ? (
