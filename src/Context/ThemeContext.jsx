@@ -24,6 +24,30 @@ const ThemeContextProvider = ({ children }) => {
 		document.body.setAttribute("data-theme", theme);
 	}, [theme]);
 
+	useEffect(() => {
+		const handleSystemThemeChange = (event) => {
+			const newTheme = event.matches ? "dark" : "light";
+			setTheme(newTheme);
+			setIsDarkTheme(newTheme === "dark");
+			localStorage.setItem("theme", newTheme);
+		};
+
+		const systemThemeQuery = window.matchMedia(
+			"(prefers-color-scheme: dark)"
+		);
+		systemThemeQuery.addEventListener(
+			"change",
+			handleSystemThemeChange
+		);
+
+		return () => {
+			systemThemeQuery.removeEventListener(
+				"change",
+				handleSystemThemeChange
+			);
+		};
+	}, []);
+
 	const themeContextData = {
 		theme,
 		isDarkTheme,

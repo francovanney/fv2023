@@ -36,7 +36,7 @@ function Experience() {
 			}
 			id='experience-section'>
 			<Container className='container mt-4'>
-				<h1 className='mb-4'>
+				<h1 className={isDarkTheme ? "mb-4 text-light" : "mb-4"}>
 					{texts.navbarExperience}
 				</h1>
 				<div className='experience'>
