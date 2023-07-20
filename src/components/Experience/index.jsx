@@ -14,23 +14,44 @@ import Agencia2222 from "../../assets/Proyects/2222page.jpg";
 import DaleArg from "../../assets/Proyects/daleArg.jpg";
 import TRT from "../../assets/Proyects/TRT.jpg";
 import LanguageContext from "../../Context/LanguageContext";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 function Experience() {
 	const [showModal, setShowModal] = useState(false);
 	const handleShowModal = () => setShowModal(true);
 	const { texts } = useContext(LanguageContext);
+	const { isDarkTheme } = useContext(ThemeContext);
+
+	const contentStyle = {
+		background: isDarkTheme ? "#1E2125" : "#f8f9fa",
+		color: isDarkTheme ? "#fff" : "#111" // Cambia este valor si es necesario
+	};
 
 	return (
-		<section className='page-section' id='experience-section'>
+		<section
+			className={
+				isDarkTheme
+					? "page-section bg-dark"
+					: "page-section bg-light"
+			}
+			id='experience-section'>
 			<Container className='container mt-4'>
 				<h1 className='mb-4'>
 					{texts.navbarExperience}
 				</h1>
 				<div className='experience'>
-					<VerticalTimeline lineColor='#4E148C'>
+					<VerticalTimeline
+						lineColor={
+							isDarkTheme
+								? "#f8f9fa"
+								: "#212529"
+						}>
 						<VerticalTimelineElement
 							className='vertical-timeline-element--education'
 							date='2022'
+							contentStyle={
+								contentStyle
+							}
 							iconStyle={{
 								background: "#17bed2",
 								color: "#fff"
@@ -62,6 +83,9 @@ function Experience() {
 						<VerticalTimelineElement
 							className='vertical-timeline-element--education'
 							date='2021 - 2022'
+							contentStyle={
+								contentStyle
+							}
 							iconStyle={{
 								background: "#17bed2",
 								color: "#fff"
@@ -84,6 +108,9 @@ function Experience() {
 						<VerticalTimelineElement
 							className='vertical-timeline-element--education'
 							date='2020'
+							contentStyle={
+								contentStyle
+							}
 							iconStyle={{
 								background: "#17bed2",
 								color: "#fff"
@@ -136,6 +163,9 @@ function Experience() {
 						<VerticalTimelineElement
 							className='vertical-timeline-element--education'
 							date='2011 - 2013'
+							contentStyle={
+								contentStyle
+							}
 							iconStyle={{
 								background: "#17bed2",
 								color: "#fff"

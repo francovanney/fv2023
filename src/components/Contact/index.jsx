@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useContext, useState } from "react";
 import emailjs from "emailjs-com";
 import LanguageContext from "../../Context/LanguageContext";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 const validationSchema = Yup.object().shape({
 	name: Yup.string().required("This is a required field"),
@@ -16,6 +17,7 @@ const validationSchema = Yup.object().shape({
 const Contact = () => {
 	const [showModal, setShowModal] = useState(false);
 	const { texts } = useContext(LanguageContext);
+	const { isDarkTheme } = useContext(ThemeContext);
 
 	function sendForm(values) {
 		emailjs.send(
@@ -37,10 +39,23 @@ const Contact = () => {
 	}
 
 	return (
-		<section className='page-section' id='contact-section'>
+		<section
+			className={
+				isDarkTheme
+					? "page-section bg-dark"
+					: "page-section bg-light"
+			}
+			id='contact-section'>
 			<Container className='container mt-4'>
 				<Container className='mb-4'>
-					<h1>{texts.navbarContact}</h1>
+					<h1
+						className={
+							isDarkTheme
+								? "text-light"
+								: ""
+						}>
+						{texts.navbarContact}
+					</h1>
 				</Container>
 				<Container id='contact-div'>
 					<Formik
@@ -79,6 +94,11 @@ const Contact = () => {
 													}
 												</BootstrapForm.Label>
 												<Field
+													className={
+														isDarkTheme
+															? "form-background-dark"
+															: ""
+													}
 													placeholder={
 														texts.contactNamePlaceholder
 													}
@@ -112,6 +132,11 @@ const Contact = () => {
 													}
 												</BootstrapForm.Label>
 												<Field
+													className={
+														isDarkTheme
+															? "form-background-dark"
+															: ""
+													}
 													placeholder={
 														texts.contactCompanyPlaceholder
 													}
@@ -144,6 +169,11 @@ const Contact = () => {
 													}
 												</BootstrapForm.Label>
 												<FastField
+													key={
+														isDarkTheme
+															? "dark"
+															: "form-background-light"
+													}
 													name='message'
 													id='message'
 													as={
@@ -159,7 +189,11 @@ const Contact = () => {
 															rows={
 																4
 															}
-															className='form-control'
+															className={
+																isDarkTheme
+																	? "form-control form-background-dark"
+																	: "form-control  form-background-light"
+															}
 															{...field}
 														/>
 													)}

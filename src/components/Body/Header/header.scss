@@ -88,11 +88,18 @@
 }
 
 
-.custom-bg {
+.custom-bg-light {
   height: 2000px;
   width: 2000px;
   opacity: 0.15;
   background-image: url('https://raw.githubusercontent.com/francovanney/fv2023/master/src/assets/Img/Fv-mosaico.png');
+}
+
+.custom-bg-dark {
+  height: 2000px;
+  width: 2000px;
+  opacity: 1;
+  background-image: url('https://raw.githubusercontent.com/francovanney/fv2023/ThemeContext/src/assets/Img/FV-Mosaico-Dark.png');
 }
 
 

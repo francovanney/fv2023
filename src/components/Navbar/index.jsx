@@ -1,12 +1,15 @@
-import logo from "../../assets/Logos/Fv/logo_FVDark.svg";
+import logoDark from "../../assets/Logos/Fv/logo_FVDark.svg";
+import logoLight from "../../assets/Logos/Fv/logo_FVLight.svg";
 import { useState, useEffect, useContext } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import LanguageContext from "../../Context/LanguageContext";
 import { MediaQueries } from "../Utils/mediaqueries";
 import Hamburger from "hamburger-react";
 import { Nav, Navbar, Container } from "react-bootstrap";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 const NavigationBar = () => {
+	const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
 	const [scrolled, setScrolled] = useState(false);
 	const [expandNavbar, setExpandNavbar] = useState(undefined);
 	const [active, setActive] = useState("");
@@ -116,7 +119,7 @@ const NavigationBar = () => {
 	return (
 		<Navbar
 			id='navbar'
-			bg='light'
+			bg={isDarkTheme ? "dark" : "light"}
 			expand='lg'
 			className={
 				isMobile && expanded
@@ -126,33 +129,87 @@ const NavigationBar = () => {
 			{isMobile ? (
 				<Container className='d-flex justify-content-between align-items-center'>
 					<img
-						src={logo}
+						src={
+							isDarkTheme
+								? logoLight
+								: logoDark
+						}
 						width={35}
 						id='FVLogo'
-						className='ml-2'
+						className={`ml-2 ${
+							isMobile
+								? "mr-auto"
+								: ""
+						}`}
 					/>
-					<div className='hamburger-wrapper'>
-						<Hamburger
-							size={20}
-							toggled={expanded}
-							toggle={handleToggle}
+					<label
+						className={`switch-container ${
+							isMobile
+								? "mx-auto"
+								: "ml-2"
+						}`}>
+						<input
+							type='checkbox'
+							checked={isDarkTheme}
+							onChange={toggleTheme}
 						/>
-					</div>
+						<span className='slider'></span>
+					</label>
+					{isMobile && (
+						<div className='hamburger-wrapper'>
+							<Hamburger
+								color={
+									isDarkTheme
+										? "white"
+										: "black"
+								}
+								size={20}
+								toggled={
+									expanded
+								}
+								toggle={
+									handleToggle
+								}
+							/>
+						</div>
+					)}
 				</Container>
 			) : (
 				<Container className='d-flex justify-content-end align-items-center'>
 					<img
-						src={logo}
+						src={
+							isDarkTheme
+								? logoLight
+								: logoDark
+						}
 						width={35}
 						id='FVLogo'
 						className='ml-2'
 						role='image'
 						tabIndex={0}
 					/>
+					<label
+						className={
+							isMobile
+								? "switch-container"
+								: "ml-2 switch-container"
+						}>
+						<input
+							type='checkbox'
+							checked={isDarkTheme}
+							onChange={toggleTheme}
+						/>
+						<span className='slider'></span>
+					</label>
 					<Navbar.Collapse
 						id='basic-navbar-nav'
 						className='justify-content-end'>
-						<Nav className='ml-auto'>
+						<Nav
+							className={
+								isDarkTheme
+									? "bg-dark text-light ml-auto"
+									: "bg-light ml-auto"
+							}>
 							<Nav.Item
 								onClick={() => {
 									handleLinkClick();
@@ -165,6 +222,10 @@ const NavigationBar = () => {
 									"header-section"
 										? " active"
 										: ""
+								} ${
+									isDarkTheme
+										? "links-desktop-dark"
+										: "links-desktop-light"
 								}`}
 								role='button'
 								tabIndex={0}>
