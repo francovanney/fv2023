@@ -43,8 +43,10 @@ function Experience() {
 								Powered by
 								Avenga
 							</h5>
-							<h6 className="mt-1">
-								{texts.aboutIncluit}
+							<h6 className='mt-1'>
+								{
+									texts.aboutIncluit
+								}
 							</h6>
 
 							<h4 className='vertical-timeline-element-subtitle pt-2'>
@@ -122,7 +124,8 @@ function Experience() {
 									}}
 									onClick={
 										handleShowModal
-									}>
+									}
+									role='button'>
 									{texts.projectsButton ===
 									"es"
 										? "VER PROYECTOS"

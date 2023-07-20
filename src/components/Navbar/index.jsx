@@ -1,11 +1,12 @@
-import { Nav } from "react-bootstrap";
 import logo from "../../assets/Logos/Fv/logo_FVDark.svg";
 import { useState, useEffect, useContext } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import LanguageContext from "../../Context/LanguageContext";
 import { MediaQueries } from "../Utils/mediaqueries";
+import Hamburger from "hamburger-react";
+import { Nav, Navbar, Container } from "react-bootstrap";
 
-const Navbar = () => {
+const NavigationBar = () => {
 	const [scrolled, setScrolled] = useState(false);
 	const [expandNavbar, setExpandNavbar] = useState(undefined);
 	const [active, setActive] = useState("");
@@ -77,191 +78,269 @@ const Navbar = () => {
 		};
 	}, []);
 
-	const handleCloseNavbar = () => {
-		setExpandNavbar(false);
+	// NEW NAVBAR CODE //
+
+	const [expanded, setExpanded] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
+
+	const handleToggle = () => setExpanded(!expanded);
+
+	const handleLinkClick = () => {
+		if (isMobile && expanded) setExpanded(false);
+	};
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth < 768);
+		};
+		handleResize();
+		window.addEventListener("resize", handleResize);
+
+		document.addEventListener("click", handleOutsideClick);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+			document.removeEventListener(
+				"click",
+				handleOutsideClick
+			);
+		};
+	}, [expanded]);
+
+	const handleOutsideClick = (event) => {
+		if (isMobile && expanded && !event.target.closest("#navbar")) {
+			setExpanded(false);
+		}
 	};
 
 	return (
-		<nav
-			activeKey='/'
-			className={scrolled ? "scrolled-down navbar" : "navbar"}
-			id={expandNavbar ? "open" : "close"}>
-			<div className='container-logo'>
-				<img src={logo} width={35} id='FVLogo' />
-			</div>
+		<Navbar
+			id='navbar'
+			bg='light'
+			expand='lg'
+			className={
+				isMobile && expanded
+					? "mobile-menu-open"
+					: "fixed-top"
+			}>
+			{isMobile ? (
+				<Container className='d-flex justify-content-between align-items-center'>
+					<img
+						src={logo}
+						width={35}
+						id='FVLogo'
+						className='ml-2'
+					/>
+					<div className='hamburger-wrapper'>
+						<Hamburger
+							size={20}
+							toggled={expanded}
+							toggle={handleToggle}
+						/>
+					</div>
+				</Container>
+			) : (
+				<Container className='d-flex justify-content-end align-items-center'>
+					<img
+						src={logo}
+						width={35}
+						id='FVLogo'
+						className='ml-2'
+						role='image'
+						tabIndex={0}
+					/>
+					<Navbar.Collapse
+						id='basic-navbar-nav'
+						className='justify-content-end'>
+						<Nav className='ml-auto'>
+							<Nav.Item
+								onClick={() => {
+									handleLinkClick();
+									setSection(
+										"header-section"
+									);
+								}}
+								className={`links-desktop${
+									active ===
+									"header-section"
+										? " active"
+										: ""
+								}`}
+								role='button'
+								tabIndex={0}>
+								{
+									texts.navbarHome
+								}
+							</Nav.Item>
+							<Nav.Item
+								onClick={() => {
+									handleLinkClick();
+									setSection(
+										"hola-section"
+									);
+								}}
+								className={`links-desktop${
+									active ===
+									"hola-section"
+										? " active"
+										: ""
+								}`}
+								role='button'
+								tabIndex={0}>
+								{
+									texts.navbarHola
+								}
+							</Nav.Item>
+							<Nav.Item
+								onClick={() => {
+									handleLinkClick();
+									setSection(
+										"skills-section"
+									);
+								}}
+								className={`links-desktop${
+									active ===
+									"skills-section"
+										? " active"
+										: ""
+								}`}
+								role='button'
+								tabIndex={0}>
+								{
+									texts.navbarSkills
+								}
+							</Nav.Item>
+							<Nav.Item
+								onClick={() => {
+									handleLinkClick();
+									setSection(
+										"experience-section"
+									);
+								}}
+								className={`links-desktop${
+									active ===
+									"experience-section"
+										? " active"
+										: ""
+								}`}
+								role='button'
+								tabIndex={0}>
+								{
+									texts.navbarExperience
+								}
+							</Nav.Item>
+							<Nav.Item
+								onClick={() => {
+									handleLinkClick();
+									setSection(
+										"contact-section"
+									);
+								}}
+								className={`links-desktop${
+									active ===
+									"contact-section"
+										? " active"
+										: ""
+								}`}
+								role='button'
+								tabIndex={0}>
+								{
+									texts.navbarContact
+								}
+							</Nav.Item>
+						</Nav>
+					</Navbar.Collapse>
+				</Container>
+			)}
 			<motion.div
 				className='progress-bar'
 				style={{ scaleX }}
 			/>
-			{isTabletOrMobile ? (
-				<div className='links'>
-					<div className='toggleButton'>
-						<button
+			{isMobile && (
+				<Navbar.Collapse
+					id='basic-navbar-nav'
+					className={expanded ? "show" : ""}>
+					<Nav className='mr-auto'>
+						<Nav.Item
 							onClick={() => {
-								setExpandNavbar(
-									(
-										prev
-									) =>
-										!prev
+								handleLinkClick();
+								setSection(
+									"header-section"
 								);
-							}}>
-							{expandNavbar
-								? "X"
-								: "O"}
-						</button>
-					</div>
-					<Nav.Link
-						className={
-							active ===
-							"header-section"
-								? "active"
-								: ""
-						}
-						onClick={() => {
-							handleCloseNavbar();
-							setSection(
+							}}
+							className={`links-mobile mt-2${
+								active ===
 								"header-section"
-							);
-						}}>
-						{texts.navbarHome}
-					</Nav.Link>
-					<Nav.Link
-						className={
-							active ===
-							"hola-section"
-								? "active"
-								: ""
-						}
-						onClick={() => {
-							handleCloseNavbar();
-							setSection(
+									? " active"
+									: ""
+							}`}>
+							{texts.navbarHome}
+						</Nav.Item>
+						<Nav.Item
+							onClick={() => {
+								handleLinkClick();
+								setSection(
+									"hola-section"
+								);
+							}}
+							className={`links-mobile mt-2${
+								active ===
 								"hola-section"
-							);
-						}}>
-						{texts.navbarHola}
-					</Nav.Link>
-					<Nav.Link
-						className={
-							active ===
-							"skills-section"
-								? "active"
-								: ""
-						}
-						onClick={() => {
-							handleCloseNavbar();
-							setSection(
+									? " active"
+									: ""
+							}`}>
+							{texts.navbarHola}
+						</Nav.Item>
+						<Nav.Item
+							onClick={() => {
+								handleLinkClick();
+								setSection(
+									"skills-section"
+								);
+							}}
+							className={`links-mobile mt-2${
+								active ===
 								"skills-section"
-							);
-						}}>
-						{texts.navbarSkills}
-					</Nav.Link>
-					<Nav.Link
-						className={
-							active ===
-							"experience-section"
-								? "active"
-								: ""
-						}
-						onClick={() => {
-							handleCloseNavbar();
-							setSection(
+									? " active"
+									: ""
+							}`}>
+							{texts.navbarSkills}
+						</Nav.Item>
+						<Nav.Item
+							onClick={() => {
+								handleLinkClick();
+								setSection(
+									"experience-section"
+								);
+							}}
+							className={`links-mobile mt-2${
+								active ===
 								"experience-section"
-							);
-						}}>
-						{texts.navbarExperience}
-					</Nav.Link>
-					<Nav.Link
-						className={
-							active ===
-							"contact-section"
-								? "active"
-								: ""
-						}
-						onClick={() => {
-							handleCloseNavbar();
-							setSection(
+									? " active"
+									: ""
+							}`}>
+							{texts.navbarExperience}
+						</Nav.Item>
+						<Nav.Item
+							onClick={() => {
+								handleLinkClick();
+								setSection(
+									"contact-section"
+								);
+							}}
+							className={`links-mobile mt-2${
+								active ===
 								"contact-section"
-							);
-						}}>
-						{texts.navbarContact}
-					</Nav.Link>
-				</div>
-			) : (
-				<div className='links'>
-					<Nav.Link
-						className={
-							active ===
-							"header-section"
-								? "active"
-								: ""
-						}
-						onClick={() => {
-							setSection(
-								"header-section"
-							);
-						}}>
-						{texts.navbarHome}
-					</Nav.Link>
-					<Nav.Link
-						className={
-							active ===
-							"hola-section"
-								? "active"
-								: ""
-						}
-						onClick={() => {
-							setSection(
-								"hola-section"
-							);
-						}}>
-						{texts.navbarHola}
-					</Nav.Link>
-					<Nav.Link
-						className={
-							active ===
-							"skills-section"
-								? "active"
-								: ""
-						}
-						onClick={() => {
-							setSection(
-								"skills-section"
-							);
-						}}>
-						{texts.navbarSkills}
-					</Nav.Link>
-					<Nav.Link
-						className={
-							active ===
-							"experience-section"
-								? "active"
-								: ""
-						}
-						onClick={() => {
-							setSection(
-								"experience-section"
-							);
-						}}>
-						{texts.navbarExperience}
-					</Nav.Link>
-					<Nav.Link
-						className={
-							active ===
-							"contact-section"
-								? "active"
-								: ""
-						}
-						onClick={() => {
-							setSection(
-								"contact-section"
-							);
-						}}>
-						{texts.navbarContact}
-					</Nav.Link>
-				</div>
+									? " active"
+									: ""
+							}`}>
+							{texts.navbarContact}
+						</Nav.Item>
+					</Nav>
+				</Navbar.Collapse>
 			)}
-		</nav>
+		</Navbar>
 	);
 };
 
-export default Navbar;
+export default NavigationBar;

@@ -5,8 +5,9 @@ import Contact from "./components/Contact";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
-import Navbar from "./components/Navbar";
+/* import Navbar from "./components/Navbar"; */
 import { LanguageProvider } from "./Context/LanguageContext";
+import NavigationBar from "./components/Navbar";
 
 const App = () => {
 	const [loading, setLoading] = useState(false);
@@ -24,7 +25,7 @@ const App = () => {
 				<Loader />
 			) : (
 				<LanguageProvider>
-					<Navbar />
+					<NavigationBar />
 					<Body />
 					<Experience />
 					<Contact />

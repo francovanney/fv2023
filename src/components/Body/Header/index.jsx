@@ -54,11 +54,11 @@ const Header = () => {
 							<h1 id='title'>
 								FRANCO VANNEY
 							</h1>
-							<h5 id='subtitle'>
+							<h6 id='subtitle'>
 								{
 									texts.description
 								}
-							</h5>
+							</h6>
 							<Row className='mt-3'>
 								<Col md={12}>
 									<a
