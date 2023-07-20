@@ -2,8 +2,8 @@ import { Container, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { useContext } from "react";
 import LanguageContext from "../../../Context/LanguageContext";
+import { useContext } from "react";
 import { ThemeContext } from "../../../Context/ThemeContext";
 
 const pathVariants = {
@@ -241,7 +241,11 @@ const AboutMe = () => {
 								z'
 								/>
 								<path
-									fill='#010101'
+									fill={
+										isDarkTheme
+											? "#FFFFFF"
+											: "#010101"
+									}
 									opacity='1.000000'
 									stroke='none'
 									d='

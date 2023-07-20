@@ -7,10 +7,18 @@ import {
 } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { Container, Row, Col } from "react-bootstrap";
+import { useContext } from "react";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 const Footer = () => {
+	const { isDarkTheme } = useContext(ThemeContext);
 	return (
-		<footer className='text-dark'>
+		<footer
+			className={
+				isDarkTheme
+					? "footer-dark text-light"
+					: "text-dark footer-light"
+			}>
 			<Container>
 				<Row id='footer-row'>
 					<Col
@@ -29,7 +37,11 @@ const Footer = () => {
 										"_blank"
 									}>
 									<FaLinkedin
-										className='mx-2 footer-icon'
+										className={
+											isDarkTheme
+												? "mx-2 footer-icon-dark"
+												: "mx-2 footer-icon-light"
+										}
 										size='25px'
 									/>
 								</a>
@@ -39,7 +51,11 @@ const Footer = () => {
 										"_blank"
 									}>
 									<FaGithub
-										className='mx-2 footer-icon'
+										className={
+											isDarkTheme
+												? "mx-2 footer-icon-dark"
+												: "mx-2 footer-icon-light"
+										}
 										size='25px'
 									/>
 								</a>
@@ -49,7 +65,11 @@ const Footer = () => {
 										"_blank"
 									}>
 									<FaBehance
-										className='mx-2 footer-icon'
+										className={
+											isDarkTheme
+												? "mx-2 footer-icon-dark"
+												: "mx-2 footer-icon-light"
+										}
 										size='30px'
 									/>
 								</a>
@@ -59,7 +79,11 @@ const Footer = () => {
 										"_blank"
 									}>
 									<FaInstagram
-										className='mx-2 footer-icon'
+										className={
+											isDarkTheme
+												? "mx-2 footer-icon-dark"
+												: "mx-2 footer-icon-light"
+										}
 										size='25px'
 									/>
 								</a>
@@ -74,12 +98,24 @@ const Footer = () => {
 						<h5 className='mb-3'>Links</h5>
 						<Row>
 							<Col md={12}>
-								<a href='#'>
+								<a
+									href='#'
+									className={
+										isDarkTheme
+											? "text-light"
+											: ""
+									}>
 									<HiMail
 										className='mx-2 footer-icon'
 										size='25px'
 									/>
-									<a href='mailto:francoavanney@gmail.com?subject=Contacto%20desde%20porftolio'>
+									<a
+										className={
+											isDarkTheme
+												? "text-light"
+												: ""
+										}
+										href='mailto:francoavanney@gmail.com?subject=Contacto%20desde%20porftolio'>
 										francoavanney@gmail.com
 									</a>
 								</a>

@@ -41,25 +41,20 @@ const languageOptions = [
 	{ value: "es", label: labelEs }
 ];
 
-const themeOptions = [
-	{ value: "light", label: "Light" },
-	{ value: "dark", label: "Dark" }
-];
-
 const headerVariants = {
 	light: {
 		backgroundColor: "transparent",
 		color: "#333"
 	},
 	dark: {
-		backgroundColor: "#333",
+		backgroundColor: "rgba(33, 37, 41, 0.90)",
 		color: "#f5f5f5"
 	}
 };
 
 const Header = () => {
 	const { texts, handleLanguage } = useContext(LanguageContext);
-	const { theme, toggleTheme, isDarkTheme } = useContext(ThemeContext);
+	const { toggleTheme, isDarkTheme } = useContext(ThemeContext);
 	const isXXL = useMediaQuery({ query: "(min-width: 1400px)" });
 	const iconSize = isXXL ? "45px" : "30px";
 
@@ -73,7 +68,7 @@ const Header = () => {
 				}`}></Background>
 			<motion.section
 				className={`page-section header ${
-					isDarkTheme ? "bg-dark" : "light-theme"
+					isDarkTheme ? "" : "light-theme"
 				}`}
 				initial={isDarkTheme ? "dark" : "light"}
 				animate={isDarkTheme ? "dark" : "light"}
@@ -139,7 +134,7 @@ const Header = () => {
 									id='col-select'
 									xs={12}
 									md={12}
-									lg={6}>
+									lg={9}>
 									<p>
 										{
 											texts.language
@@ -160,27 +155,6 @@ const Header = () => {
 											handleLanguage
 										}
 									/>
-								</Col>
-								<Col
-									id='col-select'
-									xs={12}
-									md={12}
-									lg={6}>
-									<p>
-										Theme
-									</p>
-									<label className='switch-container'>
-										<input
-											type='checkbox'
-											checked={
-												isDarkTheme
-											}
-											onChange={
-												toggleTheme
-											}
-										/>
-										<span className='slider'></span>
-									</label>
 								</Col>
 							</Row>
 						</Col>
