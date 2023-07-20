@@ -33,7 +33,7 @@
 
 /* Estilos para el Navbar en dispositivos móviles */
 .navbar-nav {
-  background-color: #f8f9fa !important;
+  background-color: #f8f9fa;
   align-items: center;
   gap: 5vh;
   background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
@@ -93,7 +93,7 @@
   cursor: pointer;
 }
 
-.links-desktop {
+.links-desktop-light {
   cursor: pointer;
   font-size: 1em;
   text-transform: uppercase;
@@ -101,4 +101,14 @@
   margin-left: 20px;
   margin-right: 20px;
   color: rgb(91, 91, 91);
+}
+
+.links-desktop-dark {
+  cursor: pointer;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 400 !important;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: rgb(255, 255, 255);
 }

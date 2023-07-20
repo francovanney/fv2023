@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "animate.css";
 import LanguageContext from "../../../Context/LanguageContext";
-import { ThemeContext } from "../../../Context/ThemeContext"; // Importamos el ThemeContext
+import { ThemeContext } from "../../../Context/ThemeContext";
 import { Parallax, Background } from "react-parallax";
 import { motion } from "framer-motion";
 import { FaGithub, FaInstagram, FaLinkedin, FaBehance } from "react-icons/fa";
@@ -48,35 +48,32 @@ const themeOptions = [
 
 const headerVariants = {
 	light: {
-		backgroundColor: 'transparent',
+		backgroundColor: "transparent",
 		color: "#333"
-		// Agregar otros estilos específicos para el tema claro si es necesario
 	},
 	dark: {
 		backgroundColor: "#333",
 		color: "#f5f5f5"
-		// Agregar otros estilos específicos para el tema oscuro si es necesario
 	}
 };
 
 const Header = () => {
 	const { texts, handleLanguage } = useContext(LanguageContext);
-	const { theme, toggleTheme } = useContext(ThemeContext);
+	const { theme, toggleTheme, isDarkTheme } = useContext(ThemeContext);
 	const isXXL = useMediaQuery({ query: "(min-width: 1400px)" });
 	const iconSize = isXXL ? "45px" : "30px";
-	const isDarkTheme = theme === "dark";
 
 	return (
 		<Parallax strength={400}>
 			<Background
-				className={`custom-bg ${
-					isDarkTheme ? "dark-theme" : ""
+				className={`${
+					isDarkTheme
+						? "custom-bg-dark"
+						: "custom-bg-light"
 				}`}></Background>
 			<motion.section
 				className={`page-section header ${
-					isDarkTheme
-						? "dark-theme"
-						: "light-theme"
+					isDarkTheme ? "bg-dark" : "light-theme"
 				}`}
 				initial={isDarkTheme ? "dark" : "light"}
 				animate={isDarkTheme ? "dark" : "light"}
@@ -172,20 +169,18 @@ const Header = () => {
 									<p>
 										Theme
 									</p>
-									<Select
-										placeholder={
-											isDarkTheme
-												? "Dark"
-												: "Light"
-										}
-										id='select-theme'
-										options={
-											themeOptions
-										}
-										onChange={
-											toggleTheme
-										}
-									/>
+									<label className='switch-container'>
+										<input
+											type='checkbox'
+											checked={
+												isDarkTheme
+											}
+											onChange={
+												toggleTheme
+											}
+										/>
+										<span className='slider'></span>
+									</label>
 								</Col>
 							</Row>
 						</Col>

@@ -15,9 +15,12 @@ import AdobePS from "../../../assets/Logos/adobe-photoshop-2.svg";
 import Jira from "../../../assets/Logos/jira-1.svg";
 import Postman from "../../../assets/Logos/postman.svg";
 import VsCode from "../../../assets/Logos/visual-studio-code-1.svg";
+import { useContext } from "react";
+import { ThemeContext } from "../../../Context/ThemeContext";
 //import NpmLogo from "../../../assets/Logos/npm-square-red-1.svg";
 
 const Skills = () => {
+	const { isDarkTheme } = useContext(ThemeContext);
 	const responsive = {
 		desktop: {
 			breakpoint: { max: 3000, min: 1024 },
@@ -36,7 +39,13 @@ const Skills = () => {
 		}
 	};
 	return (
-		<section className='page-section' id='skills-section'>
+		<section
+			className={
+				isDarkTheme
+					? "page-section bg-dark"
+					: "page-section bg-light"
+			}
+			id='skills-section'>
 			<Container className='container mt-4 animate__animated animate__fadeIn animate__delay-2s'>
 				<Row>
 					<Col className='mt-4 mb-4'>

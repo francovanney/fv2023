@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useContext } from "react";
 import LanguageContext from "../../../Context/LanguageContext";
+import { ThemeContext } from "../../../Context/ThemeContext";
 
 const pathVariants = {
 	hidden: {
@@ -22,12 +23,19 @@ const pathVariants = {
 };
 
 const AboutMe = () => {
+	const { isDarkTheme } = useContext(ThemeContext);
 	const { texts } = useContext(LanguageContext);
 	const aboutMeDescription = texts.aboutMeDescription;
 	const paragraphs = aboutMeDescription.split("\n\n");
 	return (
-		<section className='page-section' id='hola-section'>
-			<Container className='pt-4'>
+		<section
+			className={
+				isDarkTheme
+					? "page-section bg-dark"
+					: "page-section bg-light"
+			}
+			id='hola-section'>
+			<Container className='pb-4'>
 				<Row>
 					<Col xs={12} sm={12} md={4} xxl={4}>
 						<h1 className='text-left'>
@@ -85,7 +93,12 @@ const AboutMe = () => {
 						</h1>
 					</Col>
 					<Col xs={12} sm={12} md={8} xxl={8}>
-						<h2 className='mb-2'>
+						<h2
+							className={
+								isDarkTheme
+									? "text-light mb-2"
+									: "mb-2"
+							}>
 							{texts.navbarHola}
 							<motion.div
 								style={{
@@ -107,7 +120,13 @@ const AboutMe = () => {
 								<span>👋</span>
 							</motion.div>
 						</h2>
-						<div id='text-about'>
+						<div
+							id='text-about'
+							className={
+								isDarkTheme
+									? "text-light mb-2"
+									: "mb-2"
+							}>
 							{paragraphs.map(
 								(
 									paragraph,

@@ -5,8 +5,10 @@ import LanguageContext from "../../Context/LanguageContext";
 import { MediaQueries } from "../Utils/mediaqueries";
 import Hamburger from "hamburger-react";
 import { Nav, Navbar, Container } from "react-bootstrap";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 const NavigationBar = () => {
+	const { isDarkTheme } = useContext(ThemeContext);
 	const [scrolled, setScrolled] = useState(false);
 	const [expandNavbar, setExpandNavbar] = useState(undefined);
 	const [active, setActive] = useState("");
@@ -116,7 +118,7 @@ const NavigationBar = () => {
 	return (
 		<Navbar
 			id='navbar'
-			bg='light'
+			bg={isDarkTheme ? "dark" : "light"}
 			expand='lg'
 			className={
 				isMobile && expanded
@@ -133,6 +135,7 @@ const NavigationBar = () => {
 					/>
 					<div className='hamburger-wrapper'>
 						<Hamburger
+							color={isDarkTheme ? 'white' : 'black'}
 							size={20}
 							toggled={expanded}
 							toggle={handleToggle}
@@ -152,7 +155,12 @@ const NavigationBar = () => {
 					<Navbar.Collapse
 						id='basic-navbar-nav'
 						className='justify-content-end'>
-						<Nav className='ml-auto'>
+						<Nav
+							className={
+								isDarkTheme
+									? "bg-dark text-light ml-auto"
+									: "bg-light ml-auto"
+							}>
 							<Nav.Item
 								onClick={() => {
 									handleLinkClick();
@@ -165,6 +173,10 @@ const NavigationBar = () => {
 									"header-section"
 										? " active"
 										: ""
+								} ${
+									isDarkTheme
+										? "links-desktop-dark"
+										: "links-desktop-light"
 								}`}
 								role='button'
 								tabIndex={0}>

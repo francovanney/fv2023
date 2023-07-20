@@ -6,24 +6,27 @@ const ThemeContextProvider = ({ children }) => {
 	const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
 		.matches
 		? "dark"
-		: "light"; // Lee el tema configurado en el sistema operativo o navegador
+		: "light";
 	const initialTheme =
-		localStorage.getItem("theme") || systemTheme || "light"; // Prioriza el tema guardado en el almacenamiento local, luego el tema del sistema, y usa "light" como valor predeterminado si no se encuentra ninguno
+		localStorage.getItem("theme") || systemTheme || "light";
 
 	const [theme, setTheme] = useState(initialTheme);
+	const [isDarkTheme, setIsDarkTheme] = useState(initialTheme === "dark");
 
 	const toggleTheme = () => {
 		const newTheme = theme === "light" ? "dark" : "light";
 		setTheme(newTheme);
-		localStorage.setItem("theme", newTheme); // Guarda el tema en el almacenamiento local para que persista al recargar la página
+		setIsDarkTheme(newTheme === "dark");
+		localStorage.setItem("theme", newTheme);
 	};
 
 	useEffect(() => {
-		document.body.setAttribute("data-theme", theme); // Aplica el tema seleccionado a la etiqueta <body> para que los estilos CSS puedan adaptarse
+		document.body.setAttribute("data-theme", theme);
 	}, [theme]);
 
 	const themeContextData = {
 		theme,
+		isDarkTheme,
 		toggleTheme
 	};
 
