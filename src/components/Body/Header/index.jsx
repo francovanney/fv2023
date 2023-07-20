@@ -1,7 +1,8 @@
+import React, { useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "animate.css";
-import { useContext } from "react";
 import LanguageContext from "../../../Context/LanguageContext";
+import { ThemeContext } from "../../../Context/ThemeContext"; // Importamos el ThemeContext
 import { Parallax, Background } from "react-parallax";
 import { motion } from "framer-motion";
 import { FaGithub, FaInstagram, FaLinkedin, FaBehance } from "react-icons/fa";
@@ -35,19 +36,52 @@ const labelEs = (
 	/>
 );
 
-const options = [
+const languageOptions = [
 	{ value: "en", label: labelEn },
 	{ value: "es", label: labelEs }
 ];
 
+const themeOptions = [
+	{ value: "light", label: "Light" },
+	{ value: "dark", label: "Dark" }
+];
+
+const headerVariants = {
+	light: {
+		backgroundColor: 'transparent',
+		color: "#333"
+		// Agregar otros estilos específicos para el tema claro si es necesario
+	},
+	dark: {
+		backgroundColor: "#333",
+		color: "#f5f5f5"
+		// Agregar otros estilos específicos para el tema oscuro si es necesario
+	}
+};
+
 const Header = () => {
 	const { texts, handleLanguage } = useContext(LanguageContext);
+	const { theme, toggleTheme } = useContext(ThemeContext);
 	const isXXL = useMediaQuery({ query: "(min-width: 1400px)" });
 	const iconSize = isXXL ? "45px" : "30px";
+	const isDarkTheme = theme === "dark";
+
 	return (
 		<Parallax strength={400}>
-			<Background className='custom-bg'></Background>
-			<section className='page-section' id='header-section'>
+			<Background
+				className={`custom-bg ${
+					isDarkTheme ? "dark-theme" : ""
+				}`}></Background>
+			<motion.section
+				className={`page-section header ${
+					isDarkTheme
+						? "dark-theme"
+						: "light-theme"
+				}`}
+				initial={isDarkTheme ? "dark" : "light"}
+				animate={isDarkTheme ? "dark" : "light"}
+				variants={headerVariants}
+				id='header-section'>
 				<Container>
 					<Row className='animate__animated animate__fadeInDown'>
 						<Col md={8}>
@@ -63,9 +97,7 @@ const Header = () => {
 								<Col md={12}>
 									<a
 										href='https://www.linkedin.com/in/franco-vanney-0b9273a1/'
-										target={
-											"_blank"
-										}>
+										target='_blank'>
 										<FaLinkedin
 											className='mx-1 custom-icon'
 											size={
@@ -75,9 +107,7 @@ const Header = () => {
 									</a>
 									<a
 										href='https://github.com/francovanney'
-										target={
-											"_blank"
-										}>
+										target='_blank'>
 										<FaGithub
 											className='mx-2 custom-icon'
 											size={
@@ -87,9 +117,7 @@ const Header = () => {
 									</a>
 									<a
 										href='https://www.behance.net/francovanney'
-										target={
-											"_blank"
-										}>
+										target='_blank'>
 										<FaBehance
 											className='mx-2 custom-icon'
 											size={
@@ -99,9 +127,7 @@ const Header = () => {
 									</a>
 									<a
 										href='https://www.instagram.com/francovanney/'
-										target={
-											"_blank"
-										}>
+										target='_blank'>
 										<FaInstagram
 											className='mx-2 custom-icon'
 											size={
@@ -115,7 +141,8 @@ const Header = () => {
 								<Col
 									id='col-select'
 									xs={12}
-									md={12}>
+									md={12}
+									lg={6}>
 									<p>
 										{
 											texts.language
@@ -128,14 +155,35 @@ const Header = () => {
 												? labelEs
 												: labelEn
 										}
-										id={
-											"select"
-										}
+										id='select'
 										options={
-											options
+											languageOptions
 										}
 										onChange={
 											handleLanguage
+										}
+									/>
+								</Col>
+								<Col
+									id='col-select'
+									xs={12}
+									md={12}
+									lg={6}>
+									<p>
+										Theme
+									</p>
+									<Select
+										placeholder={
+											isDarkTheme
+												? "Dark"
+												: "Light"
+										}
+										id='select-theme'
+										options={
+											themeOptions
+										}
+										onChange={
+											toggleTheme
 										}
 									/>
 								</Col>
@@ -161,7 +209,7 @@ const Header = () => {
 						<Col md={1}></Col>
 					</Row>
 				</Container>
-			</section>
+			</motion.section>
 		</Parallax>
 	);
 };

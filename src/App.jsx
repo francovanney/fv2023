@@ -8,11 +8,12 @@ import Loader from "./components/Loader";
 /* import Navbar from "./components/Navbar"; */
 import { LanguageProvider } from "./Context/LanguageContext";
 import NavigationBar from "./components/Navbar";
+import ThemeContextProvider from "./Context/ThemeContext";
 
 const App = () => {
 	const [loading, setLoading] = useState(false);
 
-/* 	useEffect(() => {
+	/* 	useEffect(() => {
 		setLoading(true);
 		setTimeout(() => {
 			setLoading(false);
@@ -25,11 +26,13 @@ const App = () => {
 				<Loader />
 			) : (
 				<LanguageProvider>
-					<NavigationBar />
-					<Body />
-					<Experience />
-					<Contact />
-					<Footer />
+					<ThemeContextProvider>
+						<NavigationBar />
+						<Body />
+						<Experience />
+						<Contact />
+						<Footer />
+					</ThemeContextProvider>
 				</LanguageProvider>
 			)}
 		</div>
