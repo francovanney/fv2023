@@ -189,7 +189,7 @@ const AboutMe = () => {
 													"_blank"
 												}
 												className='link-cv'
-												href='https://drive.google.com/file/d/1YQT0cNLPzzZC8X1J2cnEkjxLWzQK-yfb/view?usp=share_link'>
+												href='https://drive.google.com/file/d/1RfEhw0csNeMvnVK9hmLKAV7Iwk9V5Uu-/view?usp=sharing'>
 												DOWNLOAD
 												RESUME
 											</a>
