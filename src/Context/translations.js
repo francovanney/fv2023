@@ -17,9 +17,7 @@ const translations = {
 		downloadCV: "CV",
 		exp1: `UCMS (Texas), Sistema Uniforme de Manejo de Casos. Este proyecto masivo involucró a más de 11 equipos, incluyendo analistas, backend, frontend, control de calidad y jefes de proyecto. Como desarrollador, asumí la responsabilidad de estimar, planificar y contribuir a la definición e implementación de diferentes historias de usuario que contribuyeron al desarrollo global del proyecto.
 
-		En este proyecto, diseñé componentes globales, solucioné errores y desarrollé la integración de seguridad en la aplicación. Además, brindé soporte a otros equipos, creé solicitudes de cambios y revisé el código de otros desarrolladores para asegurarme de que cumpliera con los estándares de calidad del proyecto.
-		
-		Tecnologías utilizadas: React, Bootstrap, HTML, CSS, Scrum, Jira, Confluence, Lucidchart.`,
+		En este proyecto, diseñé componentes globales, solucioné errores y desarrollé la integración de seguridad en la aplicación. Además, brindé soporte a otros equipos, creé solicitudes de cambios y revisé el código de otros desarrolladores para asegurarme de que cumpliera con los estándares de calidad del proyecto.`,
 		exp1Tech: "Tecnologias: React, Bootstrap, HTML, CSS, Scrum, Jira, Confluence, Lucidchart",
 		exp2: "Como miembro del equipo de front-end de varios proyectos en 3Metas, participé en el diseño y desarrollo de sitios y aplicaciones. Trabajé en la determinación de la estructura y el diseño de las páginas web, garantizando que la experiencia del usuario fuera la mejor posible. Además, creé código reutilizable para futuros proyectos y aseguré que la marca mantuviera su consistencia a lo largo del diseño. También participé en campañas de email marketing y publicidad. En resumen, como parte del equipo de front-end de 3Metas, mi trabajo se centró en crear diseños funcionales, eficaces y atractivos para los clientes.",
 		exp2Tech: "Tecnologias: Angular, React, Bootstrap, HTML, CSS",
