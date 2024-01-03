@@ -48,7 +48,7 @@ function Experience() {
 						}>
 						<VerticalTimelineElement
 							className='vertical-timeline-element--education'
-							date='2022'
+							date='2022 - Today'
 							contentStyle={
 								contentStyle
 							}
@@ -71,7 +71,17 @@ function Experience() {
 							</h6>
 
 							<h4 className='vertical-timeline-element-subtitle pt-2'>
-								Front-End
+								Accenture
+							</h4>
+							<p className='text-description'>
+								{texts.exp4}
+							</p>
+							<p className='text-description'>
+								{texts.exp4Tech}
+							</p>
+
+							<h4 className='vertical-timeline-element-subtitle pt-2'>
+								iDocket
 							</h4>
 							<p className='text-description'>
 								{texts.exp1}

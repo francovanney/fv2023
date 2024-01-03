@@ -15,9 +15,9 @@ const translations = {
 		¡Espero que disfrutes navegando por mi portafolio!.`,
 		thanks: "¡Gracias por visitar mi sitio!",
 		downloadCV: "CV",
-		exp1: `Uno de los proyectos en los que participé fue el proyecto UCMS (Texas), donde creamos un Sistema Uniforme de Manejo de Casos. Este proyecto masivo involucró a más de 11 equipos, incluyendo analistas, backend, frontend, control de calidad y jefes de proyecto. Como desarrollador, asumí la responsabilidad de estimar, planificar y contribuir a la definición e implementación de diferentes historias de usuario que contribuyeron al desarrollo global del proyecto.
+		exp1: `UCMS (Texas), Sistema Uniforme de Manejo de Casos. Este proyecto masivo involucró a más de 11 equipos, incluyendo analistas, backend, frontend, control de calidad y jefes de proyecto. Como desarrollador, asumí la responsabilidad de estimar, planificar y contribuir a la definición e implementación de diferentes historias de usuario que contribuyeron al desarrollo global del proyecto.
 
-		En este proyecto, diseñé componentes globales, solucioné errores y desarrollé la integración de seguridad en la aplicación. Además, brindé soporte a otros equipos, creé solicitudes de cambios y revisé el código de otros desarrolladores para asegurarme de que cumpliera con los estándares de calidad del proyecto. Estoy orgulloso de ser parte de este proyecto y de contribuir al éxito de la iniciativa UCMS en Texas.
+		En este proyecto, diseñé componentes globales, solucioné errores y desarrollé la integración de seguridad en la aplicación. Además, brindé soporte a otros equipos, creé solicitudes de cambios y revisé el código de otros desarrolladores para asegurarme de que cumpliera con los estándares de calidad del proyecto.
 		
 		Tecnologías utilizadas: React, Bootstrap, HTML, CSS, Scrum, Jira, Confluence, Lucidchart.`,
 		exp1Tech: "Tecnologias: React, Bootstrap, HTML, CSS, Scrum, Jira, Confluence, Lucidchart",
@@ -38,7 +38,9 @@ const translations = {
 		modalSuccessMessage:
 			"El formulario ha sido enviado exitosamente. ¡Gracias por comunicarte!",
 		errorMessage: "Este campo es obligatorio",
-		aboutIncluit: 'IncluIT es una empresa de software que opera en USA, América Latina y Europa.'
+		aboutIncluit: 'IncluIT es una empresa de software que opera en USA, América Latina y Europa.',
+		exp4: "Desarrollo de un sistema interno vital para Accenture, involucrando a 750,000 usuarios con foco en la mejora de la experiencia del usuario y la accesibilidad, abordando necesidades de personas no visibles o auditivas. Resolución de problemas (bugs) e implementación de nuevas funcionalidades mediante Vue.js, contribuyendo al avance continuo del sistema.",
+		exp4Tech: "VueJs, Bootstrap, HTML, CSS, Screen Reader"
 	},
 	en: {
 		navbarHome: "Home",
@@ -56,9 +58,9 @@ const translations = {
 		I hope you enjoy browsing through my portfolio!`,
 		thanks: "Thank you for visiting my site!",
 		downloadCV: "Resume",
-		exp1: `One of the projects I participated in was the UCMS (Texas) project, where we created a Unified Case Management System. This massive project involved more than 11 teams, including analysts, backends, frontends, quality control, and project managers. As a developer, I took on the responsibility of estimating, planning, and contributing to the definition and implementation of various user stories that contribute to the overall project development.
+		exp1: `UCMS (Texas) project, where we created a Unified Case Management System. This massive project involved more than 11 teams, including analysts, backends, frontends, quality control, and project managers. As a developer, I took on the responsibility of estimating, planning, and contributing to the definition and implementation of various user stories that contribute to the overall project development.
 
-		In this project, I designed global components, addressed bug fixes, and implemented security integration in the application. I also provided support to other teams, created change requests, and reviewed code from other developers to ensure it met the project's quality standards. I take pride in being part of this project and contributing to the success of the UCMS initiative in Texas.`,
+		In this project, I designed global components, addressed bug fixes, and implemented security integration in the application. I also provided support to other teams, created change requests, and reviewed code from other developers to ensure it met the project's quality standards.`,
 		exp1Tech: "Tecnologias: React, Bootstrap, HTML, CSS, Scrum, Jira, Confluence, Lucidchart",
 		exp1Tech: "Technologies: React, Bootstrap, HTML, CSS, Scrum, Jira, Confluence, Lucidchart",
 		exp2: "As a member of the front-end team of various projects at 3Metas, I was involved in the design and development of sites and applications. I worked on determining the structure and design of the web pages, ensuring that the user experience was the best possible. Additionally, I created reusable code for future projects and ensured that the branding remained consistent throughout the design. I also participated in email marketing and advertising campaigns. In summary, as part of the 3Metas front-end team, my work focused on creating functional, effective and attractive designs for clients.",
@@ -78,7 +80,10 @@ const translations = {
 		modalSuccessMessage:
 			"The form has been sent successfully. Thanks for reaching out!",
 		errorMessage: "This field is required",
-		aboutIncluit: 'IncluIT is a software company running operations across the US, Latin America & Europe.'
+		aboutIncluit: 'IncluIT is a software company running operations across the US, Latin America & Europe.',
+		exp4: 
+		"Development of a critical internal system for Accenture, involving 750,000 users with a focus on improving user experience and accessibility, addressing the needs of non-visible or auditory individuals. Troubleshooting (bugs) and implementation of new functionalities using Vue.js, contributing to the ongoing advancement of the system.",
+		exp4Tech: "VueJs, Bootstrap, HTML, CSS, Screen Reader"
 	}
 };
 
