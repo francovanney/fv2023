@@ -116,6 +116,13 @@ const NavigationBar = () => {
 		}
 	};
 
+	const handleColorChange = (color) => {
+		document.documentElement.style.setProperty(
+			"--FirstColor",
+			color
+		);
+	};
+
 	return (
 		<Navbar
 			id='navbar'
@@ -188,6 +195,36 @@ const NavigationBar = () => {
 						role='image'
 						tabIndex={0}
 					/>
+					{/* <div className='color-picker'>
+						<button
+							className='color-button red'
+							onClick={() =>
+								handleColorChange(
+									"#FF0000"
+								)
+							}>
+							Rojo
+						</button>
+						<button
+							className='color-button green'
+							onClick={() =>
+								handleColorChange(
+									"#00FF00"
+								)
+							}>
+							Verde
+						</button>
+						<button
+							className='color-button blue'
+							onClick={() =>
+								handleColorChange(
+									"#0000FF"
+								)
+							}>
+							Azul
+						</button>
+					</div> */}
+
 					<label
 						className={
 							isMobile

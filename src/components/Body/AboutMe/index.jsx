@@ -67,7 +67,7 @@ const AboutMe = () => {
 									variants={
 										pathVariants
 									}
-									fill='#17bed2'
+									fill="var(--FirstColor)" 
 									opacity='1.000000'
 									stroke='none'
 									d='
@@ -213,7 +213,7 @@ const AboutMe = () => {
 								enable-background='new 0 0 980 556'
 								xml:space='preserve'>
 								<path
-									fill='#17bed2'
+									fill="var(--FirstColor)" 
 									opacity='1.000000'
 									stroke='none'
 									d='
@@ -244,7 +244,7 @@ const AboutMe = () => {
 									fill={
 										isDarkTheme
 											? "#FFFFFF"
-											: "#010101"
+											: "#c2c2c2"
 									}
 									opacity='1.000000'
 									stroke='none'

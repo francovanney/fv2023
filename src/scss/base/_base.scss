@@ -47,3 +47,24 @@ Button {
         transition: all .2s !important;
     }
 }
+
+.form-control:focus {
+    border-color: var(--FirstColor);
+    /* Aplica la opacidad a través de rgba() con la variable de color */
+    box-shadow: 0 0 0 0.25rem rgba(var(--FirstColor), 0.25) !important;
+}
+
+.red {
+    background-color: #FF0000 !important;
+    color: #FFFFFF; /* Color del texto para resaltar sobre el fondo rojo */
+  }
+  
+  .green {
+    background-color: #00FF00 !important;
+    color: #000000; /* Color del texto para resaltar sobre el fondo verde */
+  }
+  
+  .blue {
+    background-color: #0000FF !important;
+    color: #FFFFFF; /* Color del texto para resaltar sobre el fondo azul */
+  }

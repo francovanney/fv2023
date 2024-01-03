@@ -53,7 +53,7 @@ function Experience() {
 								contentStyle
 							}
 							iconStyle={{
-								background: "#17bed2",
+								background: "var(--FirstColor)",
 								color: "#fff"
 							}}
 							icon={<BiCodeAlt />}>
@@ -87,7 +87,7 @@ function Experience() {
 								contentStyle
 							}
 							iconStyle={{
-								background: "#17bed2",
+								background: "var(--FirstColor)",
 								color: "#fff"
 							}}
 							icon={<BiCodeAlt />}>
@@ -112,7 +112,7 @@ function Experience() {
 								contentStyle
 							}
 							iconStyle={{
-								background: "#17bed2",
+								background: "var(--FirstColor)",
 								color: "#fff"
 							}}
 							icon={<BiCodeAlt />}>
@@ -167,7 +167,7 @@ function Experience() {
 								contentStyle
 							}
 							iconStyle={{
-								background: "#17bed2",
+								background: "var(--FirstColor)",
 								color: "#fff"
 							}}
 							icon={<IoSchool />}>

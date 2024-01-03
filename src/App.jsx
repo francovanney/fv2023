@@ -13,13 +13,13 @@ import ThemeContextProvider from "./Context/ThemeContext";
 const App = () => {
 	const [loading, setLoading] = useState(false);
 
-	/* 	useEffect(() => {
+		useEffect(() => {
 		setLoading(true);
 		setTimeout(() => {
 			setLoading(false);
-		}, 5000);
+		}, 3500);
 	}, []);
- */
+
 	return (
 		<div className='App'>
 			{loading ? (

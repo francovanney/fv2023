@@ -3,15 +3,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(180deg, rgba(255,255,255,1) 19%, rgba(23,190,210,1) 99%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 19%, var(--FirstColor) 99%, rgba(0,0,0,1) 100%);
 }
+
 
 .footer-dark {
     height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(180deg, rgb(33,37,41) 19%, rgba(23,190,210,1) 99%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(180deg, rgb(33,37,41) 19%, var(--FirstColor) 99%, rgba(255,255,255,1) 100%);
 }
 
 #footer-row {
