@@ -170,7 +170,7 @@ const AboutMe = () => {
 													"_blank"
 												}
 												className='link-cv'
-												href='https://drive.google.com/file/d/1i1Mi30QwE4C-Jd2oNMBPBtCArqrBSoMa/view?usp=sharing'>
+												href='https://drive.google.com/file/d/1th348wsLQbuLvT7mS1n6jPDQPt9GAQzv/view?usp=sharing'>
 												DESCARGAR
 												CV
 											</a>
@@ -189,7 +189,7 @@ const AboutMe = () => {
 													"_blank"
 												}
 												className='link-cv'
-												href='https://drive.google.com/file/d/1RfEhw0csNeMvnVK9hmLKAV7Iwk9V5Uu-/view?usp=sharing'>
+												href='https://drive.google.com/file/d/1sOnhdbHWdsbFI3PdpyuxElNp0mzXVbAl/view?usp=sharing'>
 												DOWNLOAD
 												RESUME
 											</a>

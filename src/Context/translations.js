@@ -36,7 +36,7 @@ const translations = {
 		modalSuccessMessage:
 			"El formulario ha sido enviado exitosamente. ¡Gracias por comunicarte!",
 		errorMessage: "Este campo es obligatorio",
-		aboutIncluit: 'IncluIT es una empresa de software que opera en USA, América Latina y Europa.',
+		aboutIncluit: 'Avenga Latam es una empresa de software que opera en USA, América Latina y Europa.',
 		exp4: "Desarrollo de un sistema interno vital para Accenture, involucrando a 750,000 usuarios con foco en la mejora de la experiencia del usuario y la accesibilidad, abordando necesidades de personas no visibles o auditivas. Resolución de problemas (bugs) e implementación de nuevas funcionalidades mediante Vue.js, contribuyendo al avance continuo del sistema.",
 		exp4Tech: "VueJs, Bootstrap, HTML, CSS, Screen Reader"
 	},
@@ -78,7 +78,7 @@ const translations = {
 		modalSuccessMessage:
 			"The form has been sent successfully. Thanks for reaching out!",
 		errorMessage: "This field is required",
-		aboutIncluit: 'IncluIT is a software company running operations across the US, Latin America & Europe.',
+		aboutIncluit: 'Avenga Latam is a software company running operations across the US, Latin America & Europe.',
 		exp4: 
 		"Development of a critical internal system for Accenture, involving 750,000 users with a focus on improving user experience and accessibility, addressing the needs of non-visible or auditory individuals. Troubleshooting (bugs) and implementation of new functionalities using Vue.js, contributing to the ongoing advancement of the system.",
 		exp4Tech: "VueJs, Bootstrap, HTML, CSS, Screen Reader"
