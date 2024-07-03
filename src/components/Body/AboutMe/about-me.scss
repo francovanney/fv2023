@@ -8,3 +8,31 @@ span {
 .link-cv {
     color: white !important;
 }
+
+.tab {
+    background-color: #1f2524 !important;
+    height: 100px;
+    color: #738883;
+}
+
+.nav-link {
+    background-color: #1f2524 !important;
+    text-align: left;
+    color: #738883 !important;
+    border-radius: 0px !important;
+
+    &:active {
+        color: #e6f0f7 !important;
+    }
+}
+
+
+.accordion-header {
+    > button {
+        background-color: var(--PrimaryColor);
+        
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}

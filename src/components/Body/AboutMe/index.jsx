@@ -1,4 +1,4 @@
-import { Container, Button } from "react-bootstrap";
+import { Container, Button, Accordion } from "react-bootstrap";
 import { motion } from "framer-motion";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -24,16 +24,12 @@ const pathVariants = {
 
 const AboutMe = () => {
 	const { isDarkTheme } = useContext(ThemeContext);
-	const { texts } = useContext(LanguageContext);
+	const { texts, language } = useContext(LanguageContext);
 	const aboutMeDescription = texts.aboutMeDescription;
 	const paragraphs = aboutMeDescription.split("\n\n");
 	return (
 		<section
-			className={
-				isDarkTheme
-					? "page-section bg-dark"
-					: "page-section bg-light"
-			}
+			className={isDarkTheme ? "page-section bg-dark" : "page-section bg-light"}
 			id='hola-section'>
 			<Container className='pb-4'>
 				<Row>
@@ -52,22 +48,14 @@ const AboutMe = () => {
 								xml:space='preserve'>
 								<motion.path
 									whileHover={{
-										y: [
-											0,
-											45,
-											0,
-											45,
-											0
-										]
+										y: [0, 45, 0, 45, 0]
 									}}
 									transition={{
 										type: "spring",
 										duration: 2
 									}}
-									variants={
-										pathVariants
-									}
-									fill="var(--FirstColor)" 
+									variants={pathVariants}
+									fill='var(--FirstColor)'
 									opacity='1.000000'
 									stroke='none'
 									d='
@@ -93,25 +81,14 @@ const AboutMe = () => {
 						</h1>
 					</Col>
 					<Col xs={12} sm={12} md={8} xxl={8}>
-						<h2
-							className={
-								isDarkTheme
-									? "text-light mb-2"
-									: "mb-2"
-							}>
+						<h2 className={isDarkTheme ? "text-light mb-2" : "mb-2"}>
 							{texts.navbarHola}
 							<motion.div
 								style={{
 									display: "inline-block"
 								}}
 								whileHover={{
-									rotate: [
-										0,
-										45,
-										0,
-										45,
-										0
-									]
+									rotate: [0, 45, 0, 45, 0]
 								}}
 								transition={{
 									type: "spring",
@@ -122,27 +99,69 @@ const AboutMe = () => {
 						</h2>
 						<div
 							id='text-about'
-							className={
-								isDarkTheme
-									? "text-light mb-2"
-									: "mb-2"
-							}>
-							{paragraphs.map(
-								(
-									paragraph,
-									index
-								) => (
-									<p
-										key={
-											index
-										}
-										className='animate__animated animate__backInRight'>
-										{
-											paragraph
-										}
-									</p>
-								)
+							className={isDarkTheme ? "text-light mb-2" : "mb-2"}>
+							{language === "es" ? (
+								<p>
+									Mi nombre es Franco Vanney, soy desarrollador front-end y
+									diseñador multidisciplinario. Actualmente resido en la ciudad
+									de Junín, Buenos Aires, Argentina. Me considero un jugador de
+									equipo, curioso, creativo y detallista, apasionado por el
+									proceso creativo. Aporto mi perspectiva junto con otras
+									visiones para dar a cada elemento un propósito, construirlos y
+									luego conectarlos a través del código.
+								</p>
+							) : (
+								<p>
+									My name is Franco Vanney, and I'm a front-end developer and
+									multidisciplinary designer. Currently, I reside in Junín,
+									Buenos Aires, Argentina. I consider myself a team player,
+									curious, creative, and detail-oriented, passionate about the
+									creative process. I bring my perspective along with other
+									viewpoints to give each element a purpose, build them, and
+									then connect them through code.
+								</p>
 							)}
+							<Accordion defaultActiveKey={["0"]} alwaysOpen>
+								<Accordion.Item eventKey='0'>
+									<Accordion.Header className='accordion-header'>
+										{language === "es" ? "Perspectiva" : "Perspective"}
+									</Accordion.Header>
+									<Accordion.Body>
+										Lorem ipsum dolor es {language}
+									</Accordion.Body>
+								</Accordion.Item>
+								<Accordion.Item eventKey='1'>
+									<Accordion.Header>
+										{language === "es" ? "Enfoque" : "Focus"}
+									</Accordion.Header>
+									<Accordion.Body>Lorem ipsum dolor sit amet</Accordion.Body>
+								</Accordion.Item>
+								<Accordion.Item eventKey='2'>
+									<Accordion.Header>
+										{language === "es" ? "Rol" : "Role"}
+									</Accordion.Header>
+									<Accordion.Body>Lorem ipsum dolor sit amet</Accordion.Body>
+								</Accordion.Item>
+								<Accordion.Item eventKey='3'>
+									<Accordion.Header>
+										{language === "es" ? "Objetivos" : "Goals"}
+									</Accordion.Header>
+									<Accordion.Body>Lorem ipsum dolor sit amet</Accordion.Body>
+								</Accordion.Item>
+								<Accordion.Item eventKey='4'>
+									<Accordion.Header>
+										{language === "es" ? "Hobbies" : "Hobbies"}
+									</Accordion.Header>
+									<Accordion.Body>Lorem ipsum dolor sit amet</Accordion.Body>
+								</Accordion.Item>
+							</Accordion>
+							{paragraphs.map((paragraph, index) => (
+								<p
+									key={index}
+									className='animate__animated animate__backInRight'>
+									{paragraph}
+								</p>
+							))}
 							<p className='mt-4 animate__animated animate__backInRight'>
 								{texts.thanks}
 							</p>
@@ -155,8 +174,7 @@ const AboutMe = () => {
 									}
 								</h4> */}
 								<Container className='d-flex justify-content-around'>
-									{texts.downloadCV ===
-									"CV" ? (
+									{texts.downloadCV === "CV" ? (
 										<motion.button
 											id='button-cv'
 											whileHover={{
@@ -166,13 +184,10 @@ const AboutMe = () => {
 												scale: 0.9
 											}}>
 											<a
-												target={
-													"_blank"
-												}
+												target={"_blank"}
 												className='link-cv'
 												href='https://drive.google.com/file/d/1th348wsLQbuLvT7mS1n6jPDQPt9GAQzv/view?usp=sharing'>
-												DESCARGAR
-												CV
+												DESCARGAR CV
 											</a>
 										</motion.button>
 									) : (
@@ -185,13 +200,10 @@ const AboutMe = () => {
 												scale: 0.9
 											}}>
 											<a
-												target={
-													"_blank"
-												}
+												target={"_blank"}
 												className='link-cv'
 												href='https://drive.google.com/file/d/1sOnhdbHWdsbFI3PdpyuxElNp0mzXVbAl/view?usp=sharing'>
-												DOWNLOAD
-												RESUME
+												DOWNLOAD RESUME
 											</a>
 										</motion.button>
 									)}
@@ -213,7 +225,7 @@ const AboutMe = () => {
 								enable-background='new 0 0 980 556'
 								xml:space='preserve'>
 								<path
-									fill="var(--FirstColor)" 
+									fill='var(--FirstColor)'
 									opacity='1.000000'
 									stroke='none'
 									d='
@@ -241,11 +253,7 @@ const AboutMe = () => {
 								z'
 								/>
 								<path
-									fill={
-										isDarkTheme
-											? "#FFFFFF"
-											: "#c2c2c2"
-									}
+									fill={isDarkTheme ? "#FFFFFF" : "#c2c2c2"}
 									opacity='1.000000'
 									stroke='none'
 									d='

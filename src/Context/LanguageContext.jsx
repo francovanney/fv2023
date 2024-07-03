@@ -23,11 +23,9 @@ const LanguageProvider = ({ children }) => {
 		}
 	};
 
-	const data = { texts, handleLanguage };
+	const data = { texts, handleLanguage, language };
 	return (
-		<LanguageContext.Provider value={data}>
-			{children}
-		</LanguageContext.Provider>
+		<LanguageContext.Provider value={data}>{children}</LanguageContext.Provider>
 	);
 };
 
