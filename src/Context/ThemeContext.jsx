@@ -1,50 +1,41 @@
-import { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
+import { GlobalTheme } from "@carbon/react";
 
 export const ThemeContext = createContext();
 
 const ThemeContextProvider = ({ children }) => {
-	const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-		.matches
-		? "dark"
-		: "light";
-	const initialTheme =
-		localStorage.getItem("theme") || systemTheme || "light";
+	const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+		? "g100"
+		: "g10";
+	const initialTheme = localStorage.getItem("theme") || systemTheme || "g10";
 
 	const [theme, setTheme] = useState(initialTheme);
-	const [isDarkTheme, setIsDarkTheme] = useState(initialTheme === "dark");
+	const [isDarkTheme, setIsDarkTheme] = useState(initialTheme === "g100");
 
 	const toggleTheme = () => {
-		const newTheme = theme === "light" ? "dark" : "light";
+		const newTheme = theme === "g10" ? "g100" : "g10";
 		setTheme(newTheme);
-		setIsDarkTheme(newTheme === "dark");
+		setIsDarkTheme(newTheme === "g100");
 		localStorage.setItem("theme", newTheme);
 	};
 
 	useEffect(() => {
-		document.body.setAttribute("data-theme", theme);
+		document.documentElement.dataset.carbonTheme = theme;
 	}, [theme]);
 
 	useEffect(() => {
 		const handleSystemThemeChange = (event) => {
-			const newTheme = event.matches ? "dark" : "light";
+			const newTheme = event.matches ? "g100" : "g10";
 			setTheme(newTheme);
-			setIsDarkTheme(newTheme === "dark");
+			setIsDarkTheme(newTheme === "g100");
 			localStorage.setItem("theme", newTheme);
 		};
 
-		const systemThemeQuery = window.matchMedia(
-			"(prefers-color-scheme: dark)"
-		);
-		systemThemeQuery.addEventListener(
-			"change",
-			handleSystemThemeChange
-		);
+		const systemThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+		systemThemeQuery.addEventListener("change", handleSystemThemeChange);
 
 		return () => {
-			systemThemeQuery.removeEventListener(
-				"change",
-				handleSystemThemeChange
-			);
+			systemThemeQuery.removeEventListener("change", handleSystemThemeChange);
 		};
 	}, []);
 
@@ -55,9 +46,11 @@ const ThemeContextProvider = ({ children }) => {
 	};
 
 	return (
-		<ThemeContext.Provider value={themeContextData}>
-			{children}
-		</ThemeContext.Provider>
+		<GlobalTheme theme={theme}>
+			<ThemeContext.Provider value={themeContextData}>
+				{children}
+			</ThemeContext.Provider>
+		</GlobalTheme>
 	);
 };
 

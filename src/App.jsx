@@ -30,7 +30,7 @@ const App = () => {
 						<NavigationBar />
 						<Body />
 						<Experience />
-						<Contact />
+						{/* <Contact /> */}
 						<Footer />
 					</ThemeContextProvider>
 				</LanguageProvider>

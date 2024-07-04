@@ -1,10 +1,43 @@
-#text-about {
-    font-weight: 200;
-}
 span {
     cursor: pointer;
 }
 
 .link-cv {
     color: white !important;
+}
+
+.tab {
+    background-color: #1f2524 !important;
+    height: 100px;
+    color: #738883;
+}
+
+.nav-link {
+    background-color: #1f2524 !important;
+    text-align: left;
+    color: #738883 !important;
+    border-radius: 0px !important;
+
+    &:active {
+        color: #e6f0f7 !important;
+    }
+}
+
+
+.acc-item {
+    >button {
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.text-description {
+    font-size: .95em !important;
+    font-weight: 900 !important;
+}
+
+
+.hi-icon {
+    cursor: default;
 }

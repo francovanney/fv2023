@@ -27,7 +27,7 @@ const Body = () => {
 			<section>
 				<Header />
 				<AboutMe />
-				<Skills />
+				{/* <Skills /> */}
 			</section>
 		</>
 	);

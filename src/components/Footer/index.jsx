@@ -9,15 +9,14 @@ import { HiMail } from "react-icons/hi";
 import { Container, Row, Col } from "react-bootstrap";
 import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
+import { CopyButton } from "@carbon/react";
 
 const Footer = () => {
 	const { isDarkTheme } = useContext(ThemeContext);
 	return (
 		<footer
 			className={
-				isDarkTheme
-					? "footer-dark text-light"
-					: "text-dark footer-light"
+				isDarkTheme ? "footer-dark text-light" : "text-dark footer-light"
 			}>
 			<Container>
 				<Row id='footer-row'>
@@ -26,16 +25,12 @@ const Footer = () => {
 						className={
 							"d-flex flex-column align-items-center justify-content-center mb-4  mb-md-0"
 						}>
-						<h5 className='mb-3'>
-							Social Links
-						</h5>
+						<h5 className='mb-3'>Social Links</h5>
 						<Row>
 							<Col md={12}>
 								<a
 									href='https://www.linkedin.com/in/franco-vanney-0b9273a1/'
-									target={
-										"_blank"
-									}>
+									target={"_blank"}>
 									<FaLinkedin
 										className={
 											isDarkTheme
@@ -45,11 +40,7 @@ const Footer = () => {
 										size='25px'
 									/>
 								</a>
-								<a
-									href='https://github.com/francovanney'
-									target={
-										"_blank"
-									}>
+								<a href='https://github.com/francovanney' target={"_blank"}>
 									<FaGithub
 										className={
 											isDarkTheme
@@ -61,9 +52,7 @@ const Footer = () => {
 								</a>
 								<a
 									href='https://www.behance.net/francovanney'
-									target={
-										"_blank"
-									}>
+									target={"_blank"}>
 									<FaBehance
 										className={
 											isDarkTheme
@@ -75,9 +64,7 @@ const Footer = () => {
 								</a>
 								<a
 									href='https://www.instagram.com/francovanney/'
-									target={
-										"_blank"
-									}>
+									target={"_blank"}>
 									<FaInstagram
 										className={
 											isDarkTheme
@@ -98,27 +85,21 @@ const Footer = () => {
 						<h5 className='mb-3'>Links</h5>
 						<Row>
 							<Col md={12}>
-								<a
-									href='#'
-									className={
-										isDarkTheme
-											? "text-light"
-											: ""
-									}>
-									<HiMail
-										className='mx-2 footer-icon'
-										size='25px'
+								<div
+									className={`d-flex align-items-center ${isDarkTheme ? "text-light" : ""}`}>
+									<CopyButton
+										className='mx-2'
+										size='xs'
+										onClick={() => {
+											navigator.clipboard.writeText("francoavanney@gmail.com");
+										}}
 									/>
 									<a
-										className={
-											isDarkTheme
-												? "text-light"
-												: ""
-										}
+										className={`ml-2 ${isDarkTheme ? "text-light" : ""}`}
 										href='mailto:francoavanney@gmail.com?subject=Contacto%20desde%20porftolio'>
 										francoavanney@gmail.com
 									</a>
-								</a>
+								</div>
 							</Col>
 						</Row>
 					</Col>
@@ -127,17 +108,11 @@ const Footer = () => {
 					<Container className='text-center pt-4'>
 						<Col md={12}>
 							<p>
-								<span>
-									Franco
-									Vanney{" "}
-									{""}
-								</span>
+								<span>Franco Vanney {""}</span>
 							</p>
 							<p>
 								<FaCopyright />
-								<span className='m-2'>
-									{new Date().getFullYear()}
-								</span>
+								<span className='m-2'>{new Date().getFullYear()}</span>
 							</p>
 						</Col>
 					</Container>

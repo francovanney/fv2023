@@ -1,10 +1,20 @@
-import { Container, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { motion } from "framer-motion";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import LanguageContext from "../../../Context/LanguageContext";
 import { useContext } from "react";
+import {
+	Download,
+	Promote,
+	CenterSquare,
+	UserRole,
+	Trophy,
+	GameConsole,
+	DocumentDownload
+} from "@carbon/icons-react";
 import { ThemeContext } from "../../../Context/ThemeContext";
+import { AccordionItem, Button, Accordion } from "@carbon/react";
 
 const pathVariants = {
 	hidden: {
@@ -24,16 +34,19 @@ const pathVariants = {
 
 const AboutMe = () => {
 	const { isDarkTheme } = useContext(ThemeContext);
-	const { texts } = useContext(LanguageContext);
+	const { texts, language } = useContext(LanguageContext);
 	const aboutMeDescription = texts.aboutMeDescription;
 	const paragraphs = aboutMeDescription.split("\n\n");
+
+	const handleButtonClick = () => {
+		window.open(
+			"https://drive.google.com/file/d/1f4gjhvJsG3MuQsDSqOouqPhBx_Lgbe1W/view?usp=sharing",
+			"_blank"
+		);
+	};
 	return (
 		<section
-			className={
-				isDarkTheme
-					? "page-section bg-dark"
-					: "page-section bg-light"
-			}
+			className={isDarkTheme ? "page-section bg-dark" : "page-section bg-light"}
 			id='hola-section'>
 			<Container className='pb-4'>
 				<Row>
@@ -52,22 +65,14 @@ const AboutMe = () => {
 								xml:space='preserve'>
 								<motion.path
 									whileHover={{
-										y: [
-											0,
-											45,
-											0,
-											45,
-											0
-										]
+										y: [0, 45, 0, 45, 0]
 									}}
 									transition={{
 										type: "spring",
 										duration: 2
 									}}
-									variants={
-										pathVariants
-									}
-									fill="var(--FirstColor)" 
+									variants={pathVariants}
+									fill='var(--FirstColor)'
 									opacity='1.000000'
 									stroke='none'
 									d='
@@ -93,57 +98,239 @@ const AboutMe = () => {
 						</h1>
 					</Col>
 					<Col xs={12} sm={12} md={8} xxl={8}>
-						<h2
-							className={
-								isDarkTheme
-									? "text-light mb-2"
-									: "mb-2"
-							}>
+						<h2 className={isDarkTheme ? "text-light mb-2 mx-3" : "mb-2 mx-3"}>
 							{texts.navbarHola}
 							<motion.div
 								style={{
 									display: "inline-block"
 								}}
 								whileHover={{
-									rotate: [
-										0,
-										45,
-										0,
-										45,
-										0
-									]
+									rotate: [0, 45, 0, 45, 0]
 								}}
 								transition={{
 									type: "spring",
 									duration: 2
 								}}>
-								<span>👋</span>
+								<span className='hi-icon'>👋</span>
 							</motion.div>
 						</h2>
-						<div
-							id='text-about'
-							className={
-								isDarkTheme
-									? "text-light mb-2"
-									: "mb-2"
-							}>
-							{paragraphs.map(
-								(
-									paragraph,
-									index
-								) => (
-									<p
-										key={
-											index
-										}
-										className='animate__animated animate__backInRight'>
-										{
-											paragraph
-										}
-									</p>
-								)
+						<div className={isDarkTheme ? "text-light mb-2" : "mb-2"}>
+							{language === "es" ? (
+								<p className='mx-3 text-description'>
+									Mi nombre es Franco Vanney, soy desarrollador front-end y
+									diseñador multidisciplinario. Actualmente resido en la ciudad
+									de Junín, Buenos Aires, Argentina. Me considero un jugador de
+									equipo, curioso, creativo y detallista, apasionado por el
+									proceso creativo.
+								</p>
+							) : (
+								<p className='mx-3 text-description'>
+									My name is Franco Vanney, and I'm a front-end developer and
+									multidisciplinary designer. Currently, I reside in Junín,
+									Buenos Aires, Argentina. I consider myself a team player,
+									curious, creative, and detail-oriented, passionate about the
+									creative process.
+								</p>
 							)}
-							<p className='mt-4 animate__animated animate__backInRight'>
+							<Accordion>
+								<AccordionItem
+									className='acc-item'
+									title={
+										language === "es" ? (
+											<>
+												<Promote /> Perspectiva
+											</>
+										) : (
+											<>
+												<Promote /> Perspective
+											</>
+										)
+									}>
+									{language === "es" ? (
+										<p className='mx-3'>
+											Creo en el poder de la colaboración y la comunicación
+											efectiva como en el trabajo en equipo, valorando distintas
+											perspectivas para crear interfaces de usuario funcionales.
+											Escuchar activamente y resolver problemas en conjunto es
+											clave para lograr soluciones innovadoras y centradas en el
+											usuario.
+										</p>
+									) : (
+										<p className='mx-3'>
+											I believe in the power of collaboration and effective
+											communication in teamwork, valuing different perspectives
+											to create functional user interfaces. Actively listening
+											and solving problems together is key to achieving
+											innovative, user-centered solutions.
+										</p>
+									)}
+								</AccordionItem>
+								<AccordionItem
+									className='acc-item'
+									title={
+										language === "es" ? (
+											<>
+												<CenterSquare /> Foco
+											</>
+										) : (
+											<>
+												<CenterSquare /> Focus
+											</>
+										)
+									}>
+									{language === "es" ? (
+										<p className='mx-3'>
+											La importancia del usuario es mi foco principal como
+											desarrollador de UI. Cada etapa, desde la necesidad, el
+											diseño y posteriormente su desarrollo, asegura productos
+											que satisfacen necesidades, transmiten valores y generan
+											experiencias positivas.
+										</p>
+									) : (
+										<p className='mx-3'>
+											The importance of the user is my primary focus as a UI
+											developer. Each stage, from understanding needs, design,
+											and subsequent development, ensures products that meet
+											needs, convey values, and generate positive experiences.
+										</p>
+									)}
+								</AccordionItem>
+								<AccordionItem
+									className='acc-item'
+									title={
+										language === "es" ? (
+											<>
+												<UserRole /> Rol
+											</>
+										) : (
+											<>
+												<UserRole /> Role
+											</>
+										)
+									}>
+									{language === "es" ? (
+										<p className='mx-3'>
+											Como desarrollador Front-End, mi rol incluye escribir
+											código en diversos lenguajes, idear, planificar y crear
+											elementos visuales atractivos. Valoro la comunicación
+											abierta y efectiva para garantizar que cada componente
+											funcione de manera óptima y se alinee con las expectativas
+											del usuario, incluso teniendo en cuenta a usuarios con
+											discapacidades y haciendo así uso de herramientas de
+											accesibilidad web.
+										</p>
+									) : (
+										<p className='mx-3'>
+											As a Front-End developer, my role includes writing code in
+											various languages, designing, planning, and creating
+											visually appealing elements. I value open and effective
+											communication to ensure that each component functions
+											optimally and aligns with user expectations, including
+											considering users with disabilities and utilizing web
+											accessibility tools.
+										</p>
+									)}
+								</AccordionItem>
+								<AccordionItem
+									className='acc-item'
+									title={
+										language === "es" ? (
+											<>
+												<Trophy /> Metas
+											</>
+										) : (
+											<>
+												<Trophy /> Goals
+											</>
+										)
+									}>
+									{language === "es" ? (
+										<p className='mx-3'>
+											Mi objetivo es aprender algo nuevo cada día, ampliando mis
+											conocimientos y habilidades. Estoy comprometido con el
+											crecimiento continuo tanto a nivel personal como
+											profesional, y busco constantemente mejorar mis
+											capacidades para ofrecer productos de alta calidad y
+											experiencias de usuario excepcionales.
+										</p>
+									) : (
+										<p className='mx-3'>
+											My goal is to learn something new every day, expanding my
+											knowledge and skills. I am committed to continuous growth
+											both personally and professionally, constantly seeking to
+											enhance my abilities to deliver high-quality products and
+											exceptional user experiences.
+										</p>
+									)}
+								</AccordionItem>
+								<AccordionItem
+									className='acc-item'
+									title={
+										language === "es" ? (
+											<>
+												<GameConsole /> Hobbies
+											</>
+										) : (
+											<>
+												<GameConsole /> Hobbies
+											</>
+										)
+									}>
+									{language === "es" ? (
+										<p className='mx-3'>
+											Disfruto andar en bicicleta, explorando nuevos paisajes y
+											sintiendo la libertad que ofrece cada pedaleo. Además,
+											toco la guitarra para conectar con la música y la
+											creatividad. También me apasiona diseñar contenidos en
+											vivo para eventos sociales y trabajar como iluminador de
+											shows, creando experiencias visuales únicas que realzan la
+											atmósfera de cada evento.
+										</p>
+									) : (
+										<p className='mx-3'>
+											I enjoy cycling, exploring new landscapes and feeling the
+											freedom that each pedal brings. Additionally, I play the
+											guitar to connect with music and creativity. I'm also
+											passionate about designing live content for social events
+											and working as a show lighting designer, creating unique
+											visual experiences that enhance the atmosphere of each
+											event.
+										</p>
+									)}
+								</AccordionItem>
+								<AccordionItem
+									className='acc-item'
+									title={
+										language === "es" ? (
+											<>
+												<DocumentDownload /> Cv
+											</>
+										) : (
+											<>
+												<DocumentDownload /> Cv
+											</>
+										)
+									}>
+									<Container>
+										<Button
+											onClick={handleButtonClick}
+											aria-label='download'
+											tooltipPosition='right'
+											hasIconOnly
+											iconDescription='Download'>
+											<Download size={18} />
+										</Button>
+									</Container>
+								</AccordionItem>
+							</Accordion>
+							{/* {paragraphs.map((paragraph, index) => (
+								<p
+									key={index}
+									className='animate__animated animate__backInRight'>
+									{paragraph}
+								</p>
+							))} */}
+							<p className='mt-4 animate__animated animate__backInRight mx-3 text-description'>
 								{texts.thanks}
 							</p>
 						</div>
@@ -154,48 +341,6 @@ const AboutMe = () => {
 										texts.downloadCV
 									}
 								</h4> */}
-								<Container className='d-flex justify-content-around'>
-									{texts.downloadCV ===
-									"CV" ? (
-										<motion.button
-											id='button-cv'
-											whileHover={{
-												scale: 1.1
-											}}
-											whileTap={{
-												scale: 0.9
-											}}>
-											<a
-												target={
-													"_blank"
-												}
-												className='link-cv'
-												href='https://drive.google.com/file/d/1th348wsLQbuLvT7mS1n6jPDQPt9GAQzv/view?usp=sharing'>
-												DESCARGAR
-												CV
-											</a>
-										</motion.button>
-									) : (
-										<motion.button
-											id='button-cv'
-											whileHover={{
-												scale: 1.1
-											}}
-											whileTap={{
-												scale: 0.9
-											}}>
-											<a
-												target={
-													"_blank"
-												}
-												className='link-cv'
-												href='https://drive.google.com/file/d/1sOnhdbHWdsbFI3PdpyuxElNp0mzXVbAl/view?usp=sharing'>
-												DOWNLOAD
-												RESUME
-											</a>
-										</motion.button>
-									)}
-								</Container>
 							</Row>
 						</Container>
 					</Col>
@@ -213,7 +358,7 @@ const AboutMe = () => {
 								enable-background='new 0 0 980 556'
 								xml:space='preserve'>
 								<path
-									fill="var(--FirstColor)" 
+									fill='var(--FirstColor)'
 									opacity='1.000000'
 									stroke='none'
 									d='
@@ -241,11 +386,7 @@ const AboutMe = () => {
 								z'
 								/>
 								<path
-									fill={
-										isDarkTheme
-											? "#FFFFFF"
-											: "#c2c2c2"
-									}
+									fill={isDarkTheme ? "#FFFFFF" : "#c2c2c2"}
 									opacity='1.000000'
 									stroke='none'
 									d='

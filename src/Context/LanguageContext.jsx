@@ -12,22 +12,19 @@ const LanguageProvider = ({ children }) => {
 	const [texts, setTexts] = useState(translations[language]);
 
 	const handleLanguage = (e) => {
-		//console.log(e.target.value);
-		const Switch = e.value;
-		if (Switch === "es") {
+		const Switch = e.name;
+		if (Switch === "ESP") {
 			setLanguage("es");
 			setTexts(translations.es);
 		} else {
-			setLanguage("en");
+			setLanguage("ENG");
 			setTexts(translations.en);
 		}
 	};
 
-	const data = { texts, handleLanguage };
+	const data = { texts, handleLanguage, language };
 	return (
-		<LanguageContext.Provider value={data}>
-			{children}
-		</LanguageContext.Provider>
+		<LanguageContext.Provider value={data}>{children}</LanguageContext.Provider>
 	);
 };
 
