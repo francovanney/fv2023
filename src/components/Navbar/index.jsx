@@ -66,9 +66,7 @@ const NavigationBar = () => {
 					rect.top <= 200 &&
 					rect.bottom > 200 &&
 					rect.bottom <=
-						(window.innerHeight ||
-							document.documentElement
-								.clientHeight)
+						(window.innerHeight || document.documentElement.clientHeight)
 				) {
 					setActive(section.id);
 				}
@@ -103,10 +101,7 @@ const NavigationBar = () => {
 
 		return () => {
 			window.removeEventListener("resize", handleResize);
-			document.removeEventListener(
-				"click",
-				handleOutsideClick
-			);
+			document.removeEventListener("click", handleOutsideClick);
 		};
 	}, [expanded]);
 
@@ -117,10 +112,7 @@ const NavigationBar = () => {
 	};
 
 	const handleColorChange = (color) => {
-		document.documentElement.style.setProperty(
-			"--FirstColor",
-			color
-		);
+		document.documentElement.style.setProperty("--FirstColor", color);
 	};
 
 	return (
@@ -128,33 +120,17 @@ const NavigationBar = () => {
 			id='navbar'
 			bg={isDarkTheme ? "dark" : "light"}
 			expand='lg'
-			className={
-				isMobile && expanded
-					? "mobile-menu-open"
-					: "fixed-top"
-			}>
+			className={isMobile && expanded ? "mobile-menu-open" : "fixed-top"}>
 			{isMobile ? (
 				<Container className='d-flex justify-content-between align-items-center'>
 					<img
-						src={
-							isDarkTheme
-								? logoLight
-								: logoDark
-						}
+						src={isDarkTheme ? logoLight : logoDark}
 						width={35}
 						id='FVLogo'
-						className={`ml-2 ${
-							isMobile
-								? "mr-auto"
-								: ""
-						}`}
+						className={`ml-2 ${isMobile ? "mr-auto" : ""}`}
 					/>
 					<label
-						className={`switch-container ${
-							isMobile
-								? "mx-auto"
-								: "ml-2"
-						}`}>
+						className={`switch-container ${isMobile ? "mx-auto" : "ml-2"}`}>
 						<input
 							type='checkbox'
 							checked={isDarkTheme}
@@ -165,18 +141,10 @@ const NavigationBar = () => {
 					{isMobile && (
 						<div className='hamburger-wrapper'>
 							<Hamburger
-								color={
-									isDarkTheme
-										? "white"
-										: "black"
-								}
+								color={isDarkTheme ? "white" : "black"}
 								size={20}
-								toggled={
-									expanded
-								}
-								toggle={
-									handleToggle
-								}
+								toggled={expanded}
+								toggle={handleToggle}
 							/>
 						</div>
 					)}
@@ -184,11 +152,7 @@ const NavigationBar = () => {
 			) : (
 				<Container className='d-flex justify-content-end align-items-center'>
 					<img
-						src={
-							isDarkTheme
-								? logoLight
-								: logoDark
-						}
+						src={isDarkTheme ? logoLight : logoDark}
 						width={35}
 						id='FVLogo'
 						className='ml-2'
@@ -226,11 +190,7 @@ const NavigationBar = () => {
 					</div> */}
 
 					<label
-						className={
-							isMobile
-								? "switch-container"
-								: "ml-2 switch-container"
-						}>
+						className={isMobile ? "switch-container" : "ml-2 switch-container"}>
 						<input
 							type='checkbox'
 							checked={isDarkTheme}
@@ -243,117 +203,75 @@ const NavigationBar = () => {
 						className='justify-content-end'>
 						<Nav
 							className={
-								isDarkTheme
-									? "bg-dark text-light ml-auto"
-									: "bg-light ml-auto"
+								isDarkTheme ? "bg-dark text-light ml-auto" : "bg-light ml-auto"
 							}>
 							<Nav.Item
 								onClick={() => {
 									handleLinkClick();
-									setSection(
-										"header-section"
-									);
+									setSection("header-section");
 								}}
 								className={`links-desktop${
-									active ===
-									"header-section"
-										? " active"
-										: ""
+									active === "header-section" ? " active" : ""
 								} ${
-									isDarkTheme
-										? "links-desktop-dark"
-										: "links-desktop-light"
+									isDarkTheme ? "links-desktop-dark" : "links-desktop-light"
 								}`}
 								role='button'
 								tabIndex={0}>
-								{
-									texts.navbarHome
-								}
+								{texts.navbarHome}
 							</Nav.Item>
 							<Nav.Item
 								onClick={() => {
 									handleLinkClick();
-									setSection(
-										"hola-section"
-									);
+									setSection("hola-section");
 								}}
 								className={`links-desktop${
-									active ===
-									"hola-section"
-										? " active"
-										: ""
+									active === "hola-section" ? " active" : ""
 								}`}
 								role='button'
 								tabIndex={0}>
-								{
-									texts.navbarHola
-								}
+								{texts.navbarHola}
+							</Nav.Item>
+							{/* 							<Nav.Item
+								onClick={() => {
+									handleLinkClick();
+									setSection("skills-section");
+								}}
+								className={`links-desktop${
+									active === "skills-section" ? " active" : ""
+								}`}
+								role='button'
+								tabIndex={0}>
+								{texts.navbarSkills}
+							</Nav.Item> */}
+							<Nav.Item
+								onClick={() => {
+									handleLinkClick();
+									setSection("experience-section");
+								}}
+								className={`links-desktop${
+									active === "experience-section" ? " active" : ""
+								}`}
+								role='button'
+								tabIndex={0}>
+								{texts.navbarExperience}
 							</Nav.Item>
 							<Nav.Item
 								onClick={() => {
 									handleLinkClick();
-									setSection(
-										"skills-section"
-									);
+									setSection("contact-section");
 								}}
 								className={`links-desktop${
-									active ===
-									"skills-section"
-										? " active"
-										: ""
+									active === "contact-section" ? " active" : ""
 								}`}
 								role='button'
 								tabIndex={0}>
-								{
-									texts.navbarSkills
-								}
-							</Nav.Item>
-							<Nav.Item
-								onClick={() => {
-									handleLinkClick();
-									setSection(
-										"experience-section"
-									);
-								}}
-								className={`links-desktop${
-									active ===
-									"experience-section"
-										? " active"
-										: ""
-								}`}
-								role='button'
-								tabIndex={0}>
-								{
-									texts.navbarExperience
-								}
-							</Nav.Item>
-							<Nav.Item
-								onClick={() => {
-									handleLinkClick();
-									setSection(
-										"contact-section"
-									);
-								}}
-								className={`links-desktop${
-									active ===
-									"contact-section"
-										? " active"
-										: ""
-								}`}
-								role='button'
-								tabIndex={0}>
-								{
-									texts.navbarContact
-								}
+								{texts.navbarContact}
 							</Nav.Item>
 						</Nav>
 					</Navbar.Collapse>
 				</Container>
 			)}
-			<motion.div
-				className='progress-bar'
-				style={{ scaleX }}
-			/>
+			<motion.div className='progress-bar' style={{ scaleX }} />
 			{isMobile && (
 				<Navbar.Collapse
 					id='basic-navbar-nav'
@@ -362,34 +280,24 @@ const NavigationBar = () => {
 						<Nav.Item
 							onClick={() => {
 								handleLinkClick();
-								setSection(
-									"header-section"
-								);
+								setSection("header-section");
 							}}
 							className={`links-mobile mt-2${
-								active ===
-								"header-section"
-									? " active"
-									: ""
+								active === "header-section" ? " active" : ""
 							}`}>
 							{texts.navbarHome}
 						</Nav.Item>
 						<Nav.Item
 							onClick={() => {
 								handleLinkClick();
-								setSection(
-									"hola-section"
-								);
+								setSection("hola-section");
 							}}
 							className={`links-mobile mt-2${
-								active ===
-								"hola-section"
-									? " active"
-									: ""
+								active === "hola-section" ? " active" : ""
 							}`}>
 							{texts.navbarHola}
 						</Nav.Item>
-						<Nav.Item
+						{/* 						<Nav.Item
 							onClick={() => {
 								handleLinkClick();
 								setSection(
@@ -403,34 +311,24 @@ const NavigationBar = () => {
 									: ""
 							}`}>
 							{texts.navbarSkills}
-						</Nav.Item>
+						</Nav.Item> */}
 						<Nav.Item
 							onClick={() => {
 								handleLinkClick();
-								setSection(
-									"experience-section"
-								);
+								setSection("experience-section");
 							}}
 							className={`links-mobile mt-2${
-								active ===
-								"experience-section"
-									? " active"
-									: ""
+								active === "experience-section" ? " active" : ""
 							}`}>
 							{texts.navbarExperience}
 						</Nav.Item>
 						<Nav.Item
 							onClick={() => {
 								handleLinkClick();
-								setSection(
-									"contact-section"
-								);
+								setSection("contact-section");
 							}}
 							className={`links-mobile mt-2${
-								active ===
-								"contact-section"
-									? " active"
-									: ""
+								active === "contact-section" ? " active" : ""
 							}`}>
 							{texts.navbarContact}
 						</Nav.Item>

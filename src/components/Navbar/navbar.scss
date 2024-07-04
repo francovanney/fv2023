@@ -10,6 +10,7 @@
 
 /* Estilos para el texto de los enlaces activos en dispositivos de escritorio */
 .links-desktop.active {
+  font-weight: 700 !important;
   color: var(--FirstColor);
 }
 
@@ -36,10 +37,14 @@
   background-color: #f8f9fa;
   align-items: center;
   gap: 5vh;
-  background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
-  color: black; /* Texto en negro */
-  position: relative; /* Asegura que la posición de los elementos sea relativa */
-  z-index: 1; /* Asegura que el Navbar esté sobre la imagen de fondo */
+  background-color: rgba(255, 255, 255, 0.7);
+  /* Fondo blanco semi-transparente */
+  color: black;
+  /* Texto en negro */
+  position: relative;
+  /* Asegura que la posición de los elementos sea relativa */
+  z-index: 1;
+  /* Asegura que el Navbar esté sobre la imagen de fondo */
 }
 
 /* Estilos adicionales para el primer hijo solo en dispositivos móviles */
@@ -55,6 +60,7 @@
     padding-bottom: 20px;
   }
 }
+
 .navbar-nav strong {
   font-size: 20px;
 }
@@ -157,11 +163,11 @@
   transition: transform 0.5s, box-shadow 0.5s;
 }
 
-.switch-container input:checked + .slider {
+.switch-container input:checked+.slider {
   background-color: #000;
 }
 
-.switch-container input:checked + .slider:before {
+.switch-container input:checked+.slider:before {
   transform: translateX(100%);
   box-shadow: inset 8px -4px 0px 0px #000000;
 }

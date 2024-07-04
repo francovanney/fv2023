@@ -1,6 +1,7 @@
-html, body {
+/* html,
+body {
     font-family: var(--Main-Font);
-}
+} */
 
 .page-section {
     min-height: 50vh;
@@ -10,40 +11,50 @@ html, body {
     //max-height: 50vh;
 }
 
+.bg-light {
+    background-color: #efefef !important;
+}
+
 li {
     list-style: none;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     margin: 0 !important;
     padding: 0 !important;
 }
 
-Button {
-    color: var(--WhiteColor)  !important;
+/* Button {
+    color: var(--WhiteColor) !important;
     background-color: var(--FirstColor) !important;
     border: none !important;
+
     &:hover {
         opacity: 0.8;
         transition: opacity .3s ease-in-out;
     }
 }
-
+ */
 #button-custom {
     padding: .75em 1.5em;
     border-radius: 15px;
     width: 100%;
 }
 
-#button-cv {
+/* #button-cv {
     padding: .75em 1.5em;
     border-radius: 15px;
-}
+} */
 
 .custom-icon {
     color: var(--FirstColor) !important;
+
     &:hover {
-        color: var(--BlackColor) !important;
+        color: #979797 !important;
         transition: all .2s !important;
     }
 }
@@ -53,18 +64,3 @@ Button {
     /* Aplica la opacidad a través de rgba() con la variable de color */
     box-shadow: 0 0 0 0.25rem rgba(var(--FirstColor), 0.25) !important;
 }
-
-.red {
-    background-color: #FF0000 !important;
-    color: #FFFFFF; /* Color del texto para resaltar sobre el fondo rojo */
-  }
-  
-  .green {
-    background-color: #00FF00 !important;
-    color: #000000; /* Color del texto para resaltar sobre el fondo verde */
-  }
-  
-  .blue {
-    background-color: #0000FF !important;
-    color: #FFFFFF; /* Color del texto para resaltar sobre el fondo azul */
-  }

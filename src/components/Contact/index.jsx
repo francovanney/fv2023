@@ -1,12 +1,13 @@
 import { Container, Modal } from "react-bootstrap";
 import { Formik, Form, Field, FastField } from "formik";
 import * as Yup from "yup";
-import { Button, Form as BootstrapForm, Row, Col } from "react-bootstrap";
+import { Form as BootstrapForm, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useContext, useState } from "react";
 import emailjs from "emailjs-com";
 import LanguageContext from "../../Context/LanguageContext";
 import { ThemeContext } from "../../Context/ThemeContext";
+import { FormGroup, Stack, TextArea, TextInput, Button } from "@carbon/react";
 
 const validationSchema = Yup.object().shape({
 	name: Yup.string().required("This is a required field"),
@@ -20,40 +21,25 @@ const Contact = () => {
 	const { isDarkTheme } = useContext(ThemeContext);
 
 	function sendForm(values) {
-		emailjs.send(
-			"service_v1a6wdt",
-			"template_6wsp1e5",
-			values,
-			"t5VRn93ztSrrfLBVy"
-		).then(
-			(result) => {
-				setShowModal(true);
-			},
-			(error) => {
-				console.log(
-					"Error al enviar formulario",
-					error.text
-				);
-			}
-		);
+		emailjs
+			.send("service_v1a6wdt", "template_6wsp1e5", values, "t5VRn93ztSrrfLBVy")
+			.then(
+				(result) => {
+					setShowModal(true);
+				},
+				(error) => {
+					console.log("Error al enviar formulario", error.text);
+				}
+			);
 	}
 
 	return (
 		<section
-			className={
-				isDarkTheme
-					? "page-section bg-dark"
-					: "page-section bg-light"
-			}
+			className={isDarkTheme ? "page-section bg-dark" : "page-section bg-light"}
 			id='contact-section'>
 			<Container className='container mt-4'>
 				<Container className='mb-4'>
-					<h1
-						className={
-							isDarkTheme
-								? "text-light"
-								: ""
-						}>
+					<h1 className={isDarkTheme ? "text-light" : ""}>
 						{texts.navbarContact}
 					</h1>
 				</Container>
@@ -64,23 +50,22 @@ const Contact = () => {
 							company: "",
 							message: ""
 						}}
-						validationSchema={
-							validationSchema
-						}
-						onSubmit={(
-							values,
-							{ resetForm }
-						) => {
+						validationSchema={validationSchema}
+						onSubmit={(values, { resetForm }) => {
 							sendForm(values);
 							resetForm();
 						}}>
-						{({
-							errors,
-							touched,
-							isSubmitting
-						}) => (
+						{({ errors, touched, isSubmitting }) => (
 							<Container>
-								<Form>
+								<FormGroup>
+									<Stack gap={7}>
+										<TextInput id='one' labelText='Name' />
+										<TextInput id='two' labelText='Subjet' />
+										<TextArea placeholder='Write here'></TextArea>
+										<Button>Submit</Button>
+									</Stack>
+								</FormGroup>
+								{/* 								<Form>
 									<Row>
 										<Col
 											md={
@@ -222,33 +207,19 @@ const Contact = () => {
 											? "ENVIAR"
 											: "SEND"}
 									</motion.button>
-								</Form>
+								</Form> */}
 							</Container>
 						)}
 					</Formik>
 				</Container>
 			</Container>
 			{showModal && (
-				<Modal
-					show={showModal}
-					centered
-					onHide={() => setShowModal(false)}>
-					<Modal.Header
-						closeButton></Modal.Header>
-					<Modal.Body>
-						{texts.modalSuccessMessage}
-					</Modal.Body>
+				<Modal show={showModal} centered onHide={() => setShowModal(false)}>
+					<Modal.Header closeButton></Modal.Header>
+					<Modal.Body>{texts.modalSuccessMessage}</Modal.Body>
 					<Modal.Footer>
-						<Button
-							onClick={() =>
-								setShowModal(
-									false
-								)
-							}>
-							{texts.projectsButton ===
-							"es"
-								? "Cerrar"
-								: "Close"}
+						<Button onClick={() => setShowModal(false)}>
+							{texts.projectsButton === "es" ? "Cerrar" : "Close"}
 						</Button>
 					</Modal.Footer>
 				</Modal>

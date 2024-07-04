@@ -11,6 +11,7 @@ import Select from "react-select";
 import ReactCountryFlag from "react-country-flag";
 import { languageParsed } from "../../../Context/LanguageContext";
 import { useMediaQuery } from "react-responsive";
+import { ContentSwitcher, Switch } from "@carbon/react";
 
 const labelEn = (
 	<ReactCountryFlag
@@ -41,6 +42,10 @@ const languageOptions = [
 	{ value: "es", label: labelEs }
 ];
 
+const handleLanguage = (selectedName) => {
+	console.log(selectedName);
+};
+
 const headerVariants = {
 	light: {
 		backgroundColor: "transparent",
@@ -62,14 +67,10 @@ const Header = () => {
 		<Parallax strength={400}>
 			<Background
 				className={`${
-					isDarkTheme
-						? "custom-bg-dark"
-						: "custom-bg-light"
+					isDarkTheme ? "custom-bg-dark" : "custom-bg-light"
 				}`}></Background>
 			<motion.section
-				className={`page-section header ${
-					isDarkTheme ? "" : "light-theme"
-				}`}
+				className={`page-section header ${isDarkTheme ? "" : "light-theme"}`}
 				initial={isDarkTheme ? "dark" : "light"}
 				animate={isDarkTheme ? "dark" : "light"}
 				variants={headerVariants}
@@ -77,84 +78,46 @@ const Header = () => {
 				<Container>
 					<Row className='animate__animated animate__fadeInDown'>
 						<Col md={8}>
-							<h1 id='title'>
-								FRANCO VANNEY
-							</h1>
-							<h6 id='subtitle'>
-								{
-									texts.description
-								}
-							</h6>
+							<h1 id='title'>FRANCO VANNEY</h1>
+							<h6 id='subtitle'>{texts.description}</h6>
 							<Row className='mt-3'>
 								<Col md={12}>
 									<a
 										href='https://www.linkedin.com/in/franco-vanney-0b9273a1/'
 										target='_blank'>
-										<FaLinkedin
-											className='mx-1 custom-icon'
-											size={
-												iconSize
-											}
-										/>
+										<FaLinkedin className='mx-1 custom-icon' size={iconSize} />
 									</a>
-									<a
-										href='https://github.com/francovanney'
-										target='_blank'>
-										<FaGithub
-											className='mx-2 custom-icon'
-											size={
-												iconSize
-											}
-										/>
+									<a href='https://github.com/francovanney' target='_blank'>
+										<FaGithub className='mx-2 custom-icon' size={iconSize} />
 									</a>
 									<a
 										href='https://www.behance.net/francovanney'
 										target='_blank'>
-										<FaBehance
-											className='mx-2 custom-icon'
-											size={
-												iconSize
-											}
-										/>
+										<FaBehance className='mx-2 custom-icon' size={iconSize} />
 									</a>
 									<a
 										href='https://www.instagram.com/francovanney/'
 										target='_blank'>
-										<FaInstagram
-											className='mx-2 custom-icon'
-											size={
-												iconSize
-											}
-										/>
+										<FaInstagram className='mx-2 custom-icon' size={iconSize} />
 									</a>
 								</Col>
 							</Row>
 							<Row>
-								<Col
-									id='col-select'
-									xs={12}
-									md={12}
-									lg={9}>
-									<p>
-										{
-											texts.language
-										}
-									</p>
-									<Select
-										placeholder={
-											languageParsed ===
-											"es"
-												? labelEs
-												: labelEn
-										}
+								<Col id='col-select' xs={12} md={12} lg={9}>
+									<p>{texts.language}</p>
+									<ContentSwitcher
+										className='lang-container'
+										onChange={handleLanguage}>
+										<Switch name='ENG' text='English' />
+										<Switch name='ESP' text='Español' />
+									</ContentSwitcher>
+
+									{/* 									<Select
+										placeholder={languageParsed === "es" ? labelEs : labelEn}
 										id='select'
-										options={
-											languageOptions
-										}
-										onChange={
-											handleLanguage
-										}
-									/>
+										options={languageOptions}
+										onChange={handleLanguage}
+									/> */}
 								</Col>
 							</Row>
 						</Col>

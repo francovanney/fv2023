@@ -1,6 +1,3 @@
-#text-about {
-    font-weight: 200;
-}
 span {
     cursor: pointer;
 }
@@ -27,12 +24,20 @@ span {
 }
 
 
-.accordion-header {
-    > button {
-        background-color: var(--PrimaryColor);
-        
+.acc-item {
+    >button {
         &:focus {
             box-shadow: none;
         }
     }
+}
+
+.text-description {
+    font-size: .95em !important;
+    font-weight: 900 !important;
+}
+
+
+.hi-icon {
+    cursor: default;
 }
