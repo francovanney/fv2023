@@ -255,7 +255,7 @@ const NavigationBar = () => {
 								tabIndex={0}>
 								{texts.navbarExperience}
 							</Nav.Item>
-							<Nav.Item
+							{/* 							<Nav.Item
 								onClick={() => {
 									handleLinkClick();
 									setSection("contact-section");
@@ -266,7 +266,7 @@ const NavigationBar = () => {
 								role='button'
 								tabIndex={0}>
 								{texts.navbarContact}
-							</Nav.Item>
+							</Nav.Item> */}
 						</Nav>
 					</Navbar.Collapse>
 				</Container>

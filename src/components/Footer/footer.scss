@@ -43,3 +43,11 @@ a {
     text-decoration: none !important;
     font-weight: 300 !important;
 }
+
+.copy-icon {
+    background-color: transparent !important;
+
+    &:hover {
+        opacity: .5 !important;
+    }
+}

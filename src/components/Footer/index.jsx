@@ -88,7 +88,7 @@ const Footer = () => {
 								<div
 									className={`d-flex align-items-center ${isDarkTheme ? "text-light" : ""}`}>
 									<CopyButton
-										className='mx-2'
+										className='mx-2 copy-icon'
 										size='xs'
 										onClick={() => {
 											navigator.clipboard.writeText("francoavanney@gmail.com");
