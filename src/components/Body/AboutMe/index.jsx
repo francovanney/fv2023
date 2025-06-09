@@ -39,10 +39,15 @@ const AboutMe = () => {
 	const paragraphs = aboutMeDescription.split("\n\n");
 
 	const handleButtonClick = () => {
-		window.open(
-			"https://drive.google.com/file/d/1f4gjhvJsG3MuQsDSqOouqPhBx_Lgbe1W/view?usp=sharing",
-			"_blank"
-		);
+		language === "es"
+			? window.open(
+					"https://drive.google.com/file/d/1eSDkdu-cjzLbsjYpOzABzdfpDbFccwNl/view?usp=sharing",
+					"_blank"
+				)
+			: window.open(
+					"https://drive.google.com/file/d/1PIX7LIpAC0F7jaJEX3RGToh7l1JelP2I/view?usp=sharing",
+					"_blank"
+				);
 	};
 	return (
 		<section

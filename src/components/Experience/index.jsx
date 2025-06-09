@@ -50,13 +50,91 @@ function Experience() {
 								color: "#fff"
 							}}
 							icon={<BiCodeAlt />}>
-							<h3 className='vertical-timeline-element-title'>Avenga</h3>
+							<h3 className='vertical-timeline-element-title mb-2'>Avenga</h3>
 							{/* <h5 className='vertical-timeline-element-'>Powered by Avenga</h5> */}
 							<h6 className='mt-1'>
 								{language === "es"
 									? "Avenga es una empresa de software que opera en USA, América Latina y Europa"
 									: "Avenga is a software company running operations across the US, Latin America & Europe."}
 							</h6>
+
+							<h4 className='vertical-timeline-element-subtitle pt-2'>
+								Emergencias | International Healt Services
+							</h4>
+							<p className='text-description'>
+								{language === "es"
+									? "Desarrollo de una plataforma web integral para la gestión operativa y logística de emergencias sanitarias, centrada en la planificación y control de viajes, equipos, suministros y personal. El sistema permite la administración de horarios de viaje, asignación de recursos, gestión de listas de verificación, seguimiento de vehículos y control de vencimientos, optimizando la coordinación y trazabilidad en las operaciones. La plataforma fue diseñada para trabajar en paralelo con una aplicación móvil, permitiendo la sincronización de datos en tiempo real entre las operaciones de campo y el sistema central, asegurando consistencia e información actualizada en todos los dispositivos."
+									: "Development of a comprehensive web platform for the operational anD logistical management of health emergencies, focused on the planning and control of trips, teams, supplies, and personnel. The system enables the administration of travel schedules, resource allocation, checklist management, vehicle tracking, and expiration control, optimizing coordination and traceability across operations. The platform was designed to work in parallel with a mobile app, allowing real-time data synchronization between field operations and the central system, ensuring consistency and up-to-date information across all devices."}
+							</p>
+							<p className='text-description'>
+								<ul className='list-experience'>
+									<li>
+										React, TypeScript, Vite, React Hook Form, React Router,
+										TanStack Query (React Query), Tailwind CSS.
+									</li>
+
+									{language === "es" ? (
+										<li>
+											Arquitectura de componentes: Uso extensivo de componentes
+											reutilizables y patrones de diseño atómico (átomos,
+											moléculas, organismos).
+										</li>
+									) : (
+										<li>
+											Component architecture: Extensive use of reusable
+											components and atomic design patterns (atoms, molecules,
+											organisms).
+										</li>
+									)}
+									{language === "es" ? (
+										<li>
+											Estado y gestión de datos: Contexto de React, hooks
+											personalizados y stores adaptados.
+										</li>
+									) : (
+										<li>
+											State management: React Context, custom hooks, and
+											tailored stores.{" "}
+										</li>
+									)}
+
+									{language === "es" ? (
+										<li>
+											Integración de API: Servicios RESTful consumidos a través
+											de hooks, con manejo asíncrono mediante React Query.
+										</li>
+									) : (
+										<li>
+											API integration: RESTful services consumed through hooks,
+											with asynchronous handling via React Query.{" "}
+										</li>
+									)}
+									{language === "es" ? (
+										<li>
+											Testing y calidad de código: Eslint, prácticas de tipado
+											fuerte y validación robusta de formularios.
+										</li>
+									) : (
+										<li>
+											Testing and code quality: Eslint, strong typing practices,
+											and robust form validation.
+										</li>
+									)}
+									{language === "es" ? (
+										<li>
+											Metodologia de trabajo: Desarrollo ágil, colaboración en
+											equipos multifuncionales, control de versiones con Git y
+											GitHub, revisiones de código y despliegue continuo.
+										</li>
+									) : (
+										<li>
+											Work methodologies: Agile development, cross-functional
+											team collaboration, version control with Git and GitHub,
+											code reviews, and continuous deployment.
+										</li>
+									)}
+								</ul>
+							</p>
 
 							<h4 className='vertical-timeline-element-subtitle pt-2'>
 								Accenture
