@@ -1,5 +1,6 @@
 #title {
-  font-size: 4.2rem;
+  font-family: var(--Font-Body);
+  font-size: var(--fs-hero);
   margin: 0px 0px;
   color: transparent;
   font-weight: 800;
@@ -13,13 +14,17 @@
 }
 
 #subtitle {
-  font-size: 2rem;
+  font-family: var(--Font-Body);
+  font-size: var(--fs-h3);
+  font-weight: 300;
+  letter-spacing: var(--ls-wide);
+  opacity: 0.85;
 }
 
 #header-section {
   min-height: 40vh;
   padding-top: 120px;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
   width: 100%;
 }
 
@@ -181,11 +186,28 @@
 }
 
 .lang-container {
-  width: 50%;
+  width: auto;
+  min-width: 280px;
+  font-family: var(--Font-Display) !important;
 
   &>button {
+    font-family: var(--Font-Display) !important;
+    font-size: var(--fs-small);
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    padding: var(--space-sm) var(--space-lg);
+
     &:focus {
       box-shadow: none;
     }
+
+    span {
+      font-family: var(--Font-Display) !important;
+    }
+  }
+
+  .cds--content-switcher-btn,
+  .cds--content-switcher__btn {
+    font-family: var(--Font-Display) !important;
   }
 }

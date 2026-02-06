@@ -19,17 +19,21 @@
 }
 
 .form-background-dark {
+    font-family: var(--Font-Body);
     color: rgba(255, 255, 255, 0.90);
     background-color: #313131;
+
     &:focus {
         background-color: #313131;
         color: rgba(255, 255, 255, 0.90);
     }
+
     &::placeholder {
         color: rgba(255, 255, 255, 0.90);
     }
 }
 
 .form-background-light {
+    font-family: var(--Font-Body);
     background-color: #fff;
 }

@@ -15,6 +15,8 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "@carbon/icons-react";
 import Agencia2222 from "../../assets/Proyects/2222page.jpg";
 import DaleArg from "../../assets/Proyects/daleArg.jpg";
+import UnPlan from "../../assets/Proyects/unpplan.jpg";
+import BuenRollo from "../../assets/Proyects/buenrollo.jpg";
 import TRT from "../../assets/Proyects/TRT.jpg";
 import LanguageContext from "../../Context/LanguageContext";
 import { ThemeContext } from "../../Context/ThemeContext";
@@ -54,9 +56,102 @@ function Experience() {
 							{/* <h5 className='vertical-timeline-element-'>Powered by Avenga</h5> */}
 							<h6 className='mt-1'>
 								{language === "es"
-									? "Avenga es una empresa de software que opera en USA, América Latina y Europa"
-									: "Avenga is a software company running operations across the US, Latin America & Europe."}
+									? "Avenga es una compañía global de ingeniería de software y transformación digital con más de 30 años de experiencia, 6,000+ expertos tecnológicos y presencia en 44 ubicaciones."
+									: "Avenga is a global software engineering and digital transformation company with over 30 years of experience, 6,000+ technology experts, and presence across 44 locations."}
 							</h6>
+
+							<h4 className='vertical-timeline-element-subtitle pt-2'>
+								Nexbit Platform
+							</h4>
+							<p className='text-description'>
+								{language === "es"
+									? "Contribuí al desarrollo de una plataforma web empresarial integral multi-módulo para automatización de marketing omnicanal e inteligencia de audiencias. El sistema integra tres módulos principales: NotifyBit (gestión de comunicaciones multicanal - Email, Push Notifications, WhatsApp - con creación de plantillas, programación, flujos de autorización y seguimiento de entregas), SegBit/Tokin (plataforma avanzada de segmentación de audiencias y análisis usando RFM, métricas de comportamiento del cliente y filtrado geográfico POI), y MarketMinds (integración para gestión de audiencias físicas y virtuales con métricas de ventas dinámicas y categorización de productos). La plataforma permite a los equipos de marketing crear campañas segmentadas combinando segmentación conductual con entrega de mensajes multicanal."
+									: "I contributed to the development of a comprehensive multi-module enterprise web platform for omnichannel marketing automation and audience intelligence. The system integrates three main modules: NotifyBit (multi-channel communication management - Email, Push Notifications, WhatsApp - with template creation, scheduling, authorization workflows, and delivery tracking), SegBit/Tokin (advanced audience segmentation and analytics platform using RFM analysis, customer behavior metrics, and geographic POI filtering), and MarketMinds (integration for physical and virtual audience management with dynamic sales metrics and product categorization). The platform enables marketing teams to create targeted campaigns by combining behavioral segmentation with multi-channel message delivery."}
+							</p>
+							<p className='text-description'>
+								<ul className='list-experience'>
+									<li>
+										React 18, TypeScript, Vite, React Hook Form, React Router,
+										TanStack Query, Tailwind CSS, Redux Toolkit, Zustand.
+									</li>
+									{language === "es" ? (
+										<li>
+											Arquitectura de componentes: Diseño UI modular con Radix
+											UI, Headless UI, componentes reutilizables siguiendo
+											patrones de diseño atómico y sistema de diseño unificado.
+										</li>
+									) : (
+										<li>
+											Component architecture: Modular UI design with Radix UI
+											primitives, Headless UI, custom reusable components
+											following atomic design patterns, and a unified design
+											system.
+										</li>
+									)}
+									{language === "es" ? (
+										<li>
+											Visualización de datos: Recharts, Chart.js, Plotly.js,
+											FullCalendar para programación de campañas.
+										</li>
+									) : (
+										<li>
+											Data visualization: Recharts, Chart.js, Plotly.js,
+											FullCalendar for campaign scheduling.
+										</li>
+									)}
+									{language === "es" ? (
+										<li>
+											Editores de contenido: GrapeJS con integración MJML para
+											diseño de plantillas de email, React Quill para edición de
+											texto enriquecido.
+										</li>
+									) : (
+										<li>
+											Rich content editors: GrapeJS with MJML integration for
+											email template design, React Quill for rich text editing.
+										</li>
+									)}
+									{language === "es" ? (
+										<li>
+											Gestión de tablas: TanStack React Table, AG Grid, con
+											paginación y filtrado del lado del servidor.
+										</li>
+									) : (
+										<li>
+											Table and data management: TanStack React Table, AG Grid,
+											with server-side pagination and filtering.
+										</li>
+									)}
+									{language === "es" ? (
+										<li>
+											Implementación de flujos de formularios complejos
+											multi-paso con validación en tiempo real, control de
+											acceso basado en roles (RBAC), y dashboards de análisis
+											con visualización de métricas.
+										</li>
+									) : (
+										<li>
+											Implementation of complex multi-step form flows with
+											real-time validation, role-based access control (RBAC),
+											and analytics dashboards with metrics visualization.
+										</li>
+									)}
+									{language === "es" ? (
+										<li>
+											Metodología de trabajo: Desarrollo ágil, colaboración en
+											equipos multifuncionales, control de versiones con Git,
+											revisiones de código y despliegues containerizados
+											(Docker).
+										</li>
+									) : (
+										<li>
+											Work methodologies: Agile development, cross-functional
+											team collaboration, version control with Git, code
+											reviews, and containerized deployments (Docker).
+										</li>
+									)}
+								</ul>
+							</p>
 
 							<h4 className='vertical-timeline-element-subtitle pt-2'>
 								Emergencias | International Healt Services
@@ -213,6 +308,7 @@ function Experience() {
 							</p>
 							<div>
 								<Button
+									id='view-projects-button'
 									onClick={() => setOpen(true)}
 									className='mt-2 button-custom'>
 									{language === "es" ? "Ver Proyectos" : "View Projects"}
@@ -262,40 +358,138 @@ function Experience() {
 					</h1>
 					<Tabs>
 						<TabList className='px-3 tab-list' data-modal-primary-focus>
-							<Tab>Dale Arg</Tab>
-							<Tab>Vivere Vene</Tab>
-							<Tab>TRT Producciones</Tab>
+							<Tab>
+								Event Platforms{" "}
+								<span
+									className='badge bg-primary ms-1'
+									style={{ fontSize: "0.65rem", verticalAlign: "middle" }}>
+									New!
+								</span>
+							</Tab>
 							<Tab>22:22 Agencia</Tab>
+							<Tab>TRT Producciones</Tab>
+							<Tab>Vivere Vene</Tab>
+							<Tab>Dale Arg</Tab>
 						</TabList>
 						<TabPanels>
-							{/* DAleArg */}
+							{/* Event Platforms */}
 							<TabPanel className='px-0 mb-5'>
 								<Container>
 									<div className='d-flex flex-column flex-md-row align-items-start justify-content-between'>
 										<div className='text-md-start mb-3 mb-md-0'>
 											<img
-												src={DaleArg}
+												src={UnPlan}
 												width={250}
 												className='mb-2 preview-img'
 											/>
 											<a
-												href='https://daleargentinafest.com/'
+												href='https://unplanenjunin.com.ar/'
 												target='_blank'
 												className='d-block'>
-												www.daleargentinafest.com
+												www.unplanenjunin.com.ar
+												<ArrowRight className='ms-2' />
+											</a>
+											<img
+												src={BuenRollo}
+												width={250}
+												className='mb-2 mt-2 preview-img'
+											/>
+											<a
+												href='https://buenrollobarcelona.com/'
+												target='_blank'
+												className='d-block mt-2'>
+												www.buenrollobarcelona.com
 												<ArrowRight className='ms-2' />
 											</a>
 										</div>
 										<div className='text-md-start ms-md-3'>
 											<p className='mx-0 mx-md-2 project-description'>
 												{language === "es"
-													? "Dale Argentina Fest es el primer festival de bandas argentinas en España, celebrándose en 5 ciudades españolas durante el mes de junio. Este festival apuesta por un concepto innovador que combina gastronomía, sostenibilidad, emprendimiento local, actividades para todas las edades y música."
-													: "Dale Argentina Fest is the first festival of Argentine bands in Spain, taking place in 5 Spanish cities during the month of June. This festival embraces an innovative concept that combines gastronomy, sustainability, local entrepreneurship, activities for all ages, and music."}
+													? "Sistema integral de gestión y publicación de eventos desarrollado con arquitectura compartida para múltiples clientes. La plataforma permite a los usuarios explorar eventos locales, ver detalles como fechas, ubicaciones, artistas y descripciones, con un diseño responsive optimizado para dispositivos móviles. El sistema incluye funcionalidades de filtrado por categorías, búsqueda de eventos y visualización de mapas integrados."
+													: "Comprehensive event management and publishing system developed with shared architecture for multiple clients. The platform allows users to explore local events, view details such as dates, locations, artists, and descriptions, with a responsive design optimized for mobile devices. The system includes category filtering, event search, and integrated map visualization features."}
 											</p>
 											<p className='mx-0 mx-md-2 project-description'>
 												{language === "es"
-													? "El diseño del sitio web se centró en proporcionar una experiencia de usuario sobresaliente a través de bocetos y prototipos para mejorar la estructura del sitio, los flujos de navegación y la disposición visual. Se prestó especial atención a la usabilidad, la navegación intuitiva y la presentación clara de la información, garantizando que el diseño se adapte automáticamente a diferentes tamaños de pantalla para ofrecer una experiencia óptima tanto en dispositivos móviles como en escritorios. Adicionalmente, se implementaron formularios de contacto y acreditaciones de prensa, notificando al cliente sobre nuevos mensajes y almacenando la información en una base de datos para una gestión eficiente según los filtros del cuestionario."
-													: "The website design focused on providing an outstanding user experience through sketches and prototypes to enhance the site's structure, navigation flows, and visual layout. Special attention was paid to usability, intuitive navigation, and clear presentation of information, ensuring that the design adapts automatically to different screen sizes for an optimal experience on both mobile and desktop devices. Additionally, contact forms and press accreditations were implemented, notifying the client of new messages and storing information in a database for efficient management according to questionnaire filters."}
+													? "La arquitectura del proyecto se compone de tres capas principales: un frontend desarrollado en React con diseño modular y componentes reutilizables, un backoffice administrativo que permite a usuarios con permisos de administrador gestionar eventos, categorías, ubicaciones y contenido multimedia de forma intuitiva, y un backend robusto construido en Node.js con Express que expone una API RESTful para la gestión de datos. El sistema implementa autenticación JWT, control de acceso basado en roles (RBAC), y operaciones CRUD completas para la administración de eventos."
+													: "The project architecture consists of three main layers: a frontend developed in React with modular design and reusable components, an administrative backoffice that allows users with admin permissions to manage events, categories, locations, and multimedia content intuitively, and a robust backend built in Node.js with Express that exposes a RESTful API for data management. The system implements JWT authentication, role-based access control (RBAC), and complete CRUD operations for event administration."}
+											</p>
+											<p className='mx-0 mx-md-2 project-description'>
+												{language === "es"
+													? "El backoffice proporciona dashboards con métricas de eventos, gestión de imágenes y contenido, programación de publicaciones, y herramientas de moderación. La base de datos almacena información estructurada de eventos, usuarios, categorías y logs de auditoría, permitiendo trazabilidad completa de las operaciones administrativas."
+													: "The backoffice provides dashboards with event metrics, image and content management, publication scheduling, and moderation tools. The database stores structured information about events, users, categories, and audit logs, enabling complete traceability of administrative operations."}
+											</p>
+
+											<h6 className='mx-0 mx-md-2 '>Stack</h6>
+											<p className='mx-0 mx-md-2 project-description'>
+												React, Node.js, Express, JWT, MongoDB, Bootstrap, REST
+												API
+											</p>
+										</div>
+									</div>
+								</Container>
+							</TabPanel>
+							{/* 22 */}
+							<TabPanel className='px-0 mb-5'>
+								<Container>
+									<div className='d-flex flex-column flex-md-row align-items-start justify-content-between'>
+										<div className='text-md-start mb-3 mb-md-0'>
+											<img
+												src={Agencia2222}
+												width={250}
+												className='mb-2 preview-img'
+											/>
+											<a
+												href='https://www.2222agencia.com/'
+												target='_blank'
+												className='d-block'>
+												www.2222agencia.com
+												<ArrowRight className='ms-2' />
+											</a>
+										</div>
+										<div className='text-md-start ms-md-3'>
+											<p className='mx-0 mx-md-2 project-description'>
+												{language === "es"
+													? "2222 Agencia está especializada en el booking, management y producción de giras, conciertos y eventos en España. Desde Pampa Code aportamos al proyecto soluciones informáticas, creando un sitio web responsive que facilita la comunicación con los usuarios en la venta de entradas y promueve la exposición de los artistas de la agencia."
+													: "2222 Agencia specializes in booking, management, and production of tours, concerts, and events in Spain. From Pampa Code, we contributed to the project with IT solutions, creating a responsive website that facilitates communication with users for ticket sales and promotes the exposure of the agency's artists."}
+											</p>
+											<p className='mx-0 mx-md-2 project-description'>
+												{language === "es"
+													? "El diseño del sitio web se centró en proporcionar una experiencia amigable para los usuarios, permitiéndoles navegar fácilmente por los servicios ofrecidos. El principal foco está en la usabilidad, la navegación intuitiva y la presentación clara y efectiva de la información. Además, se desarrolló una plataforma en línea para la venta de entradas, permitiendo a los usuarios explorar eventos, ver detalles como fechas, horarios y ubicaciones, y realizar la compra de boletos de manera conveniente y segura. La página web asegura una experiencia óptima en dispositivos móviles y de escritorio, adaptándose automáticamente a diferentes tamaños de pantalla."
+													: "The website design focused on providing a user-friendly experience, allowing them to easily navigate the services offered. The main focus is on usability, intuitive navigation, and clear and effective information presentation. Additionally, an online ticket sales platform was developed, allowing users to explore events, view details such as dates, times, and locations, and purchase tickets conveniently and securely. The website ensures an optimal experience on mobile and desktop devices, automatically adapting to different screen sizes."}
+											</p>
+
+											<h6 className='mx-0 mx-md-2 '>Stack</h6>
+											<p className='mx-0 mx-md-2 project-description'>
+												HTML, CSS, React, Bootstrap
+											</p>
+										</div>
+									</div>
+								</Container>
+							</TabPanel>
+							{/* TRT */}
+							<TabPanel className='px-0 mb-5'>
+								<Container>
+									<div className='d-flex flex-column flex-md-row align-items-start justify-content-between'>
+										<div className='text-md-start mb-3 mb-md-0'>
+											<img src={TRT} width={250} className='mb-2 preview-img' />
+											<a
+												href='http://trtproducciones.com/'
+												target='_blank'
+												className='d-block'>
+												www.trtproducciones.com
+												<ArrowRight className='ms-2' />
+											</a>
+										</div>
+										<div className='text-md-start ms-md-3'>
+											<p className='mx-0 mx-md-2 project-description'>
+												{language === "es"
+													? "TRT Producciones es una agencia de eventos con sede en Málaga, especializada en la producción de giras y festivales en las principales ciudades de España. Ofrecen servicios de planificación de eventos de alto nivel para artistas y audiencias en Barcelona, Madrid, Valencia, Mallorca, Alicante y Málaga."
+													: "TRT Producciones is an event agency based in Málaga, specializing in the production of tours and festivals in major cities across Spain. They offer high-level event planning services for artists and audiences in Barcelona, Madrid, Valencia, Mallorca, Alicante, and Málaga."}
+											</p>
+											<p className='mx-0 mx-md-2 project-description'>
+												{language === "es"
+													? "El diseño se centró en crear una experiencia de usuario excepcional mediante bocetos y prototipos para refinar la estructura del sitio web, los flujos de navegación y la disposición visual. Se prestó especial atención a la usabilidad, la navegación intuitiva y la presentación efectiva de la información, asegurando que el diseño se adapte automáticamente a diferentes tamaños de pantalla para una experiencia óptima en dispositivos móviles y de escritorio. Además, se implementaron formularios de contacto y acreditaciones, notificando al cliente sobre nuevos mensajes y guardando la información en una base de datos según el show u otros filtros del cuestionario."
+													: "The design focused on creating an exceptional user experience through sketches and prototypes to refine the website's structure, navigation flows, and visual layout. Special attention was paid to usability, intuitive navigation, and effective information presentation, ensuring the design automatically adapts to different screen sizes for an optimal experience on both mobile and desktop devices. Additionally, contact and accreditation forms were implemented, notifying the client of new messages and storing information in a database according to the show or other questionnaire filters."}
 											</p>
 
 											<h6 className='mx-0 mx-md-2 '>Stack</h6>
@@ -346,68 +540,34 @@ function Experience() {
 									</div>
 								</Container>
 							</TabPanel>
-							{/* TRT */}
-							<TabPanel className='px-0 mb-5'>
-								<Container>
-									<div className='d-flex flex-column flex-md-row align-items-start justify-content-between'>
-										<div className='text-md-start mb-3 mb-md-0'>
-											<img src={TRT} width={250} className='mb-2 preview-img' />
-											<a
-												href='http://trtproducciones.com/'
-												target='_blank'
-												className='d-block'>
-												www.trtproducciones.com
-												<ArrowRight className='ms-2' />
-											</a>
-										</div>
-										<div className='text-md-start ms-md-3'>
-											<p className='mx-0 mx-md-2 project-description'>
-												{language === "es"
-													? "TRT Producciones es una agencia de eventos con sede en Málaga, especializada en la producción de giras y festivales en las principales ciudades de España. Ofrecen servicios de planificación de eventos de alto nivel para artistas y audiencias en Barcelona, Madrid, Valencia, Mallorca, Alicante y Málaga."
-													: "TRT Producciones is an event agency based in Málaga, specializing in the production of tours and festivals in major cities across Spain. They offer high-level event planning services for artists and audiences in Barcelona, Madrid, Valencia, Mallorca, Alicante, and Málaga."}
-											</p>
-											<p className='mx-0 mx-md-2 project-description'>
-												{language === "es"
-													? "El diseño se centró en crear una experiencia de usuario excepcional mediante bocetos y prototipos para refinar la estructura del sitio web, los flujos de navegación y la disposición visual. Se prestó especial atención a la usabilidad, la navegación intuitiva y la presentación efectiva de la información, asegurando que el diseño se adapte automáticamente a diferentes tamaños de pantalla para una experiencia óptima en dispositivos móviles y de escritorio. Además, se implementaron formularios de contacto y acreditaciones, notificando al cliente sobre nuevos mensajes y guardando la información en una base de datos según el show u otros filtros del cuestionario."
-													: "The design focused on creating an exceptional user experience through sketches and prototypes to refine the website's structure, navigation flows, and visual layout. Special attention was paid to usability, intuitive navigation, and effective information presentation, ensuring the design automatically adapts to different screen sizes for an optimal experience on both mobile and desktop devices. Additionally, contact and accreditation forms were implemented, notifying the client of new messages and storing information in a database according to the show or other questionnaire filters."}
-											</p>
-
-											<h6 className='mx-0 mx-md-2 '>Stack</h6>
-											<p className='mx-0 mx-md-2 project-description'>
-												HTML, CSS, React, Bootstrap
-											</p>
-										</div>
-									</div>
-								</Container>
-							</TabPanel>
-							{/* 22 */}
+							{/* DAleArg */}
 							<TabPanel className='px-0 mb-5'>
 								<Container>
 									<div className='d-flex flex-column flex-md-row align-items-start justify-content-between'>
 										<div className='text-md-start mb-3 mb-md-0'>
 											<img
-												src={Agencia2222}
+												src={DaleArg}
 												width={250}
 												className='mb-2 preview-img'
 											/>
 											<a
-												href='https://www.2222agencia.com/'
+												href='https://daleargentinafest.com/'
 												target='_blank'
 												className='d-block'>
-												www.2222agencia.com
+												www.daleargentinafest.com
 												<ArrowRight className='ms-2' />
 											</a>
 										</div>
 										<div className='text-md-start ms-md-3'>
 											<p className='mx-0 mx-md-2 project-description'>
 												{language === "es"
-													? "2222 Agencia está especializada en el booking, management y producción de giras, conciertos y eventos en España. Desde Pampa Code aportamos al proyecto soluciones informáticas, creando un sitio web responsive que facilita la comunicación con los usuarios en la venta de entradas y promueve la exposición de los artistas de la agencia."
-													: "2222 Agencia specializes in booking, management, and production of tours, concerts, and events in Spain. From Pampa Code, we contributed to the project with IT solutions, creating a responsive website that facilitates communication with users for ticket sales and promotes the exposure of the agency's artists."}
+													? "Dale Argentina Fest es el primer festival de bandas argentinas en España, celebrándose en 5 ciudades españolas durante el mes de junio. Este festival apuesta por un concepto innovador que combina gastronomía, sostenibilidad, emprendimiento local, actividades para todas las edades y música."
+													: "Dale Argentina Fest is the first festival of Argentine bands in Spain, taking place in 5 Spanish cities during the month of June. This festival embraces an innovative concept that combines gastronomy, sustainability, local entrepreneurship, activities for all ages, and music."}
 											</p>
 											<p className='mx-0 mx-md-2 project-description'>
 												{language === "es"
-													? "El diseño del sitio web se centró en proporcionar una experiencia amigable para los usuarios, permitiéndoles navegar fácilmente por los servicios ofrecidos. El principal foco está en la usabilidad, la navegación intuitiva y la presentación clara y efectiva de la información. Además, se desarrolló una plataforma en línea para la venta de entradas, permitiendo a los usuarios explorar eventos, ver detalles como fechas, horarios y ubicaciones, y realizar la compra de boletos de manera conveniente y segura. La página web asegura una experiencia óptima en dispositivos móviles y de escritorio, adaptándose automáticamente a diferentes tamaños de pantalla."
-													: "The website design focused on providing a user-friendly experience, allowing them to easily navigate the services offered. The main focus is on usability, intuitive navigation, and clear and effective information presentation. Additionally, an online ticket sales platform was developed, allowing users to explore events, view details such as dates, times, and locations, and purchase tickets conveniently and securely. The website ensures an optimal experience on mobile and desktop devices, automatically adapting to different screen sizes."}
+													? "El diseño del sitio web se centró en proporcionar una experiencia de usuario sobresaliente a través de bocetos y prototipos para mejorar la estructura del sitio, los flujos de navegación y la disposición visual. Se prestó especial atención a la usabilidad, la navegación intuitiva y la presentación clara de la información, garantizando que el diseño se adapte automáticamente a diferentes tamaños de pantalla para ofrecer una experiencia óptima tanto en dispositivos móviles como en escritorios. Adicionalmente, se implementaron formularios de contacto y acreditaciones de prensa, notificando al cliente sobre nuevos mensajes y almacenando la información en una base de datos para una gestión eficiente según los filtros del cuestionario."
+													: "The website design focused on providing an outstanding user experience through sketches and prototypes to enhance the site's structure, navigation flows, and visual layout. Special attention was paid to usability, intuitive navigation, and clear presentation of information, ensuring that the design adapts automatically to different screen sizes for an optimal experience on both mobile and desktop devices. Additionally, contact forms and press accreditations were implemented, notifying the client of new messages and storing information in a database for efficient management according to questionnaire filters."}
 											</p>
 
 											<h6 className='mx-0 mx-md-2 '>Stack</h6>

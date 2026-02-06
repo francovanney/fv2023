@@ -104,12 +104,19 @@ const Header = () => {
 							</Row>
 							<Row>
 								<Col id='col-select' xs={12} md={12} lg={9}>
-									<p>{texts.language}</p>
+									<p
+										style={{
+											fontFamily: "var(--Font-Display)",
+											letterSpacing: "0.1em",
+											fontSize: "var(--fs-small)"
+										}}>
+										{texts.language}
+									</p>
 									<ContentSwitcher
 										className='lang-container'
 										onChange={handleLanguage}>
-										<Switch name='ENG' text='English' />
-										<Switch name='ESP' text='Español' />
+										<Switch name='ENG' text='ENGLISH' />
+										<Switch name='ESP' text='ESPAÑOL' />
 									</ContentSwitcher>
 
 									{/* 									<Select
