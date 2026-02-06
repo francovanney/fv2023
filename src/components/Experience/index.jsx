@@ -56,8 +56,8 @@ function Experience() {
 							{/* <h5 className='vertical-timeline-element-'>Powered by Avenga</h5> */}
 							<h6 className='mt-1'>
 								{language === "es"
-									? "Avenga es una empresa de software que opera en USA, América Latina y Europa"
-									: "Avenga is a software company running operations across the US, Latin America & Europe."}
+									? "Avenga es una compañía global de ingeniería de software y transformación digital con más de 30 años de experiencia, 6,000+ expertos tecnológicos y presencia en 44 ubicaciones."
+									: "Avenga is a global software engineering and digital transformation company with over 30 years of experience, 6,000+ technology experts, and presence across 44 locations."}
 							</h6>
 
 							<h4 className='vertical-timeline-element-subtitle pt-2'>

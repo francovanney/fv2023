@@ -1,14 +1,17 @@
 html,
 body {
-    font-family: var(--Main-Font);
+    font-family: var(--Font-Body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .page-section {
     min-height: 50vh;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
     width: 100%;
-    //max-height: 50vh;
 }
 
 .bg-light {
@@ -26,6 +29,60 @@ h4,
 h5 {
     margin: 0 !important;
     padding: 0 !important;
+    font-family: var(--Font-Display);
+    letter-spacing: var(--ls-wide);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+h4 {
+    font-size: var(--fs-h4);
+}
+
+p {
+    font-size: var(--fs-body);
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+strong {
+    font-weight: 600;
+}
+
+// Carbon Design System font overrides
+.cds--btn {
+    font-family: var(--Font-Display) !important;
+    letter-spacing: var(--ls-wide) !important;
+}
+
+.cds--modal-header__heading {
+    font-family: var(--Font-Display) !important;
+    letter-spacing: var(--ls-wide) !important;
+}
+
+.cds--modal-content {
+    font-family: var(--Font-Body) !important;
+}
+
+.cds--accordion__title {
+    font-family: var(--Font-Display) !important;
+    letter-spacing: var(--ls-wide) !important;
+}
+
+.cds--tab--list button {
+    font-family: var(--Font-Display) !important;
+    letter-spacing: var(--ls-wide) !important;
 }
 
 /* Button {
@@ -52,10 +109,11 @@ h5 {
 
 .custom-icon {
     color: var(--FirstColor) !important;
+    transition: color 0.3s ease, transform 0.3s ease !important;
 
     &:hover {
         color: #979797 !important;
-        transition: all .2s !important;
+        transform: translateY(-2px);
     }
 }
 

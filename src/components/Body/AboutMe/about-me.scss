@@ -26,15 +26,28 @@ span {
 
 .acc-item {
     >button {
+        font-family: var(--Font-Display);
+        font-size: var(--fs-body);
+        letter-spacing: var(--ls-wide);
+
         &:focus {
             box-shadow: none;
         }
     }
+
+    p {
+        font-family: var(--Font-Body);
+        font-size: var(--fs-body);
+        font-weight: 300;
+        line-height: 1.7;
+    }
 }
 
 .text-description {
-    font-size: .95em !important;
-    font-weight: 900 !important;
+    font-family: var(--Font-Body) !important;
+    font-size: var(--fs-body) !important;
+    font-weight: 300 !important;
+    line-height: 1.7 !important;
 }
 
 

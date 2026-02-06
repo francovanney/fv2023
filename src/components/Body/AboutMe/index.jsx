@@ -320,6 +320,9 @@ const AboutMe = () => {
 									}>
 									{language === "es" ? (
 										<div className='mx-3'>
+											<p className='mb-3'>
+												Visitá lo último agregado al portfolio:
+											</p>
 											<p className='mb-2'>
 												<strong>Event Platforms</strong> - Sistema integral de
 												gestión y publicación de eventos desarrollado con
@@ -354,6 +357,9 @@ const AboutMe = () => {
 										</div>
 									) : (
 										<div className='mx-3'>
+											<p className='mb-3'>
+												Check out the latest addition to the portfolio:
+											</p>
 											<p className='mb-2'>
 												<strong>Event Platforms</strong> - Comprehensive event
 												management and publishing system developed with shared

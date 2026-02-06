@@ -41,7 +41,15 @@
 
 a {
     text-decoration: none !important;
+    font-family: var(--Font-Body);
     font-weight: 300 !important;
+    font-size: var(--fs-small);
+    letter-spacing: var(--ls-wide);
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .copy-icon {

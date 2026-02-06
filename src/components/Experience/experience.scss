@@ -1,31 +1,92 @@
 .text-description {
-    font-size: .95em !important;
+    font-family: var(--Font-Body) !important;
+    font-size: var(--fs-body) !important;
     font-weight: 300 !important;
+    line-height: 1.7 !important;
 }
 
 .vertical-timeline-element-content {
     box-shadow: 0 2px 0 #76767659;
 }
 
+.vertical-timeline-element-title {
+    font-family: var(--Font-Display) !important;
+    font-size: var(--fs-h3) !important;
+    letter-spacing: var(--ls-wide) !important;
+}
+
+.vertical-timeline-element-subtitle {
+    font-family: var(--Font-Display) !important;
+    font-size: var(--fs-h4) !important;
+    letter-spacing: var(--ls-wide) !important;
+    color: var(--FirstColor);
+}
+
 .project-description {
-    font-size: .90em !important;
-    font-weight: 500 !important;
+    font-family: var(--Font-Body) !important;
+    font-size: var(--fs-small) !important;
+    font-weight: 300 !important;
+    line-height: 1.7 !important;
 }
 
 .button-custom {
+    font-family: var(--Font-Display) !important;
+    letter-spacing: var(--ls-wide) !important;
     width: 100% !important;
 }
 
 .preview-img {
-    border-radius: 2%;
+    border-radius: 4px;
     cursor: default;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.02);
+    }
 }
 
 .tab-list {
     overflow-x: hidden;
+
+    button {
+        font-family: var(--Font-Display) !important;
+        font-size: var(--fs-small) !important;
+        letter-spacing: var(--ls-wide) !important;
+    }
 }
 
 .list-experience>li {
     list-style-type: disc;
-    font-size: 14px !important;
+    font-family: var(--Font-Body);
+    font-size: var(--fs-small) !important;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+// Timeline date styling
+.vertical-timeline-element-date {
+    font-family: var(--Font-Display) !important;
+    font-size: var(--fs-small) !important;
+    letter-spacing: var(--ls-wider) !important;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+// Modal project stack labels
+.project-description+h6,
+.cds--modal-content h6 {
+    font-family: var(--Font-Display) !important;
+    font-size: var(--fs-small) !important;
+    letter-spacing: var(--ls-wider) !important;
+    text-transform: uppercase;
+    color: var(--FirstColor);
+    margin-top: var(--space-md) !important;
+    margin-bottom: var(--space-xs) !important;
+}
+
+// Modal title
+.cds--modal-content>h1 {
+    font-family: var(--Font-Display) !important;
+    font-size: var(--fs-h1) !important;
+    letter-spacing: var(--ls-wide) !important;
 }
