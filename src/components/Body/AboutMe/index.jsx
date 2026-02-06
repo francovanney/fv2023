@@ -11,7 +11,9 @@ import {
 	UserRole,
 	Trophy,
 	GameConsole,
-	DocumentDownload
+	DocumentDownload,
+	Notification,
+	ArrowRight
 } from "@carbon/icons-react";
 import { ThemeContext } from "../../../Context/ThemeContext";
 import { AccordionItem, Button, Accordion } from "@carbon/react";
@@ -301,6 +303,88 @@ const AboutMe = () => {
 											visual experiences that enhance the atmosphere of each
 											event.
 										</p>
+									)}
+								</AccordionItem>
+								<AccordionItem
+									className='acc-item'
+									title={
+										language === "es" ? (
+											<>
+												<Notification /> Novedades
+											</>
+										) : (
+											<>
+												<Notification /> News
+											</>
+										)
+									}>
+									{language === "es" ? (
+										<div className='mx-3'>
+											<p className='mb-2'>
+												<strong>Event Platforms</strong> - Sistema integral de
+												gestión y publicación de eventos desarrollado con
+												arquitectura compartida. Incluye frontend en React,
+												backoffice administrativo y backend en Node.js con
+												Express.
+											</p>
+											<Button
+												kind='tertiary'
+												size='sm'
+												onClick={() => {
+													const viewProjectsBtn = document.getElementById(
+														"view-projects-button"
+													);
+													if (viewProjectsBtn) {
+														viewProjectsBtn.scrollIntoView({
+															behavior: "smooth",
+															block: "center"
+														});
+														setTimeout(() => {
+															viewProjectsBtn.focus();
+															viewProjectsBtn.style.animation =
+																"pulse 0.6s ease-in-out 2";
+															setTimeout(() => {
+																viewProjectsBtn.style.animation = "";
+															}, 1200);
+														}, 800);
+													}
+												}}>
+												Ver proyecto <ArrowRight className='ms-1' />
+											</Button>
+										</div>
+									) : (
+										<div className='mx-3'>
+											<p className='mb-2'>
+												<strong>Event Platforms</strong> - Comprehensive event
+												management and publishing system developed with shared
+												architecture. Includes React frontend, administrative
+												backoffice, and Node.js backend with Express.
+											</p>
+											<Button
+												kind='tertiary'
+												size='sm'
+												onClick={() => {
+													const viewProjectsBtn = document.getElementById(
+														"view-projects-button"
+													);
+													if (viewProjectsBtn) {
+														viewProjectsBtn.scrollIntoView({
+															behavior: "smooth",
+															block: "center"
+														});
+														setTimeout(() => {
+															viewProjectsBtn.focus();
+															viewProjectsBtn.style.animation =
+																"pulse 0.6s ease-in-out 2";
+															setTimeout(() => {
+																viewProjectsBtn.style.animation = "";
+															}, 1200);
+														}, 800);
+													}
+												}}>
+												View project <ArrowRight className='ms-1' />
+											</Button>
+										</div>
 									)}
 								</AccordionItem>
 								<AccordionItem

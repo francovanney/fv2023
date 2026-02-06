@@ -41,3 +41,20 @@ span {
 .hi-icon {
     cursor: default;
 }
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(var(--FirstColor-rgb, 104, 211, 145), 0.7);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(var(--FirstColor-rgb, 104, 211, 145), 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(var(--FirstColor-rgb, 104, 211, 145), 0);
+    }
+}
