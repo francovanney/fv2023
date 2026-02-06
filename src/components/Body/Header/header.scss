@@ -182,10 +182,22 @@
 
 .lang-container {
   width: 50%;
+  font-family: 'Bourton', sans-serif !important;
 
   &>button {
+    font-family: 'Bourton', sans-serif !important;
+
     &:focus {
       box-shadow: none;
     }
+
+    span {
+      font-family: 'Bourton', sans-serif !important;
+    }
+  }
+
+  .cds--content-switcher-btn,
+  .cds--content-switcher__btn {
+    font-family: 'Bourton', sans-serif !important;
   }
 }

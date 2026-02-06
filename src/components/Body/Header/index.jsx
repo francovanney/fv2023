@@ -107,9 +107,18 @@ const Header = () => {
 									<p>{texts.language}</p>
 									<ContentSwitcher
 										className='lang-container'
-										onChange={handleLanguage}>
-										<Switch name='ENG' text='English' />
-										<Switch name='ESP' text='Español' />
+										onChange={handleLanguage}
+										style={{ fontFamily: "'Bourton', sans-serif" }}>
+										<Switch
+											name='ENG'
+											text='ENGLISH'
+											style={{ fontFamily: "'Bourton', sans-serif" }}
+										/>
+										<Switch
+											name='ESP'
+											text='ESPAÑOL'
+											style={{ fontFamily: "'Bourton', sans-serif" }}
+										/>
 									</ContentSwitcher>
 
 									{/* 									<Select
